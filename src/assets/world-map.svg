@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="100%">
+  <rect x="0" y="0" width="1000" height="500" fill="#0F172A"/>
+  
+  <!-- Middle East and surrounding regions -->
+  <!-- Turkey -->
+  <path id="TUR" d="M520 170 L540 170 L560 175 L575 180 L585 185 L590 190 L575 200 L560 205 L545 205 L530 200 L515 190 L510 180 Z" fill="#ffffff" stroke="#333333" stroke-width="1"/>
+  
+  <!-- UAE -->
+  <path id="ARE" d="M585 210 L595 210 L600 215 L605 220 L600 225 L590 225 L585 220 L580 215 Z" fill="#ffffff" stroke="#333333" stroke-width="1"/>
+  
+  <!-- Saudi Arabia -->
+  <path id="SAU" d="M555 200 L575 200 L590 215 L585 230 L575 240 L555 235 L545 225 L540 210 Z" fill="#ffffff" stroke="#333333" stroke-width="1"/>
+  
+  <!-- Qatar -->
+  <path id="QAT" d="M580 220 L585 220 L585 225 L580 225 Z" fill="#ffffff" stroke="#333333" stroke-width="1"/>
+  
+  <!-- Jordan -->
+  <path id="JOR" d="M535 190 L545 190 L550 195 L545 200 L535 200 L530 195 Z" fill="#ffffff" stroke="#333333" stroke-width="1"/>
+  
+  <!-- Macedonia -->
+  <path id="MKD" d="M495 160 L500 160 L505 165 L500 170 L495 170 L490 165 Z" fill="#ffffff" stroke="#333333" stroke-width="1"/>
+
+  <!-- Other countries for context -->
+  <!-- Europe -->
+  <path d="M440 120 L500 120 L520 140 L510 170 L470 190 L420 180 L410 150 Z" fill="#ffffff" stroke="#333333" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Asia -->
+  <path d="M570 100 L700 100 L750 200 L700 300 L600 250 L590 200 L600 150 Z" fill="#ffffff" stroke="#333333" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Africa -->
+  <path d="M450 200 L510 200 L530 280 L480 350 L430 350 L400 300 L420 230 Z" fill="#ffffff" stroke="#333333" stroke-width="1" opacity="0.5"/>
+</svg>
