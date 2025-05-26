@@ -56,13 +56,28 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex space-x-4">
-              <a href="#" className="bg-neutral-800 p-2 rounded-full hover:bg-amber-600 transition-colors">
+              <a 
+                href="#" 
+                className="bg-neutral-800 p-2 rounded-full hover:bg-amber-600 transition-colors"
+                aria-label="Follow us on Twitter"
+                title="Follow us on Twitter"
+              >
                 <Twitter size={18} className="text-neutral-300" />
               </a>
-              <a href="#" className="bg-neutral-800 p-2 rounded-full hover:bg-amber-600 transition-colors">
+              <a 
+                href="#" 
+                className="bg-neutral-800 p-2 rounded-full hover:bg-amber-600 transition-colors"
+                aria-label="Connect with us on LinkedIn"
+                title="Connect with us on LinkedIn"
+              >
                 <Linkedin size={18} className="text-neutral-300" />
               </a>
-              <a href="#" className="bg-neutral-800 p-2 rounded-full hover:bg-amber-600 transition-colors">
+              <a 
+                href="#" 
+                className="bg-neutral-800 p-2 rounded-full hover:bg-amber-600 transition-colors"
+                aria-label="View our GitHub repositories"
+                title="View our GitHub repositories"
+              >
                 <Github size={18} className="text-neutral-300" />
               </a>
             </div>

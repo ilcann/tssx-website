@@ -473,6 +473,7 @@ const References = () => {
                 id="zoom-in"
                 className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
                 title="Zoom in"
+                aria-label="Zoom in on map"
               >
                 <ZoomIn className="size-5" />
               </button>
@@ -480,6 +481,7 @@ const References = () => {
                 id="zoom-reset"
                 className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
                 title="Reset view"
+                aria-label="Reset map view"
               >
                 <RefreshCcw className="size-5" />
               </button>
@@ -487,6 +489,7 @@ const References = () => {
                 id="zoom-out"
                 className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
                 title="Zoom out"
+                aria-label="Zoom out on map"
               >
                 <ZoomOut className="size-5" />
               </button>

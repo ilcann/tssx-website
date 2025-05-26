@@ -6,18 +6,30 @@
 
 ## 🚀 Overview
 
-TSSX is a modern React + TypeScript web application showcasing enterprise IT infrastructure management and intelligent automation solutions. Built with cutting-edge technologies, the site delivers a seamless user experience while presenting sophisticated technical services with a visually appealing interface.
+TSSX is a modern React + TypeScript web application showcasing enterprise IT
+infrastructure management and intelligent automation solutions. Built with
+cutting-edge technologies, the site delivers a seamless user experience while
+presenting sophisticated technical services with a visually appealing interface.
 
-Our platform serves as a digital storefront for IT professionals specializing in automation services across various domains including application deployment, database management, server infrastructure, storage solutions, network optimization, and security compliance.
+Our platform serves as a digital storefront for IT professionals specializing
+in automation services across various domains including application deployment,
+database management, server infrastructure, storage solutions, network
+optimization, and security compliance.
 
 ## ✨ Key Features
 
-- **Modern UI/UX**: Responsive, glass-morphism design with elegant animations and transitions
-- **Performance Optimized**: Leveraging React 19 and Vite for fast rendering and optimal user experience
-- **TypeScript Integration**: Full type safety throughout the codebase for robust application structure
-- **Responsive Design**: Fully responsive across all device sizes with dedicated mobile navigation
-- **SEO Optimized**: Comprehensive metadata implementation for better search engine visibility
-- **Interactive Elements**: Animated components, countup statistics, and smooth scroll navigation
+- **Modern UI/UX**: Responsive, glass-morphism design with elegant animations
+  and transitions
+- **Performance Optimized**: Leveraging React 19 and Vite for fast rendering
+  and optimal user experience
+- **TypeScript Integration**: Full type safety throughout the codebase for
+  robust application structure
+- **Responsive Design**: Fully responsive across all device sizes with
+  dedicated mobile navigation
+- **SEO Optimized**: Comprehensive metadata implementation for better search
+  engine visibility
+- **Interactive Elements**: Animated components, countup statistics, and smooth
+  scroll navigation
 - **Accessibility**: ARIA-compliant interface with keyboard navigation support
 
 ## 🔧 Technical Stack
@@ -170,7 +182,8 @@ The application is fully responsive across all device sizes:
 
 - **Desktop**: Full-featured experience with enhanced visual elements
 - **Tablet**: Optimized layout with adjusted spacing and components
-- **Mobile**: Streamlined interface with hamburger menu navigation and touch-friendly interactions
+- **Mobile**: Streamlined interface with hamburger menu navigation and
+  touch-friendly interactions
 
 ## 🔒 Security Considerations
 
@@ -181,7 +194,8 @@ The application is fully responsive across all device sizes:
 
 ## 👥 Team & Expertise
 
-TSSX was developed by professionals with backgrounds from Istanbul Technical University who have experience in roles such as:
+TSSX was developed by professionals with backgrounds from Istanbul Technical
+University who have experience in roles such as:
 
 - System Engineers
 - Principal Consultants
@@ -189,7 +203,8 @@ TSSX was developed by professionals with backgrounds from Istanbul Technical Uni
 - Security Specialists
 - Cloud Architects
 
-This diverse expertise allows us to deliver comprehensive IT infrastructure solutions tailored to enterprise needs.
+This diverse expertise allows us to deliver comprehensive IT infrastructure
+solutions tailored to enterprise needs.
 
 ## 📜 License
 
@@ -197,7 +212,8 @@ This project is proprietary software. All rights reserved © TSSX 2024.
 
 ## 📞 Contact
 
-For more information about TSSX and our enterprise IT solutions, please visit our website or contact us directly.
+For more information about TSSX and our enterprise IT solutions, please visit
+our website or contact us directly.
 
 ---
 

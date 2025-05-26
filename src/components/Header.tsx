@@ -175,6 +175,8 @@ const Header = () => {
         <button
           className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-amber-100/80 text-amber-700 hover:bg-amber-200/90 transition-colors duration-300"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>

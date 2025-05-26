@@ -17,6 +17,7 @@ export const FAQItem = ({ question, answer }: FAQItemProps) => {
         className="flex items-center justify-between w-full text-left py-4 px-2 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
+        aria-label={`${isOpen ? 'Collapse' : 'Expand'} FAQ: ${question}`}
       >
         <h3 className="text-lg font-medium text-primary">{question}</h3>
         <span className="ml-6 flex-shrink-0 text-primary">
