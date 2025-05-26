@@ -40,7 +40,7 @@ function App() {
           property="og:description"
           content="Specializing in intelligent automation & IT infrastructure management with expertise in cloud, security, and compliance solutions."
         />
-        <meta property="og:image" content="/src/assets/logo.png" />
+        <meta property="og:image" content="/logo.png" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -53,7 +53,7 @@ function App() {
           property="twitter:description"
           content="Specializing in intelligent automation & IT infrastructure management with expertise in cloud, security, and compliance solutions."
         />
-        <meta property="twitter:image" content="/src/assets/logo.png" />
+        <meta property="twitter:image" content="/logo.png" />
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://tssx.com/" />

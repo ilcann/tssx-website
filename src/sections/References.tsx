@@ -132,8 +132,13 @@ const References = () => {
     const tooltip = d3.select(tooltipRef.current);
 
     // Load and process the TopoJSON data
-    fetch("/src/assets/world-110m.json")
-      .then((response) => response.json())
+    fetch("/world-110m.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((topoData) => {
         // Handle possible null country data
         if (!topoData || !topoData.objects || !topoData.objects.countries) {
