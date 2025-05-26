@@ -19,6 +19,8 @@ export default defineConfig({
           vendor: ['react', 'react-dom'],
           d3: ['d3', 'topojson-client'],
           ui: ['lucide-react', 'react-scroll', 'react-countup'],
+          helmet: ['react-helmet-async'],
+          slidedown: ['react-slidedown'],
         },
       },
     },
@@ -35,5 +37,10 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react', 'react-dom', 'lucide-react'],
     exclude: ['d3', 'topojson-client'], // Lazy load these heavy dependencies
+  },
+  // Enable tree shaking
+  esbuild: {
+    treeShaking: true,
+    drop: ['console', 'debugger'],
   },
 });
