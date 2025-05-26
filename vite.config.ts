@@ -11,4 +11,29 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Optimize chunk splitting
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          d3: ['d3', 'topojson-client'],
+          ui: ['lucide-react', 'react-scroll', 'react-countup'],
+        },
+      },
+    },
+    // Enable compression
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+  },
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'lucide-react'],
+    exclude: ['d3', 'topojson-client'], // Lazy load these heavy dependencies
+  },
 });

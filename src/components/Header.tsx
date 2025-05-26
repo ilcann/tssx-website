@@ -137,7 +137,7 @@ const Header = () => {
         >
           <div className="relative">
             <div
-              className={`text-4xl font-black transition-all duration-300 ${
+              className={`text-4xl font-black transition-all duration-300 header-logo ${
                 isScrolled ? "text-amber-600" : "text-amber-700"
               }`}
             >

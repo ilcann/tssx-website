@@ -43,19 +43,25 @@
 
 @font-face {
   font-family: "RobotoSlab";
-  src: url("/src/assets/fonts/Roboto_Slab/static/RobotoSlab-Bold.ttf")
+  src: url("/fonts/Roboto_Slab/static/RobotoSlab-Bold.ttf")
     format("truetype");
+  font-display: swap;
+  font-weight: 700;
 }
 @font-face {
   font-family: "RobotoSlab-Black";
-  src: url("/src/assets/fonts/Roboto_Slab/static/RobotoSlab-Black.ttf")
+  src: url("/fonts/Roboto_Slab/static/RobotoSlab-Black.ttf")
     format("truetype");
+  font-display: swap;
+  font-weight: 900;
 }
 
 @font-face {
   font-family: "RobotoSlab-Thin";
-  src: url("/src/assets/fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf")
+  src: url("/fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf")
     format("truetype");
+  font-display: swap;
+  font-weight: 400;
 }
 
 #hero {

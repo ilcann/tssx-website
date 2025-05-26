@@ -5,6 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TSS X - Enterprise IT Infrastructure Solutions & Services</title>
     <link rel="icon" href="/logo.png" />
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="/fonts/Roboto_Slab/static/RobotoSlab-Black.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/Roboto_Slab/static/RobotoSlab-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      /* Critical font loading */
+      @font-face {
+        font-family: "RobotoSlab-Black";
+        src: url("/fonts/Roboto_Slab/static/RobotoSlab-Black.ttf") format("truetype");
+        font-display: swap;
+        font-weight: 900;
+      }
+      
+      /* Critical styles for header and hero */
+      .header-logo {
+        font-family: 'RobotoSlab-Black', system-ui, -apple-system, sans-serif;
+        font-weight: 900;
+      }
+      
+      /* Prevent layout shift */
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Critical hero styles */
+      #hero {
+        min-height: 85vh;
+        background-color: #f59e0b;
+      }
+    </style>
+    
     <link rel="stylesheet" href="/src/index.css" />
   </head>
   <body>
