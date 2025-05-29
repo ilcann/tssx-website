@@ -1,44 +1,11 @@
-import { Link } from "react-scroll";
 import { useState, useEffect } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
-
-type HeaderLinkProps = {
-  to: string;
-  activeSection: string;
-  onClick: (section: string) => void;
-  children: React.ReactNode;
-};
-
-const HeaderLink = ({
-  to,
-  activeSection,
-  onClick,
-  children,
-}: HeaderLinkProps) => {
-  return (
-    <Link
-      to={to}
-      spy={true}
-      smooth={true}
-      offset={-40}
-      duration={800}
-      onClick={() => onClick(to)}
-      className={`relative group overflow-hidden px-3 py-2 rounded-full transition-all duration-500 ${
-        activeSection === to
-          ? "text-amber-600 bg-amber-100/50 font-bold"
-          : "text-black hover:text-amber-600 hover:bg-amber-50/50"
-      }`}
-    >
-      <span className="relative z-10">{children}</span>
-      {activeSection === to && (
-        <span className="absolute inset-0 bg-gradient-to-r from-amber-100/80 to-amber-200/50 rounded-full backdrop-blur-sm -z-0"></span>
-      )}
-      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-amber-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-    </Link>
-  );
-};
+import HeaderLink from "./HeaderLink";
+import { useNavigate, useLocation } from "react-router";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,13 +16,14 @@ const Header = () => {
   };
 
   const handleLogoClick = () => {
-    handleNavClick("hero");
-
-    if (window.scrollY > 0) {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+    if (location.pathname === "/") {
+      const heroElement = document.getElementById("hero");
+      if (heroElement) {
+        heroElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        setActiveSection("hero");
+      }
+    } else {
+      navigate("/");
     }
   };
 
@@ -65,6 +33,13 @@ const Header = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
+      
+      // Add validation to prevent incorrect detection during initial load
+      if (documentHeight < windowHeight) {
+        // Page content not fully loaded yet, skip section detection
+        return;
+      }
+      
       const scrolledToBottom =
         documentHeight <= scrollPosition + windowHeight + 50;
 
@@ -73,15 +48,7 @@ const Header = () => {
         return;
       }
 
-      const sections = [
-        "hero",
-        "solutions",
-        "about",
-        "detailed-solutions",
-        "references",
-        "faq",
-        "contact",
-      ];
+      const sections = ["hero", "solutions", "references", "faq", "contact"];
 
       let maxVisibleSection = "";
       let maxVisibleHeight = 0;
@@ -105,21 +72,32 @@ const Header = () => {
       }
     };
 
-    // Initial check
-    handleScroll();
+    // Delay initial check to allow page to load properly
+    const initialCheck = setTimeout(() => {
+      handleScroll();
+    }, 100);
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    return () => {
+      clearTimeout(initialCheck);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   // Navigation items for the header
-  const navItems = [
+  const allNavItems = [
     { to: "solutions", label: "Solutions" },
-    { to: "about", label: "About Us" },
-    { to: "detailed-solutions", label: "Detailed Solutions" },
+    { to: "/about", label: "About Us" },
     { to: "references", label: "References" },
+    { to: "faq", label: "FAQ" },
     { to: "contact", label: "Contact Us" },
   ];
+
+  // Filter nav items based on current page
+  const navItems = location.pathname === "/" 
+    ? allNavItems 
+    : allNavItems.filter(item => item.to !== "references" && item.to !== "faq");
 
   return (
     <header
@@ -161,7 +139,7 @@ const Header = () => {
         <nav className="hidden text-black font-medium md:flex items-center space-x-2">
           {navItems.map((item) => (
             <HeaderLink
-              key={item.to}
+              key={item.label}
               to={item.to}
               activeSection={activeSection}
               onClick={handleNavClick}
@@ -175,7 +153,9 @@ const Header = () => {
         <button
           className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-amber-100/80 text-amber-700 hover:bg-amber-200/90 transition-colors duration-300"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -190,22 +170,14 @@ const Header = () => {
       >
         <nav className="flex flex-col space-y-2 p-4">
           {navItems.map((item) => (
-            <Link
+            <HeaderLink
               key={item.to}
               to={item.to}
-              spy={true}
-              smooth={true}
-              offset={-40}
-              duration={800}
-              onClick={() => handleNavClick(item.to)}
-              className={`p-3 rounded-lg transition-colors duration-300 ${
-                activeSection === item.to
-                  ? "bg-amber-100 text-amber-700 font-medium"
-                  : "text-black hover:bg-amber-50"
-              }`}
+              activeSection={activeSection}
+              onClick={handleNavClick}
             >
               {item.label}
-            </Link>
+            </HeaderLink>
           ))}
         </nav>
       </div>

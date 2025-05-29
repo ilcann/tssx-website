@@ -2,9 +2,7 @@ import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import * as topojson from "topojson-client";
 import {
-  Building2,
   Info,
-  MapPin,
   RefreshCcw,
   ZoomIn,
   ZoomOut,
@@ -14,44 +12,13 @@ import {
   Code,
   BarChart4,
 } from "lucide-react";
-import type {
-  CountryFeature,
-  CountryGroup,
-  ReferenceLocationProps,
-} from "../types/reference";
+import type { CountryFeature, CountryGroup } from "../types/reference";
 import { Link } from "react-scroll";
-import StatCounter from "../components/StatCounter";
-
-const ReferenceLocation = ({
-  icon,
-  country,
-  clients,
-}: ReferenceLocationProps) => {
-  return (
-    <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
-      {/* Orange top border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-amber-500"></div>
-      
-      <div className="flex items-center mb-6">
-        <div className="w-16 h-16 flex items-center justify-center bg-amber-100 rounded-full text-amber-600 mr-4">
-          {icon}
-        </div>
-        <h3 className="text-xl font-bold text-neutral-900">{country}</h3>
-      </div>
-      
-      <ul className="space-y-3">
-        {clients.map((client, index) => (
-          <li key={index} className="flex items-center">
-            <span className="w-6 h-6 flex-shrink-0 text-neutral-500 mr-3">
-              <Building2 className="size-5" />
-            </span>
-            <span className="text-neutral-700">{client}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+import AnimatedStat from "@/components/ui/AnimatedStat";
+import SpecialText from "@/components/ui/SpecialText";
+import AnimatedText from "@/components/ui/AnimatedText";
+import ClientSlider from "@/components/Reference/ClientSlider";
+import { referenceLocations } from "@/staticComponents/reference";
 
 const References = () => {
   const mapRef = useRef<SVGSVGElement>(null);
@@ -61,28 +28,32 @@ const References = () => {
   useEffect(() => {
     if (!mapRef.current) return;
 
-    // Define client countries
+    // Convert reference data to the format needed for the map
     const clientCountries: Record<string, CountryGroup> = {
       "792": {
         name: "Türkiye",
-        clients: [
-          "Doğuş Teknoloji",
-          "Koç Sistem",
-          "Turkcell",
-          "Garanti Bankası",
-          "Sigorta Bilgi ve Gözetim Merkezi",
-          "Türkiye Finans Katılım Bankası",
-          "TatMetal",
-        ],
+        clients: referenceLocations.find(loc => loc.country === "Türkiye")?.clients.map(c => c.name) || [],
       },
-      "784": { name: "UAE", clients: ["Rakbank"] },
+      "784": { 
+        name: "UAE", 
+        clients: referenceLocations.find(loc => loc.country === "UAE")?.clients.map(c => c.name) || []
+      },
       "682": {
         name: "Saudi Arabia",
-        clients: ["Ministry of Environment, Water and Agriculture"],
+        clients: referenceLocations.find(loc => loc.country === "Saudi Arabia")?.clients.map(c => c.name) || [],
       },
-      "634": { name: "Qatar", clients: ["Malomatia"] },
-      "400": { name: "Jordan", clients: ["Umniah Telecom"] },
-      "807": { name: "Macedonia", clients: ["A1 Telecom"] },
+      "634": { 
+        name: "Qatar", 
+        clients: referenceLocations.find(loc => loc.country === "Qatar")?.clients.map(c => c.name) || []
+      },
+      "400": { 
+        name: "Jordan", 
+        clients: referenceLocations.find(loc => loc.country === "Jordan")?.clients.map(c => c.name) || []
+      },
+      "807": { 
+        name: "Macedonia", 
+        clients: referenceLocations.find(loc => loc.country === "Macedonia")?.clients.map(c => c.name) || []
+      },
     };
 
     // Get container dimensions
@@ -346,49 +317,8 @@ const References = () => {
     };
   }, []);
 
-  const referenceLocations = [
-    {
-      icon: <MapPin className="size-7 text-amber-600" />,
-      country: "Türkiye",
-      clients: [
-        "Doğuş Teknoloji",
-        "Koç Sistem",
-        "Turkcell",
-        "Garanti Bankası",
-        "Sigorta Bilgi ve Gözetim Merkezi",
-        "Türkiye Finans Katılım Bankası",
-        "TatMetal",
-      ],
-    },
-    {
-      icon: <MapPin className="size-7 text-amber-600" />,
-      country: "UAE",
-      clients: ["Rakbank"],
-    },
-    {
-      icon: <MapPin className="size-7 text-amber-600" />,
-      country: "Saudi Arabia",
-      clients: ["Ministry of Environment, Water and Agriculture"],
-    },
-    {
-      icon: <MapPin className="size-7 text-amber-600" />,
-      country: "Qatar",
-      clients: ["Malomatia"],
-    },
-    {
-      icon: <MapPin className="size-7 text-amber-600" />,
-      country: "Jordan",
-      clients: ["Umniah Telecom"],
-    },
-    {
-      icon: <MapPin className="size-7 text-amber-600" />,
-      country: "Macedonia",
-      clients: ["A1 Telecom"],
-    },
-  ];
-
   // Stats are calculated directly in the StatCounter components
-  
+
   return (
     <section
       id="references"
@@ -400,60 +330,40 @@ const References = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl font-bold mb-6 text-white">Our References</h2>
+          <SpecialText
+            id="references-special-text"
+            className="text-4xl font-bold mb-6 text-white"
+          >
+            <AnimatedText text="Our References" />
+          </SpecialText>
           <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg text-neutral-300 leading-relaxed">
-            Globally{" "}
-            <span className="text-amber-400 font-medium">
-              trusted solution partners
-            </span>{" "}
-            across multiple countries
-          </p>
+          <span className="text-lg text-neutral-300 leading-relaxed">
+            Globally <AnimatedText text="trusted solution partners" /> across
+            multiple countries
+          </span>
         </div>
-
-        {/* Key stats at the top */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow p-6 text-center">
-            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="text-amber-600 size-7" />
-            </div>
-            <div className="text-xl font-bold text-neutral-900 mb-1">
-              <StatCounter value="15+" enableScrollSpy={true} />
-            </div>
-            <div className="text-neutral-600 text-sm">Team Members</div>
-          </div>
-          
-          <div className="bg-white rounded-lg shadow p-6 text-center">
-            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Award className="text-amber-600 size-7" />
-            </div>
-            <div className="text-xl font-bold text-neutral-900 mb-1">
-              <StatCounter value="10+" enableScrollSpy={true} />
-            </div>
-            <div className="text-neutral-600 text-sm">Years Experience</div>
-          </div>
-          
-          <div className="bg-white rounded-lg shadow p-6 text-center">
-            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Code className="text-amber-600 size-7" />
-            </div>
-            <div className="text-xl font-bold text-neutral-900 mb-1">
-              <StatCounter value="100+" enableScrollSpy={true} />
-            </div>
-            <div className="text-neutral-600 text-sm">Projects Delivered</div>
-          </div>
-          
-          <div className="bg-white rounded-lg shadow p-6 text-center">
-            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <BarChart4 className="text-amber-600 size-7" />
-            </div>
-            <div className="text-xl font-bold text-neutral-900 mb-1">
-              <StatCounter value="98%" enableScrollSpy={true} />
-            </div>
-            <div className="text-neutral-600 text-sm">Client Satisfaction</div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <AnimatedStat
+            icon={<Users className="size-7" />}
+            value="15+"
+            label="Team Members"
+          />
+          <AnimatedStat
+            icon={<Award className="size-7" />}
+            value="10+"
+            label="Years Experience"
+          />
+          <AnimatedStat
+            icon={<Code className="size-7" />}
+            value="100+"
+            label="Projects Delivered"
+          />
+          <AnimatedStat
+            icon={<BarChart4 className="size-7" />}
+            value="98%"
+            label="Client Satisfaction"
+          />
         </div>
-
         {/* Interactive Reference Map */}
         <div className="mb-16 bg-neutral-800/50 backdrop-blur-sm border border-neutral-700 rounded-xl p-6">
           <h3 className="text-2xl font-bold text-center mb-6 text-white">
@@ -515,18 +425,20 @@ const References = () => {
         </div>
 
         {/* Client locations grid */}
-        <h3 className="text-3xl font-bold text-center mb-8 text-white">
-          Client Locations
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {referenceLocations.map((location, index) => (
-            <ReferenceLocation
-              key={index}
-              icon={location.icon}
-              country={location.country}
-              clients={location.clients}
-            />
-          ))}
+        <div className="w-full">
+          <div className="container w-full flex flex-col items-center justify-center mx-auto px-4 mb-8">
+            <SpecialText
+              id="references-special-text"
+              className="text-2xl font-bold text-center text-amber-50 mb-2"
+            >
+              <AnimatedText text="Trusted by Leading Organizations" />
+            </SpecialText>
+
+            <span className="text-center text-neutral-600">
+              Our clients across the globe trust us with their IT infrastructure
+            </span>
+          </div>
+          <ClientSlider />
         </div>
 
         {/* CTA Section */}

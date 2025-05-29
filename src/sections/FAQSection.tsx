@@ -1,5 +1,7 @@
 import FAQ from "@/components/FAQ";
 import type { FAQItemProps } from "@/components/FAQ";
+import SpecialText from "@/components/ui/SpecialText";
+import AnimatedText from "@/components/ui/AnimatedText";
 
 const FAQSection = () => {
   // FAQ data
@@ -34,21 +36,31 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-gradient-to-b from-amber-50/50 to-white relative overflow-hidden">
+    <section
+      id="faq"
+      className="py-24 bg-gradient-to-b from-amber-50/50 to-white relative overflow-hidden"
+    >
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-amber-100 rounded-full opacity-30 transform translate-x-1/3 -translate-y-1/4"></div>
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-amber-200 rounded-full opacity-20 transform -translate-x-1/4 translate-y-1/4"></div>
       <div className="absolute top-1/2 right-1/3 w-28 h-28 bg-amber-200 rounded-full opacity-10 transform -translate-y-1/2"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 text-neutral-900">
-            Frequently Asked Questions
+            <SpecialText
+              id="faq-special-text"
+              className="text-2xl font-bold text-center mb-2"
+            >
+              <AnimatedText text="Frequently Asked Questions" />
+            </SpecialText>
           </h2>
           <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-neutral-700 leading-relaxed">
             Get answers to the most common questions about our{" "}
-            <span className="text-amber-600 font-semibold">IT infrastructure solutions</span>
+            <span className="text-amber-600 font-semibold">
+              IT infrastructure solutions
+            </span>
           </p>
         </div>
 

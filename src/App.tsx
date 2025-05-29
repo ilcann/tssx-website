@@ -1,14 +1,19 @@
-import Header from "./components/Header";
-import Hero from "./sections/Hero";
-import Solutions from "./sections/Solutions";
-import FAQSection from "./sections/FAQSection";
-import Footer from "./components/Footer";
-import LazySection from "./components/LazySection";
-import IntersectionObserver from "./components/IntersectionObserver";
-import { LazyAbout, LazyDetailedSolutions, LazyReferences } from "./components/LazyComponents";
+import Header from "./components/Navbar/Header";
 import { Helmet } from "react-helmet-async";
+import { Routes, Route, useLocation } from "react-router";
+import About from "./pages/About";
+import MainPage from "./pages/MainPage";
+import Footer from "./components/Footer";
+import { useEffect } from "react";
 
 function App() {
+  const location = useLocation();
+
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <>
       <Helmet>
@@ -64,39 +69,28 @@ function App() {
         <meta name="language" content="English" />
         <meta name="rating" content="General" />
         <meta name="revisit-after" content="7 days" />
-        
+
         {/* Performance and accessibility */}
         <meta name="theme-color" content="#f59e0b" />
         <meta name="color-scheme" content="light" />
-        
+
         {/* Preconnect to external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
-        
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossOrigin=""
+        />
+
         {/* Resource hints */}
         <link rel="prefetch" href="/world-110m.json" />
       </Helmet>
+
       <Header />
-      <main id="main">
-        <Hero />
-        <Solutions />
-        <IntersectionObserver>
-          <LazySection>
-            <LazyAbout />
-          </LazySection>
-        </IntersectionObserver>
-        <IntersectionObserver>
-          <LazySection>
-            <LazyDetailedSolutions />
-          </LazySection>
-        </IntersectionObserver>
-        <IntersectionObserver>
-          <LazySection>
-            <LazyReferences />
-          </LazySection>
-        </IntersectionObserver>
-        <FAQSection />
-      </main>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
       <Footer />
     </>
   );
