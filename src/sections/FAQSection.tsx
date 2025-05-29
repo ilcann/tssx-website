@@ -1,6 +1,6 @@
 import FAQ from "@/components/FAQ";
 import type { FAQItemProps } from "@/components/FAQ";
-import AnimatedText from "@/components/ui/AnimatedText";
+import SpecialText from "@/components/ui/SpecialText";
 
 const FAQSection = () => {
   // FAQ data
@@ -46,10 +46,11 @@ const FAQSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl font-bold mb-6 text-neutral-900">
-            <AnimatedText text="Frequently Asked Questions" />
-          </h2>
-
+          <SpecialText>
+            <h2 className="text-4xl font-bold mb-6 text-neutral-900">
+              Frequently Asked Questions
+            </h2>
+          </SpecialText>
           <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-neutral-700 leading-relaxed">
             Get answers to the most common questions about our{" "}
@@ -61,16 +62,6 @@ const FAQSection = () => {
 
         <div className="max-w-4xl shadow-none mx-auto">
           <FAQ items={faqItems} className="mb-8" />
-
-          <div className="text-center mt-10">
-            <p className="text-lg mb-4">Still have questions?</p>
-            <a
-              href="#contact"
-              className="inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all duration-300"
-            >
-              Contact Us
-            </a>
-          </div>
         </div>
       </div>
     </section>

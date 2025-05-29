@@ -34,7 +34,7 @@ const Solutions = () => {
             and improve your productivity.
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-7xl relative  z-10">
           {solutionData.map((solution, index) => (
             <SolutionCard
               key={index}

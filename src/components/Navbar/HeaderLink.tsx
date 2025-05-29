@@ -1,37 +1,33 @@
 import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router";
 
 type HeaderLinkProps = {
   to: string;
-  activeSection: string;
   onClick: (section: string) => void;
   children: React.ReactNode;
 };
 
-const HeaderLink = ({
-  to,
-  activeSection,
-  onClick,
-  children,
-}: HeaderLinkProps) => {
+const HeaderLink = ({ to, onClick, children }: HeaderLinkProps) => {
   const isPageRoute = to.startsWith("/");
 
-  const baseClasses = `relative group overflow-hidden px-3 py-2 rounded-full transition-all duration-500 ${
-    activeSection === to
-      ? "text-amber-600 bg-amber-100/50 font-bold"
-      : "text-black hover:text-amber-600 hover:bg-amber-50/50"
-  }`;
+  const baseClasses = `relative px-3 py-2 rounded-full transition-all duration-300 text-neutral-700 hover:text-amber-600 hover:bg-amber-50 font-medium`;
 
-  const content = (
-    <>
-      <span className="relative z-10">{children}</span>
-    </>
-  );
+  const content = <span>{children}</span>;
 
   if (isPageRoute) {
     // Use React Router Link for page navigation
     return (
-      <RouterLink to={to} onClick={() => onClick(to)} className={baseClasses}>
+      <RouterLink 
+        to={to} 
+        onClick={() => {
+          onClick(to);
+          // Always scroll to top when navigating to a page
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }, 100);
+        }} 
+        className={baseClasses}
+      >
         {content}
       </RouterLink>
     );
@@ -41,12 +37,14 @@ const HeaderLink = ({
   return (
     <ScrollLink
       to={to}
-      spy={true}
+      spy={false}
       smooth={true}
-      offset={-40}
+      offset={-80}
       duration={800}
       onClick={() => onClick(to)}
       className={baseClasses}
+      isDynamic={true}
+      ignoreCancelEvents={true}
     >
       {content}
     </ScrollLink>

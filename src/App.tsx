@@ -8,7 +8,6 @@ import { useEffect } from "react";
 
 function App() {
   const location = useLocation();
-
   // Scroll to top when route changes
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,21 +58,17 @@ function App() {
           content="Specializing in intelligent automation & IT infrastructure management with expertise in cloud, security, and compliance solutions."
         />
         <meta property="twitter:image" content="/logo.png" />
-
         {/* Canonical URL */}
         <link rel="canonical" href="https://tssx.com/" />
-
         {/* Additional SEO tags */}
         <meta name="geo.region" content="TR" />
         <meta name="geo.placename" content="Istanbul" />
         <meta name="language" content="English" />
         <meta name="rating" content="General" />
         <meta name="revisit-after" content="7 days" />
-
         {/* Performance and accessibility */}
         <meta name="theme-color" content="#f59e0b" />
         <meta name="color-scheme" content="light" />
-
         {/* Preconnect to external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link
@@ -81,7 +76,6 @@ function App() {
           href="https://fonts.googleapis.com"
           crossOrigin=""
         />
-
         {/* Resource hints */}
         <link rel="prefetch" href="/world-110m.json" />
       </Helmet>

@@ -32,10 +32,20 @@ export const SolutionCard = ({
     const servicesList = servicesRef.current;
     const content = contentRef.current;
 
-    if (!card || !header || !iconContainer || !iconElement || !titleElement || !titleTrElement || !servicesList || !content) return;
+    if (
+      !card ||
+      !header ||
+      !iconContainer ||
+      !iconElement ||
+      !titleElement ||
+      !titleTrElement ||
+      !servicesList ||
+      !content
+    )
+      return;
 
     // Get service items for staggered animation
-    const serviceItems = servicesList.querySelectorAll('li');
+    const serviceItems = servicesList.querySelectorAll("li");
 
     // Initial state - hide elements for entrance animation
     gsap.set([titleElement, titleTrElement], {
@@ -83,170 +93,56 @@ export const SolutionCard = ({
       ease: "back.out(1.7)",
       delay: index * 0.15, // Stagger based on card index
     })
-    .to(header, {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      duration: 0.6,
-      ease: "power2.out",
-    }, "-=0.6")
-    .to(iconContainer, {
-      scale: 1,
-      rotation: 0,
-      duration: 0.6,
-      ease: "back.out(1.7)",
-    }, "-=0.4")
-    .to(titleElement, {
-      y: 0,
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.out",
-    }, "-=0.3")
-    .to(titleTrElement, {
-      y: 0,
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.out",
-    }, "-=0.2")
-    .to(serviceItems, {
-      x: 0,
-      opacity: 1,
-      duration: 0.4,
-      ease: "power2.out",
-      stagger: 0.1,
-    }, "-=0.2");
-
-    // Hover animations
-    let hoverTl: gsap.core.Timeline;
-    let isHovering = false;
-
-    const handleMouseEnter = () => {
-      if (isHovering) return;
-      isHovering = true;
-
-      // Kill any existing hover timeline
-      if (hoverTl) hoverTl.kill();
-
-      hoverTl = gsap.timeline();
-
-      hoverTl
-        .to(card, {
-          y: -15,
-          scale: 1.02,
-          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-          duration: 0.4,
+      .to(
+        header,
+        {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          duration: 0.6,
           ease: "power2.out",
-        })
-        .to(header, {
-          background: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-          duration: 0.3,
-          ease: "power2.out",
-        }, 0)
-        .to(iconContainer, {
-          scale: 1.15,
-          rotation: 10,
-          duration: 0.4,
-          ease: "back.out(1.7)",
-        }, 0.1)
-        .to(iconElement, {
-          scale: 1.1,
-          duration: 0.3,
-          ease: "power2.out",
-        }, 0.1)
-        .to(titleElement, {
-          color: "#1f2937",
-          scale: 1.05,
-          duration: 0.3,
-          ease: "power2.out",
-        }, 0.1)
-        .to(serviceItems, {
-          x: 5,
-          duration: 0.3,
-          ease: "power2.out",
-          stagger: 0.05,
-        }, 0.15);
-    };
-
-    const handleMouseLeave = () => {
-      if (!isHovering) return;
-      isHovering = false;
-
-      // Kill any existing hover timeline
-      if (hoverTl) hoverTl.kill();
-
-      hoverTl = gsap.timeline();
-
-      hoverTl
-        .to(card, {
-          y: 0,
-          scale: 1,
-          boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-          duration: 0.4,
-          ease: "power2.out",
-        })
-        .to(header, {
-          background: "linear-gradient(135deg, rgba(245, 158, 11, 0.8) 0%, rgba(217, 119, 6, 0.8) 100%)",
-          duration: 0.3,
-          ease: "power2.out",
-        }, 0)
-        .to(iconContainer, {
+        },
+        "-=0.6"
+      )
+      .to(
+        iconContainer,
+        {
           scale: 1,
           rotation: 0,
+          duration: 0.6,
+          ease: "back.out(1.7)",
+        },
+        "-=0.4"
+      )
+      .to(
+        titleElement,
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      )
+      .to(
+        titleTrElement,
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      )
+      .to(
+        serviceItems,
+        {
+          x: 0,
+          opacity: 1,
           duration: 0.4,
           ease: "power2.out",
-        }, 0)
-        .to(iconElement, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        }, 0)
-        .to(titleElement, {
-          color: "#111827",
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        }, 0)
-        .to(serviceItems, {
-          x: 0,
-          duration: 0.3,
-          ease: "power2.out",
-          stagger: 0.03,
-        }, 0);
-    };
-
-    // 3D Tilt effect on mouse move
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isHovering) return;
-
-      const rect = card.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      
-      const deltaX = (e.clientX - centerX) / (rect.width / 2);
-      const deltaY = (e.clientY - centerY) / (rect.height / 2);
-
-      gsap.to(card, {
-        rotateY: deltaX * 5,
-        rotateX: -deltaY * 5,
-        duration: 0.3,
-        ease: "power2.out",
-        transformPerspective: 1000,
-      });
-
-      // Parallax effect for header
-      gsap.to(header, {
-        x: deltaX * 5,
-        y: deltaY * 5,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-
-      // Counter-parallax for content
-      gsap.to(content, {
-        x: -deltaX * 2,
-        y: -deltaY * 2,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-    };
+          stagger: 0.1,
+        },
+        "-=0.2"
+      );
 
     // Click animation with ripple effect
     const handleClick = () => {
@@ -259,11 +155,12 @@ export const SolutionCard = ({
       });
 
       // Create ripple effect
-      const ripple = document.createElement('div');
-      ripple.className = 'absolute inset-0 rounded-xl pointer-events-none';
-      ripple.style.background = 'radial-gradient(circle, rgba(245,158,11,0.3) 0%, transparent 70%)';
-      ripple.style.transform = 'scale(0)';
-      
+      const ripple = document.createElement("div");
+      ripple.className = "absolute inset-0 rounded-xl pointer-events-none";
+      ripple.style.background =
+        "radial-gradient(circle, rgba(245,158,11,0.3) 0%, transparent 70%)";
+      ripple.style.transform = "scale(0)";
+
       card.appendChild(ripple);
 
       gsap.to(ripple, {
@@ -289,21 +186,13 @@ export const SolutionCard = ({
       });
     };
 
-    // Add event listeners
-    card.addEventListener('mouseenter', handleMouseEnter);
-    card.addEventListener('mouseleave', handleMouseLeave);
-    card.addEventListener('mousemove', handleMouseMove);
-    card.addEventListener('click', handleClick);
+    card.addEventListener("click", handleClick);
 
     // Cleanup
     return () => {
-      card.removeEventListener('mouseenter', handleMouseEnter);
-      card.removeEventListener('mouseleave', handleMouseLeave);
-      card.removeEventListener('mousemove', handleMouseMove);
-      card.removeEventListener('click', handleClick);
-      
-      if (hoverTl) hoverTl.kill();
-      ScrollTrigger.getAll().forEach(trigger => {
+      card.removeEventListener("click", handleClick);
+
+      ScrollTrigger.getAll().forEach((trigger) => {
         if (trigger.trigger === card) {
           trigger.kill();
         }
@@ -312,18 +201,18 @@ export const SolutionCard = ({
   }, [index, services.length]);
 
   return (
-    <div 
+    <div
       ref={cardRef}
-      className="group bg-white rounded-xl shadow-lg border border-neutral-200 h-full overflow-hidden cursor-pointer relative"
-      style={{ transformStyle: 'preserve-3d' }}
+      className="group bg-white rounded-xl w-full shadow-lg border border-neutral-200 h-full overflow-hidden cursor-pointer relative"
+      style={{ transformStyle: "preserve-3d" }}
     >
-      <div 
+      <div
         ref={headerRef}
         className="relative h-40 bg-gradient-to-br from-amber-500/80 to-amber-600/80 flex items-center justify-center overflow-hidden"
       >
         <div className="absolute inset-0 bg-amber-100 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-        
-        <div 
+
+        <div
           ref={iconContainerRef}
           className="w-20 h-20 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full z-10 relative"
         >
@@ -340,7 +229,7 @@ export const SolutionCard = ({
           <div className="absolute bottom-4 right-4 w-1 h-1 bg-white rounded-full animate-ping delay-150"></div>
         </div>
       </div>
-      
+
       <div ref={contentRef} className="p-6">
         <h3 ref={titleRef} className="text-xl font-bold text-neutral-900 mb-2">
           {title}
