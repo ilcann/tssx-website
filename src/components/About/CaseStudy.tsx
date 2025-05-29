@@ -1,3 +1,6 @@
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { CaseStudyProps } from "@/types/about";
 import {
   Card,
@@ -8,45 +11,140 @@ import {
 } from "../ui/card";
 import { Check } from "lucide-react";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const CaseStudy = ({
   title,
   subtitle,
   description,
+  image,
+  icon,
   points,
 }: CaseStudyProps) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const pointsRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    const pointElements = pointsRef.current;
+
+    if (!card) return;
+
+    // Initial state
+    gsap.set(card, { opacity: 0, y: 30 });
+    gsap.set(pointElements, { opacity: 0, x: -20 });
+
+    // Card animation
+    gsap.to(card, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: card,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Points stagger animation
+    gsap.to(pointElements, {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      ease: "power2.out",
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: card,
+        start: "top 75%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.trigger === card) {
+          trigger.kill();
+        }
+      });
+    };
+  }, []);
+
   return (
-    <Card className="bg-white rounded-xl overflow-hidden shadow-lg border border-neutral-200 transition-all duration-300 hover:shadow-xl group">
-      <div className="absolute w-full h-1 bg-gradient-to-r from-amber-500 to-amber-600 top-0 left-0 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-      <CardHeader className="p-8">
-        <div className="text-amber-600 font-medium text-sm uppercase tracking-wider mb-2">
-          {title}
+    <Card
+      ref={cardRef}
+      className="bg-white rounded-lg shadow-sm border border-neutral-200 hover:shadow-md transition-shadow duration-200 mt-16"
+    >
+      <CardHeader className="p-6">
+        <div className="flex items-center gap-3 mb-4">
+          {/* Icon Display */}
+          {icon && (
+            <div className="size-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+              {React.isValidElement(icon)
+                ? React.cloneElement(
+                    icon as React.ReactElement<{ className?: string }>,
+                    { className: "size-6" }
+                  )
+                : icon}
+            </div>
+          )}
+          <div className="flex-grow">
+            <div className="text-amber-600 font-medium text-sm mb-1">
+              {title}
+            </div>
+            <CardTitle className="text-2xl font-semibold text-neutral-900">
+              {subtitle}
+            </CardTitle>
+          </div>
         </div>
-        <CardTitle className="text-2xl font-bold text-neutral-900 mb-4">
-          {subtitle}
-        </CardTitle>
-        <CardDescription className="text-neutral-600 leading-relaxed">
+        <CardDescription className="text-neutral-600">
           {description}
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-8 pt-0">
-        <ul className="space-y-4">
-          {points.map((point, index) => (
-            <li
-              key={index}
-              className="flex items-start bg-neutral-50 p-4 rounded-lg"
-            >
-              <div className="w-8 h-8 flex items-center justify-center bg-amber-100 rounded-full mt-0.5 mr-4 flex-shrink-0">
-                <Check className="text-amber-600 size-5" />
+
+      <CardContent className="p-6 pt-0">
+        <div
+          className={`${image ? "grid grid-cols-1 lg:grid-cols-2 gap-6" : ""}`}
+        >
+          {/* Points Section */}
+          <div className="space-y-3">
+            {points.map((point, index) => (
+              <div
+                key={index}
+                ref={(el) => {
+                  if (el) pointsRef.current[index] = el;
+                }}
+                className="flex items-start gap-3"
+              >
+                <div className="w-5 h-5 flex items-center justify-center bg-amber-100 rounded-full mt-0.5 flex-shrink-0">
+                  <Check className="text-amber-600 size-3" />
+                </div>
+                <div>
+                  <div className="text-neutral-900 font-medium text-sm">
+                    {point.label}
+                  </div>
+                  <div className="text-neutral-600 text-sm">{point.value}</div>
+                </div>
               </div>
-              <div>
-                <span className="text-amber-600 font-semibold block mb-1">
-                  {point.label}
-                </span>
-                <span className="text-neutral-600 text-sm">{point.value}</span>
+            ))}
+          </div>
+
+          {/* Image Section */}
+          {image && (
+            <div className="flex items-center justify-center">
+              <div className="w-full max-w-sm">
+                <img
+                  src={image}
+                  alt={subtitle}
+                  className="w-full h-auto rounded-lg shadow-sm border border-neutral-200 object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
               </div>
-            </li>
-          ))}
-        </ul>
+            </div>
+          )}
+        </div>
       </CardContent>
     </Card>
   );

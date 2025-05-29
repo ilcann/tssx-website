@@ -3,8 +3,20 @@ import SpecialText from "@/components/ui/SpecialText";
 import AnimatedText from "@/components/ui/AnimatedText";
 import DecorativeBackground from "@/components/ui/DecorativeBackground";
 import { solutionData } from "@/staticComponents/solution";
+import { detailedSolutionData } from "@/staticComponents/detailedSolutions";
 
 const Solutions = () => {
+  // Map solution data with detailed solution data to get ids
+  const solutionsWithIds = solutionData.map((solution) => {
+    const detailedSolution = detailedSolutionData.find(
+      (detailed) => detailed.title === solution.title
+    );
+    return {
+      ...solution,
+      id: detailedSolution?.id,
+    };
+  });
+
   return (
     <DecorativeBackground
       variant="light"
@@ -32,13 +44,15 @@ const Solutions = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-7xl">
-            {solutionData.map((solution, index) => (
+            {solutionsWithIds.map((solution, index) => (
               <SolutionCard
                 key={index}
                 icon={solution.icon}
                 title={solution.title}
                 titleTr={solution.titleTr}
                 services={solution.services}
+                id={solution.id}
+                index={index}
               />
             ))}
           </div>

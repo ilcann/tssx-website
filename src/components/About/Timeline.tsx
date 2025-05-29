@@ -4,8 +4,11 @@ import AnimatedText from "../ui/AnimatedText";
 
 const Timeline = () => {
   return (
-    <div className="mt-16 relative">
-      <SpecialText id="about-our-journey" className="text-2xl font-bold text-neutral-900 mb-8 text-center">
+    <div className="relative mt-16">
+      <SpecialText
+        id="about-our-journey"
+        className="text-2xl font-bold text-neutral-900 mb-8 text-center"
+      >
         <AnimatedText text="Our Journey" />
       </SpecialText>
       <div className="absolute h-full w-0.5 bg-amber-200 left-1/2 transform -translate-x-1/2 top-12 z-0"></div>

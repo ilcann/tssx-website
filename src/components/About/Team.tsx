@@ -11,10 +11,13 @@ const TeamSection = () => {
   );
 
   return (
-    <div className="mt-16 bg-white rounded-xl shadow-lg p-8 border border-neutral-200">
+    <div className="bg-white rounded-xl shadow-lg p-8 border border-neutral-200">
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2">
-          <SpecialText id="about-our-team" className="text-2xl font-bold text-neutral-900 mb-6">
+          <SpecialText
+            id="about-our-team"
+            className="text-2xl font-bold text-neutral-900 mb-6"
+          >
             <AnimatedText text="Our Team" />
           </SpecialText>
           <p className="text-neutral-700 mb-6 leading-relaxed">

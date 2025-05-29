@@ -1,7 +1,9 @@
 import type { SolutionCardProps } from "@/types/solution";
 import { useRef, useEffect } from "react";
+import { Link } from "react-router";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ArrowRight } from "lucide-react";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -11,8 +13,9 @@ export const SolutionCard = ({
   title,
   titleTr,
   services,
+  id,
   index = 0,
-}: SolutionCardProps & { index?: number }) => {
+}: SolutionCardProps & { id?: number; index?: number }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const iconContainerRef = useRef<HTMLDivElement>(null);
@@ -144,54 +147,18 @@ export const SolutionCard = ({
         "-=0.2"
       );
 
-    // Click animation with ripple effect
-    const handleClick = () => {
-      gsap.to(card, {
-        scale: 0.95,
-        duration: 0.1,
-        ease: "power2.out",
-        yoyo: true,
-        repeat: 1,
-      });
-
-      // Create ripple effect
-      const ripple = document.createElement("div");
-      ripple.className = "absolute inset-0 rounded-xl pointer-events-none";
-      ripple.style.background =
-        "radial-gradient(circle, rgba(245,158,11,0.3) 0%, transparent 70%)";
-      ripple.style.transform = "scale(0)";
-
-      card.appendChild(ripple);
-
-      gsap.to(ripple, {
-        scale: 2.5,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        onComplete: () => {
-          if (card.contains(ripple)) {
-            card.removeChild(ripple);
-          }
-        },
-      });
-
-      // Animate services with bounce effect
-      gsap.to(serviceItems, {
-        scale: 1.05,
-        duration: 0.2,
-        ease: "power2.out",
-        stagger: 0.05,
-        yoyo: true,
-        repeat: 1,
-      });
-    };
-
-    card.addEventListener("click", handleClick);
+    // Animate services with bounce effect
+    gsap.to(serviceItems, {
+      scale: 1.05,
+      duration: 0.2,
+      ease: "power2.out",
+      stagger: 0.05,
+      yoyo: true,
+      repeat: 1,
+    });
 
     // Cleanup
     return () => {
-      card.removeEventListener("click", handleClick);
-
       ScrollTrigger.getAll().forEach((trigger) => {
         if (trigger.trigger === card) {
           trigger.kill();
@@ -200,10 +167,10 @@ export const SolutionCard = ({
     };
   }, [index, services.length]);
 
-  return (
+  const cardContent = (
     <div
       ref={cardRef}
-      className="group bg-white rounded-xl w-full shadow-lg border border-neutral-200 h-full overflow-hidden cursor-pointer relative"
+      className="group bg-white rounded-xl w-full shadow-lg border border-neutral-200 h-full overflow-hidden cursor-pointer relative transition-transform hover:scale-[1.02]"
       style={{ transformStyle: "preserve-3d" }}
     >
       <div
@@ -220,24 +187,16 @@ export const SolutionCard = ({
             {icon}
           </div>
         </div>
-
-        {/* Floating particles effect */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-4 left-4 w-2 h-2 bg-white rounded-full animate-pulse"></div>
-          <div className="absolute top-8 right-6 w-1 h-1 bg-white rounded-full animate-ping"></div>
-          <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-white rounded-full animate-pulse delay-300"></div>
-          <div className="absolute bottom-4 right-4 w-1 h-1 bg-white rounded-full animate-ping delay-150"></div>
-        </div>
       </div>
 
-      <div ref={contentRef} className="p-6">
+      <div ref={contentRef} className="p-6 flex flex-col h-[calc(100%-10rem)]">
         <h3 ref={titleRef} className="text-xl font-bold text-neutral-900 mb-2">
           {title}
         </h3>
         <p ref={titleTrRef} className="text-amber-600 mb-4 text-sm font-medium">
           {titleTr}
         </p>
-        <ul ref={servicesRef} className="space-y-3 mb-4">
+        <ul ref={servicesRef} className="space-y-3 mb-6 flex-grow">
           {services.map((service, serviceIndex) => (
             <li key={serviceIndex} className="flex items-start group/item">
               <span className="w-5 h-5 flex-shrink-0 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mr-3 mt-0.5 group-hover/item:bg-amber-200 transition-colors duration-200">
@@ -260,12 +219,28 @@ export const SolutionCard = ({
             </li>
           ))}
         </ul>
-      </div>
 
-      {/* Shine effect overlay */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        {/* Learn More Indicator */}
+        {id && (
+          <div className="mt-auto">
+            <div className="flex items-center justify-between text-amber-600 font-medium text-sm group-hover:text-amber-700 transition-colors">
+              <span>Learn More</span>
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
+
+  // If id is provided, wrap with Link, otherwise return plain card
+  if (id) {
+    return (
+      <Link to={`/solutions/${id}`} className="block h-full">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return cardContent;
 };

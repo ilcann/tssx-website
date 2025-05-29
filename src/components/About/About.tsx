@@ -14,6 +14,23 @@ const About = () => {
     <DecorativeBackground
       variant="neutral"
       className="py-24 bg-gradient-to-b from-neutral-50 to-white"
+      elements={[
+        { position: "top-left", size: "lg", opacity: "high", intensity: "medium" },
+        { position: "bottom-right", size: "lg", opacity: "high", intensity: "medium" },
+        { position: "center-left", size: "lg", opacity: "high", intensity: "medium" },
+        { position: "bottom-center", size: "lg", opacity: "high", intensity: "medium" },
+        { position: "top-center", size: "lg", opacity: "high", intensity: "light" },
+        { position: "bottom-left", size: "xl", opacity: "high", intensity: "light" },
+        { position: "top-right", size: "lg", opacity: "high", intensity: "light" },
+        { position: "center-right", size: "lg", opacity: "high", intensity: "light" },
+        { position: "bottom-center", size: "lg", opacity: "high", intensity: "dark" },
+        { position: "center-left", size: "xl", opacity: "high", intensity: "dark" },
+        { position: "center-right", size: "lg", opacity: "high", intensity: "dark" },
+        { position: "bottom-center", size: "lg", opacity: "high", intensity: "dark" },
+        { position: "center-left", size: "lg", opacity: "high", intensity: "dark" },
+        { position: "center-right", size: "lg", opacity: "high", intensity: "dark" },
+        { position: "bottom-center", size: "xl", opacity: "high", intensity: "dark" },
+      ]}
     >
       <main id="about">
         <div className="container mx-auto px-4">
@@ -155,7 +172,7 @@ const About = () => {
           <Timeline />
 
           {/* Case studies */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 w-full">
             {caseStudies.map((study, index) => (
               <CaseStudy
                 key={index}

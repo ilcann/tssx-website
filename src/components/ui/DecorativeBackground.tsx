@@ -19,7 +19,7 @@ export type BackgroundConfig = {
     | "bottom-center"
     | "custom";
   /** Size variant */
-  size: "sm" | "md" | "lg" | "xl";
+  size: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
   /** Opacity level */
   opacity: "low" | "medium" | "high";
   /** Color intensity */
@@ -44,14 +44,14 @@ export type DecorativeBackgroundProps = {
 };
 
 const POSITION_CLASSES = {
-  "top-left": "top-0 left-0 -translate-x-1/3 -translate-y-1/4",
-  "top-right": "top-0 right-0 translate-x-1/3 -translate-y-1/4", 
-  "bottom-left": "bottom-0 left-0 -translate-x-1/4 translate-y-1/4",
-  "bottom-right": "bottom-0 right-0 translate-x-1/3 translate-y-1/4",
-  "center-left": "top-1/2 left-1/4 -translate-y-1/2",
-  "center-right": "top-1/2 right-1/4 -translate-y-1/2",
-  "top-center": "top-0 left-1/2 -translate-x-1/2 -translate-y-1/4",
-  "bottom-center": "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4",
+  "top-left": "top-0 left-0 -translate-x-1/2 -translate-y-1/2",
+  "top-right": "top-0 right-0 translate-x-1/2 -translate-y-1/2", 
+  "bottom-left": "bottom-0 left-0 -translate-x-1/2 translate-y-1/2",
+  "bottom-right": "bottom-0 right-0 translate-x-1/2 translate-y-1/2",
+  "center-left": "top-1/2 left-0 -translate-x-1/2 -translate-y-1/2",
+  "center-right": "top-1/2 right-0 translate-x-1/2 -translate-y-1/2",
+  "top-center": "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2",
+  "bottom-center": "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2",
   "custom": "",
 };
 
@@ -60,6 +60,8 @@ const SIZE_CLASSES = {
   md: "w-64 h-64", 
   lg: "w-80 h-80",
   xl: "w-96 h-96",
+  "2xl": "w-[32rem] h-[32rem]", // 512px
+  "3xl": "w-[40rem] h-[40rem]", // 640px
 };
 
 const OPACITY_CLASSES = {
@@ -101,25 +103,28 @@ const DecorativeBackground = ({
   className = "",
   children 
 }: DecorativeBackgroundProps) => {
-  // Default configurations for common patterns
+  // Default configurations for common patterns with better coverage
   const getDefaultElements = (): BackgroundConfig[] => {
     switch (variant) {
       case "light":
         return [
-          { position: "top-left", size: "md", opacity: "medium", intensity: "medium" },
-          { position: "bottom-right", size: "lg", opacity: "high", intensity: "light" },
-          { position: "center-right", size: "sm", opacity: "low", intensity: "dark" },
+          { position: "top-left", size: "2xl", opacity: "medium", intensity: "medium" },
+          { position: "bottom-right", size: "3xl", opacity: "high", intensity: "light" },
+          { position: "center-right", size: "xl", opacity: "medium", intensity: "dark" },
+          { position: "top-center", size: "lg", opacity: "low", intensity: "medium" },
         ];
       case "dark":
         return [
-          { position: "top-right", size: "xl", opacity: "low", intensity: "light", blur: true },
-          { position: "bottom-left", size: "lg", opacity: "low", intensity: "light", blur: true },
+          { position: "top-right", size: "3xl", opacity: "medium", intensity: "light", blur: true },
+          { position: "bottom-left", size: "2xl", opacity: "medium", intensity: "light", blur: true },
+          { position: "center-left", size: "xl", opacity: "low", intensity: "light", blur: true },
         ];
       case "neutral":
         return [
-          { position: "bottom-left", size: "xl", opacity: "medium", intensity: "light" },
-          { position: "top-right", size: "lg", opacity: "high", intensity: "light" },
-          { position: "center-left", size: "sm", opacity: "low", intensity: "medium" },
+          { position: "bottom-left", size: "3xl", opacity: "high", intensity: "light" },
+          { position: "top-right", size: "2xl", opacity: "high", intensity: "light" },
+          { position: "center-left", size: "lg", opacity: "medium", intensity: "medium" },
+          { position: "bottom-center", size: "xl", opacity: "low", intensity: "light" },
         ];
       default:
         return [];
