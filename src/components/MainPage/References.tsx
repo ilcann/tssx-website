@@ -12,13 +12,14 @@ import {
   Code,
   BarChart4,
 } from "lucide-react";
-import type { CountryFeature, CountryGroup } from "../types/reference";
-import { Link } from "react-scroll";
+import type { CountryFeature, CountryGroup } from "../../types/reference";
+import { Link } from "react-router";
 import AnimatedStat from "@/components/ui/AnimatedStat";
 import SpecialText from "@/components/ui/SpecialText";
 import AnimatedText from "@/components/ui/AnimatedText";
 import ClientSlider from "@/components/Reference/ClientSlider";
 import { referenceLocations } from "@/staticComponents/reference";
+import DecorativeBackground from "@/components/ui/DecorativeBackground";
 
 const References = () => {
   const mapRef = useRef<SVGSVGElement>(null);
@@ -32,27 +33,45 @@ const References = () => {
     const clientCountries: Record<string, CountryGroup> = {
       "792": {
         name: "Türkiye",
-        clients: referenceLocations.find(loc => loc.country === "Türkiye")?.clients.map(c => c.name) || [],
+        clients:
+          referenceLocations
+            .find((loc) => loc.country === "Türkiye")
+            ?.clients.map((c) => c.name) || [],
       },
-      "784": { 
-        name: "UAE", 
-        clients: referenceLocations.find(loc => loc.country === "UAE")?.clients.map(c => c.name) || []
+      "784": {
+        name: "UAE",
+        clients:
+          referenceLocations
+            .find((loc) => loc.country === "UAE")
+            ?.clients.map((c) => c.name) || [],
       },
       "682": {
         name: "Saudi Arabia",
-        clients: referenceLocations.find(loc => loc.country === "Saudi Arabia")?.clients.map(c => c.name) || [],
+        clients:
+          referenceLocations
+            .find((loc) => loc.country === "Saudi Arabia")
+            ?.clients.map((c) => c.name) || [],
       },
-      "634": { 
-        name: "Qatar", 
-        clients: referenceLocations.find(loc => loc.country === "Qatar")?.clients.map(c => c.name) || []
+      "634": {
+        name: "Qatar",
+        clients:
+          referenceLocations
+            .find((loc) => loc.country === "Qatar")
+            ?.clients.map((c) => c.name) || [],
       },
-      "400": { 
-        name: "Jordan", 
-        clients: referenceLocations.find(loc => loc.country === "Jordan")?.clients.map(c => c.name) || []
+      "400": {
+        name: "Jordan",
+        clients:
+          referenceLocations
+            .find((loc) => loc.country === "Jordan")
+            ?.clients.map((c) => c.name) || [],
       },
-      "807": { 
-        name: "Macedonia", 
-        clients: referenceLocations.find(loc => loc.country === "Macedonia")?.clients.map(c => c.name) || []
+      "807": {
+        name: "Macedonia",
+        clients:
+          referenceLocations
+            .find((loc) => loc.country === "Macedonia")
+            ?.clients.map((c) => c.name) || [],
       },
     };
 
@@ -320,149 +339,145 @@ const References = () => {
   // Stats are calculated directly in the StatCounter components
 
   return (
-    <section
-      id="references"
-      className="py-24 bg-gradient-to-b from-neutral-900 to-neutral-950 relative overflow-hidden"
+    <DecorativeBackground
+      variant="dark"
+      className="py-24 bg-gradient-to-b from-neutral-900 to-neutral-950"
     >
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl"></div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <SpecialText
-            id="references-special-text"
-            className="text-4xl font-bold mb-6 text-white"
-          >
-            <AnimatedText text="Our References" />
-          </SpecialText>
-          <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
-          <span className="text-lg text-neutral-300 leading-relaxed">
-            Globally <AnimatedText text="trusted solution partners" /> across
-            multiple countries
-          </span>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <AnimatedStat
-            icon={<Users className="size-7" />}
-            value="15+"
-            label="Team Members"
-          />
-          <AnimatedStat
-            icon={<Award className="size-7" />}
-            value="10+"
-            label="Years Experience"
-          />
-          <AnimatedStat
-            icon={<Code className="size-7" />}
-            value="100+"
-            label="Projects Delivered"
-          />
-          <AnimatedStat
-            icon={<BarChart4 className="size-7" />}
-            value="98%"
-            label="Client Satisfaction"
-          />
-        </div>
-        {/* Interactive Reference Map */}
-        <div className="mb-16 bg-neutral-800/50 backdrop-blur-sm border border-neutral-700 rounded-xl p-6">
-          <h3 className="text-2xl font-bold text-center mb-6 text-white">
-            Global Client Network
-          </h3>
-          <div className="map-container h-[450px] mx-auto max-w-5xl relative rounded-lg overflow-hidden">
-            <svg id="world-map" ref={mapRef} className="w-full h-full"></svg>
-            <div
-              id="map-tooltip"
-              ref={tooltipRef}
-              className="map-tooltip"
-            ></div>
-
-            {/* Map Controls */}
-            <div className="absolute top-4 right-4 flex flex-col space-y-2 z-10">
-              <button
-                id="zoom-in"
-                className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
-                title="Zoom in"
-                aria-label="Zoom in on map"
-              >
-                <ZoomIn className="size-5" />
-              </button>
-              <button
-                id="zoom-reset"
-                className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
-                title="Reset view"
-                aria-label="Reset map view"
-              >
-                <RefreshCcw className="size-5" />
-              </button>
-              <button
-                id="zoom-out"
-                className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
-                title="Zoom out"
-                aria-label="Zoom out on map"
-              >
-                <ZoomOut className="size-5" />
-              </button>
-            </div>
-          </div>
-
-          <div className="text-center text-neutral-400 mt-4 mb-2 flex items-center justify-center">
-            <Info className="size-5 mr-1 text-amber-500" />
-            <p>Hover or tap on highlighted countries to see our clients</p>
-          </div>
-
-          {/* Map Legend */}
-          <div className="flex items-center justify-center gap-8 max-w-xl mx-auto">
-            <div className="flex items-center">
-              <span className="inline-block size-4 rounded-sm bg-white/80 mr-2"></span>
-              <span className="text-neutral-300">Other Countries</span>
-            </div>
-            <div className="flex items-center">
-              <span className="inline-block size-4 rounded-sm bg-amber-500 mr-2"></span>
-              <span className="text-neutral-300">Client Locations</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Client locations grid */}
-        <div className="w-full">
-          <div className="container w-full flex flex-col items-center justify-center mx-auto px-4 mb-8">
+      <section id="references">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
             <SpecialText
               id="references-special-text"
-              className="text-2xl font-bold text-center text-white mb-2"
+              className="text-4xl font-bold mb-6 text-white"
             >
-              <AnimatedText text="Trusted by Leading Organizations" />
+              <AnimatedText text="Our References" />
             </SpecialText>
-
-            <span className="text-center text-neutral-600">
-              Our clients across the globe trust us with their IT infrastructure
+            <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
+            <span className="text-lg text-neutral-300 leading-relaxed">
+              Globally <AnimatedText text="trusted solution partners" /> across
+              multiple countries
             </span>
           </div>
-          <ClientSlider />
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <AnimatedStat
+              icon={<Users className="size-6" />}
+              value="15+"
+              label="Team Members"
+            />
+            <AnimatedStat
+              icon={<Award className="size-6" />}
+              value="10+"
+              label="Years Experience"
+            />
+            <AnimatedStat
+              icon={<Code className="size-6" />}
+              value="100+"
+              label="Projects Delivered"
+            />
+            <AnimatedStat
+              icon={<BarChart4 className="size-6" />}
+              value="98%"
+              label="Client Satisfaction"
+            />
+          </div>
+          {/* Interactive Reference Map */}
+          <div className="mb-16 bg-neutral-800/50 backdrop-blur-sm border border-neutral-700 rounded-xl p-6">
+            <h3 className="text-2xl font-bold text-center mb-6 text-white">
+              Global Client Network
+            </h3>
+            <div className="map-container h-[450px] mx-auto max-w-5xl relative rounded-lg overflow-hidden">
+              <svg id="world-map" ref={mapRef} className="w-full h-full"></svg>
+              <div
+                id="map-tooltip"
+                ref={tooltipRef}
+                className="map-tooltip"
+              ></div>
 
-        {/* CTA Section */}
-        <div className="bg-gradient-to-r from-amber-600 to-amber-700 rounded-xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Join Our Growing List of Satisfied Clients
-          </h3>
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-            Experience the same level of exceptional service and innovative
-            solutions that have helped organizations across the globe transform
-            their IT infrastructure.
-          </p>
-          <Link
-            to="contact"
-            smooth={true}
-            duration={800}
-            className="inline-flex items-center bg-white text-amber-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-amber-50 transition-colors shadow-lg"
-          >
-            Contact Us Today
-            <ExternalLink className="ml-2 size-4" />
-          </Link>
+              {/* Map Controls */}
+              <div className="absolute top-4 right-4 flex flex-col space-y-2 z-10">
+                <button
+                  id="zoom-in"
+                  className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
+                  title="Zoom in"
+                  aria-label="Zoom in on map"
+                >
+                  <ZoomIn className="size-5" />
+                </button>
+                <button
+                  id="zoom-reset"
+                  className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
+                  title="Reset view"
+                  aria-label="Reset map view"
+                >
+                  <RefreshCcw className="size-5" />
+                </button>
+                <button
+                  id="zoom-out"
+                  className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
+                  title="Zoom out"
+                  aria-label="Zoom out on map"
+                >
+                  <ZoomOut className="size-5" />
+                </button>
+              </div>
+            </div>
+
+            <div className="text-center text-neutral-400 mt-4 mb-2 flex items-center justify-center">
+              <Info className="size-5 mr-1 text-amber-500" />
+              <p>Hover or tap on highlighted countries to see our clients</p>
+            </div>
+
+            {/* Map Legend */}
+            <div className="flex items-center justify-center gap-8 max-w-xl mx-auto">
+              <div className="flex items-center">
+                <span className="inline-block size-4 rounded-sm bg-white/80 mr-2"></span>
+                <span className="text-neutral-300">Other Countries</span>
+              </div>
+              <div className="flex items-center">
+                <span className="inline-block size-4 rounded-sm bg-amber-500 mr-2"></span>
+                <span className="text-neutral-300">Client Locations</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Client locations grid */}
+          <div className="w-full">
+            <div className="container w-full flex flex-col items-center justify-center mx-auto px-4 mb-8">
+              <SpecialText
+                id="references-special-text"
+                className="text-2xl font-bold text-center text-white mb-2"
+              >
+                <AnimatedText text="Trusted by Leading Organizations" />
+              </SpecialText>
+
+              <span className="text-center text-neutral-600">
+                Our clients across the globe trust us with their IT infrastructure
+              </span>
+            </div>
+            <ClientSlider />
+          </div>
+
+          {/* CTA Section */}
+          <div className="bg-gradient-to-r from-amber-600 to-amber-700 rounded-xl p-8 text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Join Our Growing List of Satisfied Clients
+            </h3>
+            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+              Experience the same level of exceptional service and innovative
+              solutions that have helped organizations across the globe transform
+              their IT infrastructure.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center bg-white text-amber-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-amber-50 transition-colors shadow-lg"
+            >
+              Contact Us Today
+              <ExternalLink className="ml-2 size-4" />
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </DecorativeBackground>
   );
 };
 

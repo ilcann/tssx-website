@@ -8,7 +8,7 @@
   --secondary-color: #ffd500;
   --tertiary-color: #ffb000;
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.98 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -73,7 +73,6 @@
 /* Typography */
 #hero {
   font-family: "RobotoSlab";
-  min-height: 100vh;
 }
 
 #header {
@@ -102,137 +101,10 @@ section#about,
 section#detailed-solutions,
 section#references,
 section#faq {
-  min-height: 60vh;
-}
-
-section#contact {
   min-height: 50vh;
 }
 
-/* Critical animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+section#contact {
+  min-height: 60vh;
 }
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-}
-
-@keyframes float-bubble {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.2;
-  }
-  50% {
-    transform: translateY(-120vh) scale(1.5);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(-200vh) scale(1);
-    opacity: 0;
-  }
-}
-
-.animate-float-bubble {
-  animation: float-bubble 15s ease-in-out infinite;
-  animation-fill-mode: both;
-}
-
-.animate-fadeIn {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse {
-  animation: pulse 4s ease-in-out infinite;
-}
-
-.text-glow {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 
-               0 0 20px rgba(255, 255, 255, 0.5),
-               0 0 30px rgba(255, 255, 255, 0.3);
-}
-
-/* Bubble styles */
-.bubble {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 
-              inset 0 0 15px rgba(255, 255, 255, 0.3),
-              0 0 30px rgba(255, 165, 0, 0.2);
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
-  backdrop-filter: blur(4px);
-}
-
-/* Rounded button styles */
-.rounded-button {
-  border-radius: 9999px;
-}
-
-.dark {
-  --background: oklch(0.07 0 0);
-  --foreground: oklch(0.94 0 0);
-  --card: oklch(0.07 0 0);
-  --card-foreground: oklch(0.94 0 0);
-  --popover: oklch(0.07 0 0);
-  --popover-foreground: oklch(0.94 0 0);
-  --primary: oklch(0.94 0 0);
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.145 0 0);
-  --secondary-foreground: oklch(0.94 0 0);
-  --muted: oklch(0.145 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.145 0 0);
-  --accent-foreground: oklch(0.94 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.145 0 0);
-  --input: oklch(0.145 0 0);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.8 0.222 41.116);
-  --chart-2: oklch(0.7 0.118 184.704);
-  --chart-3: oklch(0.6 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.07 0 0);
-  --sidebar-foreground: oklch(0.94 0 0);
-  --sidebar-primary: oklch(0.94 0 0);
-  --sidebar-primary-foreground: oklch(0.145 0 0);
-  --sidebar-accent: oklch(0.145 0 0);
-  --sidebar-accent-foreground: oklch(0.94 0 0);
-  --sidebar-border: oklch(0.145 0 0);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
 

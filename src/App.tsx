@@ -3,8 +3,9 @@ import { Helmet } from "react-helmet-async";
 import { Routes, Route, useLocation } from "react-router";
 import About from "./pages/About";
 import MainPage from "./pages/MainPage";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import { useEffect } from "react";
+import Solutions from "./components/MainPage/Solutions";
 
 function App() {
   const location = useLocation();
@@ -83,6 +84,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/solutions/:solutionId" element={<Solutions />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />

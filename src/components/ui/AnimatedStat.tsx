@@ -21,11 +21,12 @@ const AnimatedStat = ({ icon, value, label }: AnimatedStatProps) => {
     const iconContainer = iconRef.current;
     const label = labelRef.current;
     const value = valueRef.current;
-
-    // Mouse enter animation
+    
     const handleMouseEnter = () => {
+      gsap.killTweensOf(card);
+      
       gsap.to(card, {
-        y: -8,
+        y: "-=8", 
         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
         scale: 1.02,
         duration: 0.4,
@@ -55,14 +56,25 @@ const AnimatedStat = ({ icon, value, label }: AnimatedStatProps) => {
       });
     };
 
-    // Mouse leave animation
+    // Mouse leave animation - restore to floating state
     const handleMouseLeave = () => {
       gsap.to(card, {
-        y: 0,
+        y: "+=8", // Return to the floating position
         boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
         scale: 1,
         duration: 0.4,
         ease: "power2.out",
+        onComplete: () => {
+          // Restart the floating animation if it was killed
+          const currentY = gsap.getProperty(card, "y") as number;
+          gsap.to(card, {
+            y: currentY - 5,
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: "power2.inOut",
+          });
+        }
       });
 
       gsap.to(iconContainer, {
