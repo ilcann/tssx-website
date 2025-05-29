@@ -1,6 +1,5 @@
 import FAQ from "@/components/FAQ";
 import type { FAQItemProps } from "@/components/FAQ";
-import SpecialText from "@/components/ui/SpecialText";
 import AnimatedText from "@/components/ui/AnimatedText";
 
 const FAQSection = () => {
@@ -48,13 +47,9 @@ const FAQSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 text-neutral-900">
-            <SpecialText
-              id="faq-special-text"
-              className="text-2xl font-bold text-center mb-2"
-            >
-              <AnimatedText text="Frequently Asked Questions" />
-            </SpecialText>
+            <AnimatedText text="Frequently Asked Questions" />
           </h2>
+
           <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-neutral-700 leading-relaxed">
             Get answers to the most common questions about our{" "}

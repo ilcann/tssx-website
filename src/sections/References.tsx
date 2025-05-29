@@ -429,7 +429,7 @@ const References = () => {
           <div className="container w-full flex flex-col items-center justify-center mx-auto px-4 mb-8">
             <SpecialText
               id="references-special-text"
-              className="text-2xl font-bold text-center text-amber-50 mb-2"
+              className="text-2xl font-bold text-center text-white mb-2"
             >
               <AnimatedText text="Trusted by Leading Organizations" />
             </SpecialText>
