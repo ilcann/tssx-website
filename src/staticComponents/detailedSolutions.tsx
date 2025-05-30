@@ -16,7 +16,7 @@ export const detailedSolutionData: DetailedSolution[] = [
     description: "Comprehensive monitoring and observability solutions with AI-powered insights",
     detailedDescription: "Our observability solutions provide comprehensive monitoring, alerting, and analytics capabilities across your entire IT infrastructure. Using advanced AI and machine learning algorithms, we deliver proactive insights that help prevent issues before they impact your business operations.",
     icon: <EyeIcon className="size-10 text-primary" />,
-    services: ["BMC Helix AIOPS", "Zabbix", "Netreo"],
+    services: ["BMC Helix AIOPS", "Zabbix"],
     features: [
       "Real-time monitoring and alerting",
       "AI-powered anomaly detection",
@@ -152,7 +152,7 @@ export const detailedSolutionData: DetailedSolution[] = [
         ]
       }
     ],
-    technologies: ["BMC TrueSight", "Control-M", "Ansible", "Terraform", "Kubernetes"],
+    technologies: ["BMC TrueSight", "Terraform", "Kubernetes"],
     image: "/img/solutions/automation.jpg",
     category: "automation"
   },

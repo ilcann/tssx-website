@@ -14,7 +14,7 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Doğuş Teknoloji",
-        logo: "/img/logos/dogus-teknoloji.png"
+        logo: "/img/logos/dogus-teknoloji.svg"
       },
       {
         name: "Koç Sistem",
@@ -26,7 +26,7 @@ export const referenceLocations: ReferenceLocation[] = [
       },
       {
         name: "Garanti Bankası",
-        logo: "/img/logos/garanti-bankasi.png"
+        logo: "/img/logos/garanti-bankasi.svg"
       },
       {
         name: "Sigorta Bilgi ve Gözetim Merkezi",
@@ -38,7 +38,7 @@ export const referenceLocations: ReferenceLocation[] = [
       },
       {
         name: "TatMetal",
-        logo: "/img/logos/tatmetal.png"
+        logo: "/img/logos/tatmetal.svg"
       },
     ],
   },
@@ -56,7 +56,7 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Ministry of Environment, Water and Agriculture",
-        logo: "/img/logos/mewa-saudi.png"
+        logo: "/img/logos/mewa-saudi.svg"
       }
     ],
   },

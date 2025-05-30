@@ -19,10 +19,18 @@ const Solutions = () => {
 
   return (
     <DecorativeBackground
+      elements={[
+        {
+          position: "bottom-right",
+          size: "lg",
+          opacity: "high",
+          intensity: "medium",
+        },
+      ]}
       variant="light"
-      className="py-24 bg-gradient-to-b from-white to-neutral-100"
+      className="py-24 bg-gradient-to-b from-white to-neutral-50"
     >
-      <section id="solutions" className="h-[100dvh]">
+      <section id="solutions" className="min-h-[100dvh]">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-neutral-900">

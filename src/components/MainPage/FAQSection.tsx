@@ -9,7 +9,7 @@ const FAQSection = () => {
       variant="light"
       elements={[
         {
-          position: "top-right",
+          position: "top-left",
           size: "lg",
           opacity: "high",
           intensity: "medium",
@@ -18,16 +18,16 @@ const FAQSection = () => {
           position: "bottom-left",
           size: "lg",
           opacity: "medium",
-          intensity: "medium",
+          intensity: "dark",
         },
         {
           position: "center-right",
-          size: "sm",
-          opacity: "low",
+          size: "xl",
+          opacity: "medium",
           intensity: "medium",
         },
       ]}
-      className="py-24 bg-gradient-to-b from-amber-50/50 to-white"
+      className="bg-gradient-to-b from-amber-50 to-amber-100/50"
     >
       <section id="faq">
         <div className="container mx-auto px-4">

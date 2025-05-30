@@ -340,20 +340,40 @@ const References = () => {
 
   return (
     <DecorativeBackground
-      variant="dark"
-      className="py-24 bg-gradient-to-b from-neutral-900 to-neutral-950"
+      variant="light"
+      elements={[
+        {
+          position: "top-right",
+          size: "lg",
+          opacity: "high",
+          intensity: "medium",
+        },
+        {
+          position: "bottom-left",
+          size: "lg",
+          opacity: "medium",
+          intensity: "medium",
+        },
+        {
+          position: "center-right",
+          size: "sm",
+          opacity: "low",
+          intensity: "medium",
+        },
+      ]}
+      className="py-12 bg-gradient-to-b from-neutral-50 to-amber-50"
     >
       <section id="references">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <SpecialText
               id="references-special-text"
-              className="text-4xl font-bold mb-6 text-white"
+              className="text-4xl font-bold mb-6 text-neutral-900"
             >
               <AnimatedText text="Our References" />
             </SpecialText>
             <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
-            <span className="text-lg text-neutral-300 leading-relaxed">
+            <span className="text-lg text-neutral-600 leading-relaxed">
               Globally <AnimatedText text="trusted solution partners" /> across
               multiple countries
             </span>
@@ -381,8 +401,8 @@ const References = () => {
             />
           </div>
           {/* Interactive Reference Map */}
-          <div className="mb-16 bg-neutral-800/50 backdrop-blur-sm border border-neutral-700 rounded-xl p-6">
-            <h3 className="text-2xl font-bold text-center mb-6 text-white">
+          <div className="mb-16 shadow-sm rounded-xl p-6">
+            <h3 className="text-2xl font-bold text-center mb-6 text-neutral-900">
               Global Client Network
             </h3>
             <div className="map-container h-[450px] mx-auto max-w-5xl relative rounded-lg overflow-hidden">
@@ -422,7 +442,7 @@ const References = () => {
               </div>
             </div>
 
-            <div className="text-center text-neutral-400 mt-4 mb-2 flex items-center justify-center">
+            <div className="text-center text-neutral-600 mt-4 mb-2 flex items-center justify-center">
               <Info className="size-5 mr-1 text-amber-500" />
               <p>Hover or tap on highlighted countries to see our clients</p>
             </div>
@@ -431,11 +451,11 @@ const References = () => {
             <div className="flex items-center justify-center gap-8 max-w-xl mx-auto">
               <div className="flex items-center">
                 <span className="inline-block size-4 rounded-sm bg-white/80 mr-2"></span>
-                <span className="text-neutral-300">Other Countries</span>
+                <span className="text-neutral-600">Other Countries</span>
               </div>
               <div className="flex items-center">
                 <span className="inline-block size-4 rounded-sm bg-amber-500 mr-2"></span>
-                <span className="text-neutral-300">Client Locations</span>
+                <span className="text-neutral-600">Client Locations</span>
               </div>
             </div>
           </div>
@@ -445,13 +465,14 @@ const References = () => {
             <div className="container w-full flex flex-col items-center justify-center mx-auto px-4 mb-8">
               <SpecialText
                 id="references-special-text"
-                className="text-2xl font-bold text-center text-white mb-2"
+                className="text-2xl font-bold text-center text-neutral-900 mb-2"
               >
                 <AnimatedText text="Trusted by Leading Organizations" />
               </SpecialText>
 
               <span className="text-center text-neutral-600">
-                Our clients across the globe trust us with their IT infrastructure
+                Our clients across the globe trust us with their IT
+                infrastructure
               </span>
             </div>
             <ClientSlider />
@@ -464,8 +485,8 @@ const References = () => {
             </h3>
             <p className="text-white/80 mb-6 max-w-2xl mx-auto">
               Experience the same level of exceptional service and innovative
-              solutions that have helped organizations across the globe transform
-              their IT infrastructure.
+              solutions that have helped organizations across the globe
+              transform their IT infrastructure.
             </p>
             <Link
               to="/contact"

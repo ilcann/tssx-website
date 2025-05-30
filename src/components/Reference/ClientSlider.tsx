@@ -1,14 +1,18 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { referenceLocations } from "@/staticComponents/reference";
-import { Building2 } from "lucide-react";
+import "./ClientSlider.css";
 
 const ClientSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const sliderTrackRef = useRef<HTMLDivElement>(null);
-  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
 
-  // Flatten all clients from all countries
+  const lightLogos = [
+    "Turkiye Finans Katılım Bankası",
+    "TatMetal",
+    "Turkcell",
+    "Rakbank",
+  ];
   const allClients = referenceLocations.flatMap((location) =>
     location.clients.map((client) => ({
       name: client.name,
@@ -17,11 +21,11 @@ const ClientSlider = () => {
     }))
   );
 
-  // Duplicate the clients array for seamless loop
-  const duplicatedClients = [...allClients, ...allClients];
+  const duplicatedClients = [...allClients, ...allClients, ...allClients];
 
-  const handleImageError = (logoPath: string) => {
-    setImageErrors(prev => new Set(prev).add(logoPath));
+  const getLogoClass = (clientName: string) => {
+    const isLight = lightLogos.includes(clientName);
+    return `logo-image ${isLight ? "logo-light" : "logo-dark"}`;
   };
 
   useEffect(() => {
@@ -29,86 +33,86 @@ const ClientSlider = () => {
 
     const track = sliderTrackRef.current;
     const slider = sliderRef.current;
+    let cleanup: (() => void) | null = null;
 
-    // Get the width of the track after rendering
     const updateAnimation = () => {
-      const trackWidth = track.scrollWidth;
+      setTimeout(() => {
+        const trackWidth = track.scrollWidth;
 
-      // Set up the infinite animation
-      const tl = gsap.timeline({ repeat: -1 });
+        const singleSetWidth = trackWidth / 3;
 
-      // Start from 0, move to -50% (half of the duplicated content)
-      tl.fromTo(track, 
-        { x: 0 },
-        {
-          x: -trackWidth / 2, // Move exactly half the width (one complete set)
-          duration: allClients.length * 3, // 3 seconds per client for smooth reading
+        const tl = gsap.timeline({ repeat: -1 });
+
+        tl.to(track, {
+          x: -singleSetWidth,
+          duration: allClients.length * 4,
           ease: "none",
-        }
-      ).set(track, { x: 0 }); // Reset instantly to beginning
+        });
 
-      // Pause on hover
-      const handleMouseEnter = () => {
-        tl.pause();
-      };
+        tl.set(track, { x: 0 });
 
-      const handleMouseLeave = () => {
-        tl.resume();
-      };
+        const handleMouseEnter = () => {
+          tl.pause();
+        };
 
-      slider.addEventListener("mouseenter", handleMouseEnter);
-      slider.addEventListener("mouseleave", handleMouseLeave);
+        const handleMouseLeave = () => {
+          tl.resume();
+        };
 
-      return () => {
-        tl.kill();
-        slider.removeEventListener("mouseenter", handleMouseEnter);
-        slider.removeEventListener("mouseleave", handleMouseLeave);
-      };
+        slider.addEventListener("mouseenter", handleMouseEnter);
+        slider.addEventListener("mouseleave", handleMouseLeave);
+
+        cleanup = () => {
+          tl.kill();
+          slider.removeEventListener("mouseenter", handleMouseEnter);
+          slider.removeEventListener("mouseleave", handleMouseLeave);
+        };
+      }, 500);
     };
 
-    // Wait for DOM to be fully rendered
-    const timer = setTimeout(updateAnimation, 100);
+    updateAnimation();
 
     return () => {
-      clearTimeout(timer);
+      if (cleanup) cleanup();
     };
   }, [allClients.length]);
 
   return (
-    <div className="py-12 overflow-hidden">
-      <div
-        ref={sliderRef}
-        className="flex overflow-hidden whitespace-nowrap"
-      >
+    <div className="py-12 my-12 overflow-hidden">
+      <div className="container mx-auto px-4 mb-8">
+        <div className="text-center">
+          <h3 className="text-xl font-semibold text-amber-500 mb-2">
+            Our Trusted Clients
+          </h3>
+        </div>
+      </div>
+
+      <div ref={sliderRef} className="flex overflow-hidden whitespace-nowrap">
         <div
           ref={sliderTrackRef}
-          className="flex items-center gap-8"
+          className="flex items-center gap-12"
           style={{ width: "fit-content" }}
         >
           {duplicatedClients.map((client, index) => (
             <div
               key={`${client.name}-${client.country}-${index}`}
-              className="flex items-center bg-white rounded-lg shadow-md px-6 py-4 border border-amber-200 hover:shadow-lg transition-shadow duration-300 flex-shrink-0 min-w-[280px]"
+              className="flex items-center gap-3 flex-shrink-0"
             >
-              <div className="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 overflow-hidden">
-                {imageErrors.has(client.logo) ? (
-                  <Building2 size={20} className="text-amber-600" />
-                ) : (
-                  <img
-                    src={client.logo}
-                    alt={`${client.name} logo`}
-                    className="w-full h-full object-contain"
-                    onError={() => handleImageError(client.logo)}
-                    loading="lazy"
-                  />
-                )}
+              {/* Logo */}
+              <div className="logo-container w-40 h-24">
+                <img
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  className={getLogoClass(client.name)}
+                  loading="lazy"
+                />
               </div>
-              <div className="flex-1 min-w-0">
-                <h4 className="font-semibold text-neutral-900 text-sm whitespace-nowrap overflow-hidden text-ellipsis">
+              {/* Client Name */}
+              {!client.logo && (
+                <span className="text-sm text-amber-500 font-medium whitespace-nowrap">
                   {client.name}
-                </h4>
-                <p className="text-xs text-neutral-500">{client.country}</p>
-              </div>
+                </span>
+              )}
             </div>
           ))}
         </div>
