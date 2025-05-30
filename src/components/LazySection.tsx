@@ -10,7 +10,7 @@ const LazySection = ({ children, fallback }: LazySectionProps) => {
   const defaultFallback = (
     <div className="min-h-[60vh] flex items-center justify-center bg-neutral-50">
       <div className="text-center">
-        <Loader2 className="h-6 w-6 animate-spin mx-auto mb-4 text-amber-600" />
+        <Loader2 className="h-6 w-6 animate-spin mx-auto mb-4 text-amber-700" />
         <p className="text-neutral-600">Loading...</p>
       </div>
     </div>

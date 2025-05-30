@@ -28,7 +28,7 @@ const Solutions = () => {
         },
       ]}
       variant="light"
-      className="py-24 bg-gradient-to-b from-white to-neutral-50"
+      className="py-12 bg-gradient-to-b from-white to-neutral-50"
     >
       <section id="solutions" className="min-h-[100dvh]">
         <div className="container mx-auto px-4">
@@ -41,12 +41,12 @@ const Solutions = () => {
                 <AnimatedText text="Our Solutions" />
               </SpecialText>
             </h2>
-            <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
+            <div className="w-24 h-1 bg-amber-700 mx-auto mb-6 rounded-full"></div>
             <div className="text-lg text-neutral-700 leading-relaxed">
               Our solutions are designed to help you{" "}
               <AnimatedText
                 text="automate your business processes"
-                className="text-amber-600 font-semibold"
+                className="text-amber-700 font-semibold"
               />{" "}
               and improve your productivity.
             </div>

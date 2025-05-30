@@ -14,31 +14,31 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Doğuş Teknoloji",
-        logo: "/img/logos/dogus-teknoloji.svg"
+        logo: "/img/companies/dogus-teknoloji.svg"
       },
       {
         name: "Koç Sistem",
-        logo: "/img/logos/koc-sistem.png"
+        logo: "/img/companies/koc-sistem.png"
       },
       {
         name: "Turkcell",
-        logo: "/img/logos/turkcell.png"
+        logo: "/img/companies/turkcell.png"
       },
       {
         name: "Garanti Bankası",
-        logo: "/img/logos/garanti-bankasi.svg"
+        logo: "/img/companies/garanti-bankasi.svg"
       },
       {
         name: "Sigorta Bilgi ve Gözetim Merkezi",
-        logo: "/img/logos/sbgm.png"
+        logo: "/img/companies/sbgm.png"
       },
       {
         name: "Türkiye Finans Katılım Bankası",
-        logo: "/img/logos/turkiye-finans.png"
+        logo: "/img/companies/turkiye-finans.png"
       },
       {
         name: "TatMetal",
-        logo: "/img/logos/tatmetal.svg"
+        logo: "/img/companies/tatmetal.svg"
       },
     ],
   },
@@ -47,7 +47,7 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Rakbank",
-        logo: "/img/logos/rakbank.png"
+        logo: "/img/companies/rakbank.png"
       }
     ],
   },
@@ -56,7 +56,7 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Ministry of Environment, Water and Agriculture",
-        logo: "/img/logos/mewa-saudi.svg"
+        logo: "/img/companies/mewa-saudi.svg"
       }
     ],
   },
@@ -65,7 +65,7 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Malomatia",
-        logo: "/img/logos/malomatia.png"
+        logo: "/img/companies/malomatia.png"
       }
     ],
   },
@@ -74,7 +74,7 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Umniah Telecom",
-        logo: "/img/logos/umniah.png"
+        logo: "/img/companies/umniah.png"
       }
     ],
   },
@@ -83,7 +83,7 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "A1 Telecom",
-        logo: "/img/logos/a1-telecom.png"
+        logo: "/img/companies/a1-telecom.png"
       }
     ],
   },

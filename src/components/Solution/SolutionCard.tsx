@@ -175,7 +175,7 @@ export const SolutionCard = ({
     >
       <div
         ref={headerRef}
-        className="relative h-40 bg-gradient-to-br from-amber-500/80 to-amber-600/80 flex items-center justify-center overflow-hidden"
+        className="relative h-40 bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center overflow-hidden"
       >
         <div className="absolute inset-0 bg-amber-100 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
 
@@ -193,13 +193,13 @@ export const SolutionCard = ({
         <h3 ref={titleRef} className="text-xl font-bold text-neutral-900 mb-2">
           {title}
         </h3>
-        <p ref={titleTrRef} className="text-amber-600 mb-4 text-sm font-medium">
+        <p ref={titleTrRef} className="text-amber-700 mb-4 text-sm font-medium">
           {titleTr}
         </p>
         <ul ref={servicesRef} className="space-y-3 mb-6 flex-grow">
           {services.map((service, serviceIndex) => (
             <li key={serviceIndex} className="flex items-start group/item">
-              <span className="w-5 h-5 flex-shrink-0 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mr-3 mt-0.5 group-hover/item:bg-amber-200 transition-colors duration-200">
+              <span className="w-5 h-5 flex-shrink-0 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mr-3 mt-0.5 group-hover/item:bg-amber-200 transition-colors duration-200">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

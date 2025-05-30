@@ -79,7 +79,7 @@ const CaseStudy = ({
         <div className="flex items-center gap-3 mb-4">
           {/* Icon Display */}
           {icon && (
-            <div className="size-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="size-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center flex-shrink-0">
               {React.isValidElement(icon)
                 ? React.cloneElement(
                     icon as React.ReactElement<{ className?: string }>,
@@ -89,7 +89,7 @@ const CaseStudy = ({
             </div>
           )}
           <div className="flex-grow">
-            <div className="text-amber-600 font-medium text-sm mb-1">
+            <div className="text-amber-700 font-medium text-sm mb-1">
               {title}
             </div>
             <CardTitle className="text-2xl font-semibold text-neutral-900">
@@ -117,7 +117,7 @@ const CaseStudy = ({
                 className="flex items-start gap-3"
               >
                 <div className="w-5 h-5 flex items-center justify-center bg-amber-100 rounded-full mt-0.5 flex-shrink-0">
-                  <Check className="text-amber-600 size-3" />
+                  <Check className="text-amber-700 size-3" />
                 </div>
                 <div>
                   <div className="text-neutral-900 font-medium text-sm">

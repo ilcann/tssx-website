@@ -6,9 +6,10 @@ type AnimatedStatProps = {
   icon: React.ReactNode;
   value: string;
   label: string;
+  className?: string;
 };
 
-const AnimatedStat = ({ icon, value, label }: AnimatedStatProps) => {
+const AnimatedStat = ({ icon, value, label, className }: AnimatedStatProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
   const labelRef = useRef<HTMLHeadingElement>(null);
@@ -112,18 +113,18 @@ const AnimatedStat = ({ icon, value, label }: AnimatedStatProps) => {
   return (
     <div 
       ref={cardRef}
-      className="bg-white shadow-lg rounded-xl p-6 border border-neutral-200 cursor-pointer"
+      className={`bg-white shadow-lg rounded-xl p-6 border border-neutral-200 cursor-pointer ${className}`}
     >
       <div className="flex items-center mb-4">
         <div 
           ref={iconRef}
-          className="w-10 h-10 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mr-3"
+          className="w-10 h-10 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mr-3"
         >
           {icon}
         </div>
         <h3 ref={labelRef} className="text-xl font-bold text-neutral-900">{label}</h3>
       </div>
-      <div ref={valueRef} className="text-3xl font-bold text-amber-600 mb-1">
+      <div ref={valueRef} className="text-3xl font-bold text-amber-700 mb-1">
         <StatCounter value={value} enableScrollSpy={true} />
       </div>
     </div>

@@ -31,7 +31,7 @@ const TeamSection = () => {
             <button
               className={`px-4 py-2 font-medium text-sm ${
                 activeTab === "vision"
-                  ? "text-amber-600 border-b-2 border-amber-500"
+                  ? "text-amber-700 border-b-2 border-amber-500"
                   : "text-neutral-500"
               }`}
               onClick={() => setActiveTab("vision")}
@@ -41,7 +41,7 @@ const TeamSection = () => {
             <button
               className={`px-4 py-2 font-medium text-sm ${
                 activeTab === "mission"
-                  ? "text-amber-600 border-b-2 border-amber-500"
+                  ? "text-amber-700 border-b-2 border-amber-500"
                   : "text-neutral-500"
               }`}
               onClick={() => setActiveTab("mission")}
@@ -51,7 +51,7 @@ const TeamSection = () => {
             <button
               className={`px-4 py-2 font-medium text-sm ${
                 activeTab === "values"
-                  ? "text-amber-600 border-b-2 border-amber-500"
+                  ? "text-amber-700 border-b-2 border-amber-500"
                   : "text-neutral-500"
               }`}
               onClick={() => setActiveTab("values")}
@@ -94,19 +94,19 @@ const TeamSection = () => {
                 </h4>
                 <ul className="text-neutral-600 leading-relaxed space-y-2">
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-amber-700 rounded-full mr-2"></span>
                     Excellence in service delivery
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-amber-700 rounded-full mr-2"></span>
                     Continuous innovation
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-amber-700 rounded-full mr-2"></span>
                     Client-centered approach
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-amber-700 rounded-full mr-2"></span>
                     Integrity and transparency
                   </li>
                 </ul>
@@ -119,7 +119,7 @@ const TeamSection = () => {
           <div className="grid grid-cols-2 gap-4 w-full">
             <div className="bg-neutral-50 rounded-lg p-4 text-center flex flex-col items-center">
               <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-2">
-                <Users className="text-amber-600 size-6" />
+                <Users className="text-amber-700 size-6" />
               </div>
               <div className="text-2xl font-bold text-neutral-900">
                 <StatCounter value="15+" enableScrollSpy={true} />
@@ -129,7 +129,7 @@ const TeamSection = () => {
 
             <div className="bg-neutral-50 rounded-lg p-4 text-center flex flex-col items-center">
               <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-2">
-                <Award className="text-amber-600 size-6" />
+                <Award className="text-amber-700 size-6" />
               </div>
               <div className="text-2xl font-bold text-neutral-900">
                 <StatCounter value="10+" enableScrollSpy={true} />
@@ -139,7 +139,7 @@ const TeamSection = () => {
 
             <div className="bg-neutral-50 rounded-lg p-4 text-center flex flex-col items-center">
               <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-2">
-                <Code className="text-amber-600 size-6" />
+                <Code className="text-amber-700 size-6" />
               </div>
               <div className="text-2xl font-bold text-neutral-900">
                 <StatCounter value="100+" enableScrollSpy={true} />
@@ -149,7 +149,7 @@ const TeamSection = () => {
 
             <div className="bg-neutral-50 rounded-lg p-4 text-center flex flex-col items-center">
               <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-2">
-                <BarChart4 className="text-amber-600 size-6" />
+                <BarChart4 className="text-amber-700 size-6" />
               </div>
               <div className="text-2xl font-bold text-neutral-900">
                 <StatCounter value="98%" enableScrollSpy={true} />

@@ -36,8 +36,8 @@ const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
     gsap.to(letterElements, {
       opacity: 1,
       y: 0,
-      duration: 0.6,
-      stagger: 0.03,
+      duration: 0.4,
+      stagger: 0.02,
       ease: "power2.out", 
       scrollTrigger: {
         trigger: container,

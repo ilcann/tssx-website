@@ -26,8 +26,8 @@ const SpecialText = ({ className, children, id }: SpecialTextProps) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
-          end: "bottom 10%",
+          start: "top 95%",
+          end: "bottom 5%",
           toggleActions: "play reverse play reverse",
         },
       });

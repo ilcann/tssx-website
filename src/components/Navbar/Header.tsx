@@ -21,35 +21,31 @@ const Header = () => {
 
     const updateHeader = () => {
       const scrollY = window.scrollY;
-      const scrollDirection = scrollY > lastScrollY ? 'down' : 'up';
-      const scrollThreshold = 300; // Start hiding after 300px scroll
-
+      const scrollDirection = scrollY > lastScrollY ? "down" : "up";
+      const scrollThreshold = window.innerHeight * 0.5; // 50% of screen height
       if (headerRef.current) {
         if (scrollY > scrollThreshold) {
-          if (scrollDirection === 'down') {
-            // Scrolling down - hide header
+          if (scrollDirection === "down") {
             gsap.to(headerRef.current, {
               y: -100,
               opacity: 0,
               duration: 1,
-              ease: "power2.out"
+              ease: "power2.out",
             });
-          } else if (scrollDirection === 'up') {
-            // Scrolling up - show header
+          } else if (scrollDirection === "up") {
             gsap.to(headerRef.current, {
               y: 0,
               opacity: 1,
               duration: 0.7,
-              ease: "power2.out"
+              ease: "power2.out",
             });
           }
         } else {
-          // At the top - always show header
           gsap.to(headerRef.current, {
             y: 0,
             opacity: 1,
-            duration: 0.3,
-            ease: "power2.out"
+            duration: 0.1,
+            ease: "power2.out",
           });
         }
       }
@@ -65,18 +61,15 @@ const Header = () => {
       }
     };
 
-    // Add scroll event listener
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
 
-    // Initial state
     if (headerRef.current) {
       gsap.set(headerRef.current, { y: 0, opacity: 1 });
     }
 
-    // Cleanup
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      window.removeEventListener("scroll", onScroll);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
@@ -91,7 +84,7 @@ const Header = () => {
     <header
       ref={headerRef}
       id="header"
-      className="w-full sticky top-0 z-40 backdrop-blur-md bg-white/90 border-b border-gray-200 shadow-md py-3"
+      className="w-full sticky top-0 z-40 backdrop-blur-sm bg-neutral-900 border-b border-b-black shadow-xl py-3"
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div
@@ -100,14 +93,15 @@ const Header = () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <div className="text-4xl font-black">
-            <span className="text-gray-800">TSS</span>
-            <span className="text-amber-500">X</span>
-          </div>
+          <img
+            src="img/tssx/tssx-light-logo.png"
+            alt="TSS-X Logo"
+            className="h-7 brightness-100"
+          />
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-2">
+        <nav className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => (
             <HeaderLink key={item.label} to={item.to} onClick={handleNavClick}>
               {item.label}
@@ -117,7 +111,7 @@ const Header = () => {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden w-10 h-10 rounded-lg bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors duration-200 flex items-center justify-center"
+          className="md:hidden w-10 h-10 rounded-lg bg-amber-600 text-white hover:bg-amber-700 transition-colors duration-200 flex items-center justify-center"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={
             mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
@@ -130,7 +124,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden absolute w-full bg-white border-b border-gray-200 shadow-lg transition-all duration-300 overflow-hidden ${
+        className={`md:hidden absolute w-full bg-neutral-900 border-b border-neutral-700 shadow-lg transition-all duration-300 overflow-hidden ${
           mobileMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
         }`}
       >

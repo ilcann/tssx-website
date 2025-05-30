@@ -2,6 +2,8 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { referenceLocations } from "@/staticComponents/reference";
 import "./ClientSlider.css";
+import SpecialText from "../ui/SpecialText";
+import AnimatedText from "../ui/AnimatedText";
 
 const ClientSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -10,7 +12,6 @@ const ClientSlider = () => {
   const lightLogos = [
     "Turkiye Finans Katılım Bankası",
     "TatMetal",
-    "Turkcell",
     "Rakbank",
   ];
   const allClients = referenceLocations.flatMap((location) =>
@@ -79,9 +80,22 @@ const ClientSlider = () => {
 
   return (
     <div className="py-12 my-12 overflow-hidden">
+      <div className="container w-full flex flex-col items-center justify-center mx-auto px-4 mb-8">
+              <SpecialText
+                id="references-special-text"
+                className="text-2xl font-bold text-center text-neutral-900 mb-2"
+              >
+                <AnimatedText text="Trusted by Leading Organizations" />
+              </SpecialText>
+
+              <span className="text-center text-neutral-600">
+                Our clients across the globe trust us with their IT
+                infrastructure
+              </span>
+            </div>
       <div className="container mx-auto px-4 mb-8">
         <div className="text-center">
-          <h3 className="text-xl font-semibold text-amber-500 mb-2">
+          <h3 className="text-xl font-bold text-neutral-900 mb-2">
             Our Trusted Clients
           </h3>
         </div>
@@ -109,7 +123,7 @@ const ClientSlider = () => {
               </div>
               {/* Client Name */}
               {!client.logo && (
-                <span className="text-sm text-amber-500 font-medium whitespace-nowrap">
+                <span className="text-sm text-amber-700 font-medium whitespace-nowrap">
                   {client.name}
                 </span>
               )}

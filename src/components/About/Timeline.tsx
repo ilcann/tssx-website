@@ -27,7 +27,7 @@ const Timeline = () => {
               }`}
             >
               <div className="bg-white p-6 rounded-xl shadow-md inline-block">
-                <div className="text-amber-600 font-bold text-lg">
+                <div className="text-amber-700 font-bold text-lg">
                   {milestone.year}
                 </div>
                 <h4 className="text-neutral-900 font-bold mb-2">
@@ -39,7 +39,7 @@ const Timeline = () => {
               </div>
             </div>
 
-            <div className="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center z-10 flex-shrink-0">
+            <div className="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center z-10 flex-shrink-0">
               <div className="w-4 h-4 bg-white rounded-full"></div>
             </div>
 

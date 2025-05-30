@@ -7,6 +7,7 @@ import MainPage from "./pages/MainPage";
 import Footer from "./components/Footer/Footer";
 import Solution from "./pages/Solution";
 import Contact from "./pages/Contact";
+import BackToTop from "./components/ui/BackToTop";
 
 function App() {
   const location = useLocation();
@@ -90,6 +91,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+      <BackToTop />
     </>
   );
 }

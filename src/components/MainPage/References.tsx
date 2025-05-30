@@ -226,7 +226,7 @@ const References = () => {
             tooltip
               .html(
                 `<div class="bg-neutral-900/95 p-4 rounded-lg shadow-lg border border-amber-500/20">
-                  <h4 class="text-amber-500 font-bold text-lg mb-2">${
+                  <h4 class="text-amber-700 font-bold text-lg mb-2">${
                     clientData.name
                   }</h4>
                   <ul class="space-y-1">
@@ -336,8 +336,6 @@ const References = () => {
     };
   }, []);
 
-  // Stats are calculated directly in the StatCounter components
-
   return (
     <DecorativeBackground
       variant="light"
@@ -361,7 +359,7 @@ const References = () => {
           intensity: "medium",
         },
       ]}
-      className="py-12 bg-gradient-to-b from-neutral-50 to-amber-50"
+      className="py-12 bg-gradient-to-b from-neutral-50 to-neutral-100"
     >
       <section id="references">
         <div className="container mx-auto px-4">
@@ -372,7 +370,7 @@ const References = () => {
             >
               <AnimatedText text="Our References" />
             </SpecialText>
-            <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
+            <div className="w-24 h-1 bg-amber-700 mx-auto mb-6 rounded-full"></div>
             <span className="text-lg text-neutral-600 leading-relaxed">
               Globally <AnimatedText text="trusted solution partners" /> across
               multiple countries
@@ -401,7 +399,7 @@ const References = () => {
             />
           </div>
           {/* Interactive Reference Map */}
-          <div className="mb-16 shadow-sm rounded-xl p-6">
+          <div className="mb-16 rounded-xl p-6">
             <h3 className="text-2xl font-bold text-center mb-6 text-neutral-900">
               Global Client Network
             </h3>
@@ -417,7 +415,7 @@ const References = () => {
               <div className="absolute top-4 right-4 flex flex-col space-y-2 z-10">
                 <button
                   id="zoom-in"
-                  className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
+                  className="bg-black/40 hover:bg-amber-700/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
                   title="Zoom in"
                   aria-label="Zoom in on map"
                 >
@@ -425,7 +423,7 @@ const References = () => {
                 </button>
                 <button
                   id="zoom-reset"
-                  className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
+                  className="bg-black/40 hover:bg-amber-700/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
                   title="Reset view"
                   aria-label="Reset map view"
                 >
@@ -433,7 +431,7 @@ const References = () => {
                 </button>
                 <button
                   id="zoom-out"
-                  className="bg-black/40 hover:bg-amber-600/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
+                  className="bg-black/40 hover:bg-amber-700/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none"
                   title="Zoom out"
                   aria-label="Zoom out on map"
                 >
@@ -443,7 +441,7 @@ const References = () => {
             </div>
 
             <div className="text-center text-neutral-600 mt-4 mb-2 flex items-center justify-center">
-              <Info className="size-5 mr-1 text-amber-500" />
+              <Info className="size-5 mr-1 text-amber-700" />
               <p>Hover or tap on highlighted countries to see our clients</p>
             </div>
 
@@ -454,7 +452,7 @@ const References = () => {
                 <span className="text-neutral-600">Other Countries</span>
               </div>
               <div className="flex items-center">
-                <span className="inline-block size-4 rounded-sm bg-amber-500 mr-2"></span>
+                <span className="inline-block size-4 rounded-sm bg-amber-700 mr-2"></span>
                 <span className="text-neutral-600">Client Locations</span>
               </div>
             </div>
@@ -462,39 +460,44 @@ const References = () => {
 
           {/* Client locations grid */}
           <div className="w-full">
-            <div className="container w-full flex flex-col items-center justify-center mx-auto px-4 mb-8">
-              <SpecialText
-                id="references-special-text"
-                className="text-2xl font-bold text-center text-neutral-900 mb-2"
-              >
-                <AnimatedText text="Trusted by Leading Organizations" />
-              </SpecialText>
-
-              <span className="text-center text-neutral-600">
-                Our clients across the globe trust us with their IT
-                infrastructure
-              </span>
-            </div>
             <ClientSlider />
           </div>
 
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-amber-600 to-amber-700 rounded-xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Join Our Growing List of Satisfied Clients
-            </h3>
-            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-              Experience the same level of exceptional service and innovative
-              solutions that have helped organizations across the globe
-              transform their IT infrastructure.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center bg-white text-amber-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-amber-50 transition-colors shadow-lg"
+          <div className="relative rounded-xl overflow-hidden">
+            {/* Video Background */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+              onError={(e) => {
+                // Hide video if it fails to load
+                e.currentTarget.style.display = "none";
+              }}
             >
-              Contact Us Today
-              <ExternalLink className="ml-2 size-4" />
-            </Link>
+              <source src="/img/tssx/background.mp4" type="video/mp4" />
+              {/* Fallback to gradient background if video doesn't load */}
+            </video>
+            {/* Content */}
+            <div className="relative z-10 p-8 text-center">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Join Our Growing List of Satisfied Clients
+              </h3>
+              <p className="text-white/90 mb-6 max-w-2xl mx-auto">
+                Experience the same level of exceptional service and innovative
+                solutions that have helped organizations across the globe
+                transform their IT infrastructure.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center bg-white text-amber-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-amber-50 transition-colors shadow-lg"
+              >
+                Contact Us Today
+                <ExternalLink className="ml-2 size-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

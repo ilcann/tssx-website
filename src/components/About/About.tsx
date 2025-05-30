@@ -42,7 +42,7 @@ const About = () => {
               <AnimatedText text="About TSSX" />
             </SpecialText>
 
-            <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
+            <div className="w-24 h-1 bg-amber-600 mx-auto mb-6 rounded-full"></div>
             <span className="text-lg text-neutral-700 leading-relaxed">
               Your trusted <AnimatedText text="IT infrastructure management" />{" "}
               partner

@@ -145,15 +145,15 @@ const Hero = () => {
     <section
       ref={heroRef}
       id="hero"
-      className="relative bg-amber-600 h-[100dvh] flex items-center overflow-hidden"
+      className="relative flex items-center overflow-hidden"
     >
-      {/* Simplified background elements */}
-      <div ref={backgroundElementsRef} className="absolute inset-0 z-0">
-        <div className="absolute w-64 h-64 rounded-full bg-orange-400 -top-20 -left-20 blur-3xl opacity-60"></div>
-        <div className="absolute w-64 h-64 rounded-full bg-orange-300 bottom-20 -right-20 blur-3xl opacity-60"></div>
-        <div className="absolute w-56 h-56 rounded-full bg-orange-200 top-1/3 left-1/4 blur-3xl opacity-40"></div>
-        <div className="absolute w-64 h-64 rounded-full bg-orange-400 -bottom-20 left-1/3 blur-3xl opacity-60"></div>
-      </div>
+      <video
+        src="/img/tssx/background.mp4"
+        autoPlay
+        muted
+        loop
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
       {/* Content container */}
       <div className="container mx-auto px-4 relative z-20">
@@ -170,13 +170,13 @@ const Hero = () => {
           </div>
 
           <div className="text-4xl md:text-6xl font-bold text-white mb-8">
-            <h2 ref={titleRef} className="text-white">
+            <h2 ref={titleRef} className="text-white text-shadow-2xl">
               Automate Your Future
             </h2>
-            <span className="text-3xl text-white/80 font-light italic">
+            <span className="text-3xl text-white/80 font-light italic text-shadow-2xl">
               with
             </span>
-            <h2 ref={subtitleRef} className="text-white mt-2">
+            <h2 ref={subtitleRef} className="text-white mt-2 text-shadow-2xl">
               Smart Code Solutions
             </h2>
 

@@ -1,6 +1,9 @@
-import type { FAQItemProps } from "@/components/MainPage/FAQ";
+type FAQItemData = {
+  question: string;
+  answer: string;
+};
 
-const faqItems: FAQItemProps[] = [
+const faqItems: FAQItemData[] = [
   {
     question: "What IT infrastructure solutions do you offer?",
     answer:

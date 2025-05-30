@@ -7,7 +7,7 @@ type HeaderLinkProps = {
 };
 
 const HeaderLink = ({ to, onClick, children }: HeaderLinkProps) => {
-  const baseClasses = `px-3 py-2 rounded-md text-gray-700 hover:text-amber-600 hover:bg-amber-50 transition-colors duration-200 font-medium text-sm`;
+  const baseClasses = `text-md px-3 py-2 rounded-md text-neutral-200 hover:text-amber-400 hover:bg-neutral-800 transition-colors duration-200 font-medium`;
 
   return (
     <RouterLink
