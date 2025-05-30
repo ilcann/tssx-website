@@ -15,6 +15,8 @@ const Footer = () => {
               <img
                 src="img/tssx/tssx-light-logo.png"
                 alt="TSS-X Logo"
+                width="90"
+                height="25"
                 className="h-7 mb-4 brightness-100"
               />
               <p className="text-neutral-300 text-sm leading-relaxed mb-4 max-w-sm">

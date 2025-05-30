@@ -24,27 +24,36 @@ const Header = () => {
       const scrollDirection = scrollY > lastScrollY ? "down" : "up";
       const scrollThreshold = window.innerHeight * 0.5; // 50% of screen height
       if (headerRef.current) {
-        if (scrollY > scrollThreshold) {
+        // Always show header when near the top
+        if (scrollY <= 10) {
+          gsap.to(headerRef.current, {
+            y: 0,
+            opacity: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        } else if (scrollY > scrollThreshold) {
           if (scrollDirection === "down") {
             gsap.to(headerRef.current, {
               y: -100,
               opacity: 0,
-              duration: 1,
+              duration: 0.5,
               ease: "power2.out",
             });
           } else if (scrollDirection === "up") {
             gsap.to(headerRef.current, {
               y: 0,
               opacity: 1,
-              duration: 0.7,
+              duration: 0.5,
               ease: "power2.out",
             });
           }
         } else {
+          // Smooth transition in the middle range
           gsap.to(headerRef.current, {
             y: 0,
             opacity: 1,
-            duration: 0.1,
+            duration: 0.3,
             ease: "power2.out",
           });
         }
@@ -63,6 +72,7 @@ const Header = () => {
 
     window.addEventListener("scroll", onScroll, { passive: true });
 
+    // Initial state
     if (headerRef.current) {
       gsap.set(headerRef.current, { y: 0, opacity: 1 });
     }
@@ -96,6 +106,8 @@ const Header = () => {
           <img
             src="img/tssx/tssx-light-logo.png"
             alt="TSS-X Logo"
+            width="90"
+            height="25"
             className="h-7 brightness-100"
           />
         </div>

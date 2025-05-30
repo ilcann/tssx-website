@@ -145,7 +145,7 @@ const Hero = () => {
     <section
       ref={heroRef}
       id="hero"
-      className="relative flex items-center overflow-hidden"
+      className="relative h-screen flex items-center overflow-hidden"
     >
       <video
         src="/img/tssx/background.mp4"
