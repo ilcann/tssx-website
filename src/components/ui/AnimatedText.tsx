@@ -43,7 +43,7 @@ const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
         trigger: container,
         start: "top 80%",
         end: "bottom 10%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none none",
       },
     });
 

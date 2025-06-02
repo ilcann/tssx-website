@@ -28,7 +28,7 @@ const SpecialText = ({ className, children, id }: SpecialTextProps) => {
           trigger: containerRef.current,
           start: "top 95%",
           end: "bottom 5%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none none",
         },
       });
 

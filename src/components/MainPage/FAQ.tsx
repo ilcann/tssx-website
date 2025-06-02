@@ -21,7 +21,7 @@ export const FAQItem = ({
   return (
     <div className={`${!isLast ? "border-b border-neutral-200" : ""}`}>
       <button
-        className="flex items-center justify-between w-full text-left py-5 px-6 focus:outline-none hover:bg-neutral-50 transition-colors duration-200"
+        className="flex items-center justify-between w-full text-left py-5 px-6 focus:outline-none hover:bg-neutral-50 transition-colors duration-200 cursor-pointer"
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-label={`${isOpen ? "Collapse" : "Expand"} FAQ: ${question}`}
