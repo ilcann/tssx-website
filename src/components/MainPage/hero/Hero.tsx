@@ -43,7 +43,7 @@ const Hero = () => {
         loop
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="container mx-auto px-4 relative z-20 max-w-4xl text-center">
+      <div className="container mx-auto px-4 relative z-20 max-w-4xl text-center py-12">
         <HeroTagline ref={tagLineRef} />
         <HeroTitle titleRef={titleRef} subtitleRef={subtitleRef} />
         <HeroDescription ref={descriptionRef} />

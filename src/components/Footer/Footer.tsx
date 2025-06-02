@@ -65,7 +65,7 @@ const Footer = () => {
           {/* Solutions */}
           <div className="md:col-span-3">
             <h3 className="text-lg font-semibold mb-4 text-white">Solutions</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2">  
               <li>
                 <FooterLink href="#solutions">
                   Hybrid Cloud Provisioning

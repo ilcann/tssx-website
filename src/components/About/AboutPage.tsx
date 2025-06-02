@@ -33,7 +33,7 @@ const About = () => {
       ]}
     >
       <main id="about">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto max-w-7xl px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <SpecialText
               id="about-special-text"

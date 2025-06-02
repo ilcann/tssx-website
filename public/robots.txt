@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to access all content
+Allow: /about
+Allow: /contact
+Allow: /solutions/
+
+# Disallow any admin or private areas (if they exist in the future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_*
+
+# Allow access to CSS, JS, and image files for proper rendering
+Allow: /src/
+Allow: /img/
+Allow: /fonts/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Sitemap location
+Sitemap: https://tssx.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1 
