@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import Header from "./components/Navbar/Header";
+import Header from "./components/header/Header";
 import About from "./pages/About";
 import MainPage from "./pages/MainPage";
 import Footer from "./components/Footer/Footer";

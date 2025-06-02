@@ -79,7 +79,7 @@ const ClientSlider = () => {
   }, [allClients.length]);
 
   return (
-    <div className="py-12 my-12 overflow-hidden">
+    <div className="overflow-hidden">
       <div className="container w-full flex flex-col items-center justify-center mx-auto px-4 mb-8">
               <SpecialText
                 id="references-special-text"
