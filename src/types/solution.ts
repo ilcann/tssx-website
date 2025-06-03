@@ -28,6 +28,11 @@ export type DetailedSolution = {
   }[];
   technologies: string[];
   image: string;
+  screenshots?: {
+    url: string;
+    title: string;
+    description: string;
+  }[];
   category:
     | "observability"
     | "automation"
