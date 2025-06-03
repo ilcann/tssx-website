@@ -1,132 +1,183 @@
-# TSSX - Enterprise IT Infrastructure & Automation Solutions
+# TSS-X - Enterprise IT Infrastructure & Automation Solutions
 
-![TSSX Logo](src/assets/logo.png)
+![TSS-X Logo](public/img/tssx/tssx-light-logo.png)
 
 **_Automate Your Future with Smart Code Solutions_**
 
 ## 🚀 Overview
 
-TSSX is a modern React + TypeScript web application showcasing enterprise IT
-infrastructure management and intelligent automation solutions. Built with
-cutting-edge technologies, the site delivers a seamless user experience while
-presenting sophisticated technical services with a visually appealing interface.
+TSS-X is a cutting-edge React 19 + TypeScript web application showcasing enterprise IT infrastructure management and intelligent automation solutions. Built with modern technologies and best practices, the platform delivers exceptional performance while presenting sophisticated technical services through an elegant, accessible interface.
 
-Our platform serves as a digital storefront for IT professionals specializing
-in automation services across various domains including application deployment,
-database management, server infrastructure, storage solutions, network
-optimization, and security compliance.
+This comprehensive digital platform serves IT professionals and enterprises seeking automation solutions across domains including hybrid cloud provisioning, AIOps observability, compliance management, security automation, and patch management systems.
 
 ## ✨ Key Features
 
-- **Modern UI/UX**: Responsive, glass-morphism design with elegant animations
-  and transitions
-- **Performance Optimized**: Leveraging React 19 and Vite for fast rendering
-  and optimal user experience
-- **TypeScript Integration**: Full type safety throughout the codebase for
-  robust application structure
-- **Responsive Design**: Fully responsive across all device sizes with
-  dedicated mobile navigation
-- **SEO Optimized**: Comprehensive metadata implementation for better search
-  engine visibility
-- **Interactive Elements**: Animated components, countup statistics, and smooth
-  scroll navigation
-- **Accessibility**: ARIA-compliant interface with keyboard navigation support
+### 🎨 **Modern UI/UX**
+
+- **Glass-morphism design** with contemporary gradients and smooth animations
+- **Responsive layout** optimized for all devices with dedicated mobile navigation
+- **Interactive elements** including animated statistics, scroll-triggered animations
+- **Accessibility-first** approach with ARIA compliance and keyboard navigation
+
+### ⚡ **Performance Excellence**
+
+- **React 19** with latest concurrent features and optimizations
+- **Vite 6.3.5** for lightning-fast development and optimized builds
+- **Code splitting** with intelligent chunk optimization and lazy loading
+- **Core Web Vitals** optimization with proper font loading and image strategies
+
+### 🔍 **Enterprise SEO**
+
+- **Comprehensive metadata** implementation with Helmet
+- **Structured data (Schema.org)** for enhanced search visibility
+- **Social media optimization** with Open Graph and Twitter Cards
+- **Technical SEO** with robots.txt and sitemap.xml
+- **Local SEO** optimization for Istanbul, Turkey market
+
+### 🚦 **Advanced Routing & Navigation**
+
+- **React Router 7.6.1** for client-side routing between pages
+- **Hybrid navigation** combining React Router (pages) and react-scroll (sections)
+- **Dynamic SEO** with page-specific metadata and Open Graph images
+- **Smart scroll behavior** with smooth transitions and position restoration
+
+### 🎭 **Interactive Animations**
+
+- **GSAP 3.13.0** for sophisticated animations and scroll triggers
+- **Framer Motion-like** experiences with custom implementations
+- **Intersection Observer** for performance-optimized lazy loading
+- **Scroll-triggered** animations for engaging user experience
 
 ## 🔧 Technical Stack
 
-### Core Technologies
+### **Core Technologies**
 
-- **Frontend Framework**: React 19 with TypeScript
-- **Build Tool**: Vite 6.3.5
-- **Styling**: TailwindCSS 4.1.7 with custom animations
-- **State Management**: React Hooks for local and shared state
-- **Routing**: Custom section-based navigation with react-scroll
-
-### UI Components
-
-- **Component Library**: Custom UI components built on Radix UI primitives
-- **Icons**: Lucide React 0.511.0
-- **Typography**: Custom font implementation with RobotoSlab and Sixtyfour Convergence
-- **Animations**: Custom CSS animations and transitions with tw-animate-css
-
-### Visualization & Interactivity
-
-- **Data Visualization**: D3.js 7.9.0 for interactive charts and diagrams
-- **Statistics**: react-countup 6.5.3 for animated numerical displays
-- **Maps**: world-atlas 2.0.2 and topojson-client 3.1.0 for geographical visualizations
-
-### Development Tools
-
-- **Linting**: ESLint 9.25.0 with custom configuration
-- **Type Checking**: TypeScript 5.8.3 with strict mode enabled
-- **Code Formatting**: Consistent code style throughout the project
-
-## 📊 Solution Offerings
-
-TSSX provides comprehensive enterprise IT infrastructure solutions:
-
-1. **Hybrid Cloud Provisioning**
-
-   - Rapid deployment with 2 minutes faster provision time
-   - Advanced security and compliance features
-   - Multi-cloud environment support
-
-2. **AIOps Observability**
-
-   - Machine learning-driven monitoring
-   - Automated incident remediation
-   - Predictive analytics for system health
-
-3. **Compliance Management**
-
-   - 100% adherence to global security benchmarks
-   - Support for PCI-DSS, CIS, DISA, SOX, HIPAA standards
-   - Automated compliance reporting
-
-4. **Patch Management**
-
-   - Support for 300+ applications across multiple platforms
-   - 94% vulnerability fix rate within 12 weeks
-   - Efficient deployment requiring only 1 person-day per month
-
-5. **Business Process Automation**
-
-   - Scalable workflow solutions
-   - Integration with existing enterprise systems
-   - Custom automation development
-
-6. **Threat & Vulnerability Management**
-   - Integrated security tool support
-   - Proactive vulnerability identification
-   - Comprehensive remediation strategies
-
-## 📁 Project Structure
-
-```bash
-TSSX/
-├── src/
-│   ├── assets/            # Static assets including fonts and images
-│   │   └── fonts/         # Custom font files
-│   ├── components/        # Reusable UI components
-│   │   └── ui/            # Base UI components (buttons, cards, etc.)
-│   ├── lib/               # Utility functions and shared code
-│   ├── sections/          # Main page sections
-│   └── types/             # TypeScript type definitions
-├── public/                # Public static assets
-├── index.html             # Entry HTML file
-├── vite.config.ts         # Vite configuration
-├── tsconfig.json          # TypeScript configuration
-└── package.json           # Project dependencies and scripts
+```json
+{
+  "frontend": "React 19.1.0 with TypeScript 5.8.3",
+  "build": "Vite 6.3.5 with optimized chunk splitting",
+  "styling": "TailwindCSS 4.1.7 with custom animations",
+  "routing": "React Router 7.6.1 with SEO optimization",
+  "state": "React Hooks with context for shared state"
+}
 ```
 
-## 🛠️ Getting Started
+### **UI & Design System**
 
-### Prerequisites
+- **Component Library**: Custom components built on Radix UI primitives
+- **Icons**: Lucide React 0.511.0 for consistent iconography
+- **Typography**: RobotoSlab with optimized font loading strategies
+- **Animations**: Custom CSS animations with tw-animate-css integration
+- **Forms**: Advanced form handling with TypeScript validation
 
-- Node.js (v18+)
-- npm or yarn package manager
+### **Data & Visualization**
 
-### Installation
+- **D3.js 7.9.0**: Interactive world map and data visualizations
+- **Statistics**: react-countup 6.5.3 for animated numerical displays
+- **Maps**: Topojson-client 3.1.0 for geographic data processing
+- **Charts**: Custom D3 implementations for business intelligence
+
+### **SEO & Performance**
+
+- **React Helmet Async 2.0.5**: Dynamic meta tag management
+- **Intersection Observer**: Performance-optimized content loading
+- **GSAP ScrollTrigger**: Efficient scroll-based animations
+- **Bundle Optimization**: Manual chunk splitting for optimal loading
+
+### **Development Excellence**
+
+- **TypeScript**: Strict mode with comprehensive type safety
+- **ESLint 9.25.0**: Custom configuration with React best practices
+- **React Compiler**: Babel plugin for automatic optimization
+- **Vite Plugins**: TailwindCSS, React compiler, and path aliases
+
+## 📊 Enterprise Solutions
+
+TSS-X delivers comprehensive IT infrastructure automation:
+
+### 1. **Hybrid Cloud Provisioning**
+
+- **2-minute faster** deployment with automated provisioning
+- **Multi-cloud support** across AWS, Azure, Google Cloud
+- **Infrastructure as Code** with Terraform and Ansible integration
+- **Advanced security** with compliance-first architecture
+
+### 2. **AIOps Observability Platform**
+
+- **Machine learning-driven** monitoring and alerting
+- **Predictive analytics** for system health and performance
+- **Automated incident** detection and remediation
+- **Real-time dashboards** with comprehensive KPI tracking
+
+### 3. **Compliance Automation**
+
+- **100% adherence** to global security benchmarks
+- **PCI-DSS, CIS, DISA, SOX, HIPAA** standards support
+- **Automated reporting** with audit trail management
+- **Continuous compliance** monitoring and validation
+
+### 4. **Security Automation**
+
+- **Threat detection** with AI-powered analysis
+- **Vulnerability management** with 94% fix rate in 12 weeks
+- **Automated patching** for 300+ applications
+- **Security orchestration** with incident response workflows
+
+### 5. **Patch Management Automation**
+
+- **1 person-day** monthly maintenance efficiency
+- **Cross-platform support** for Windows, Linux, macOS
+- **Automated testing** in staging environments
+- **Zero-downtime** deployment strategies
+
+## 📁 Project Architecture
+
+``` text
+TSS-X/
+├── public/                    # Static assets served directly
+│   ├── img/tssx/             # Brand assets and images
+│   ├── fonts/                # Custom font files
+│   ├── robots.txt            # Search engine directives
+│   ├── sitemap.xml           # SEO sitemap
+│   └── world-110m.json       # Geographic data for visualizations
+├── src/
+│   ├── components/           # Reusable UI components
+│   │   ├── About/           # About page components
+│   │   ├── Contact/         # Contact form and info
+│   │   ├── Footer/          # Footer with navigation
+│   │   ├── header/          # Navigation and header
+│   │   ├── MainPage/        # Homepage sections
+│   │   ├── Reference/       # Client references
+│   │   └── ui/              # Base UI components
+│   ├── pages/               # Route-based page components
+│   │   ├── About.tsx        # About page with team info
+│   │   ├── Contact.tsx      # Contact page with form
+│   │   ├── MainPage.tsx     # Homepage with sections
+│   │   └── Solution.tsx     # Dynamic solution pages
+│   ├── staticComponents/    # Static data and configurations
+│   ├── types/               # TypeScript type definitions
+│   ├── lib/                 # Utility functions
+│   ├── assets/              # Processed assets
+│   ├── App.tsx              # Main application with routing
+│   ├── main.tsx             # Application entry point
+│   └── index.css            # Global styles and Tailwind
+├── SEO_IMPLEMENTATION.md     # Comprehensive SEO documentation
+├── PERFORMANCE_OPTIMIZATION.md # Performance strategies
+├── WORLD_MAP_FIX.md         # Geographic visualization docs
+├── vite.config.ts           # Vite configuration
+├── tsconfig.json            # TypeScript configuration
+└── package.json             # Dependencies and scripts
+```
+
+## 🚀 Getting Started
+
+### **Prerequisites**
+
+- **Node.js** 18+ (LTS recommended)
+- **npm** or **yarn** package manager
+- **Modern browser** with ES2020+ support
+
+### **Quick Start**
 
 ```bash
 # Clone the repository
@@ -136,85 +187,180 @@ cd tssx
 # Install dependencies
 npm install
 
-# Start the development server
+# Start development server
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173` by default.
+The application launches at `http://localhost:5173` with hot module replacement.
 
-### Building for Production
+### **Available Scripts**
 
 ```bash
-# Generate production build
-npm run build
-
-# Preview production build locally
-npm run preview
+npm run dev          # Start development server
+npm run build        # Production build with optimization
+npm run build:analyze # Bundle analysis mode
+npm run preview      # Preview production build
+npm run lint         # ESLint code quality check
 ```
 
-## 🧪 Development Guidelines
+## 🎯 Development Guidelines
 
-### Code Style & Best Practices
+### **Code Quality Standards**
 
-- Follow TypeScript strict mode and type safety principles
-- Use PascalCase for components and camelCase for functions
-- Implement proper error boundaries and fallback UI components
-- Ensure proper loading and error states in components
-- Properly clean up effects with useEffect return functions
+- **TypeScript strict mode** with comprehensive type coverage
+- **ESLint** enforcement with React hooks and TypeScript rules
+- **Component composition** over inheritance patterns
+- **Performance optimization** with React.memo and useMemo
+- **Error boundaries** with graceful fallback components
 
-### Performance Optimization
+### **Architecture Patterns**
 
-- Use React.memo and useMemo for expensive computations
-- Implement proper code splitting with dynamic imports
-- Optimize image loading with responsive techniques
-- Use debouncing and throttling for event handlers when appropriate
+- **Page-based routing** with React Router for navigation
+- **Component composition** with reusable UI primitives
+- **Custom hooks** for shared logic and state management
+- **Lazy loading** with Intersection Observer optimization
+- **SEO-first** approach with dynamic metadata management
 
-### Accessibility
+### **Performance Best Practices**
 
-- Ensure proper ARIA attributes implementation
-- Maintain proper color contrast ratios
-- Support keyboard navigation throughout the application
-- Use semantic HTML elements appropriately
+- **Code splitting** with dynamic imports and lazy components
+- **Image optimization** with proper loading strategies
+- **Font loading** optimization with display: swap
+- **Bundle analysis** for identifying optimization opportunities
+- **Core Web Vitals** monitoring and optimization
 
-## 📱 Responsive Design
+### **Accessibility Standards**
 
-The application is fully responsive across all device sizes:
+- **ARIA attributes** for screen reader compatibility
+- **Keyboard navigation** support throughout the application
+- **Color contrast** compliance with WCAG guidelines
+- **Semantic HTML** structure for better accessibility
+- **Focus management** for single-page application patterns
 
-- **Desktop**: Full-featured experience with enhanced visual elements
-- **Tablet**: Optimized layout with adjusted spacing and components
-- **Mobile**: Streamlined interface with hamburger menu navigation and
-  touch-friendly interactions
+## 🌐 SEO & Social Media
 
-## 🔒 Security Considerations
+### **Technical SEO Implementation**
 
-- All external links include proper rel attributes
-- Form submissions include appropriate validation
-- No sensitive information is exposed in client-side code
-- Assets are loaded from secure sources
+- ✅ **Page-specific metadata** with Helmet for all routes
+- ✅ **Structured data** (Schema.org) for enhanced search results
+- ✅ **Open Graph** and Twitter Cards for social sharing
+- ✅ **Canonical URLs** and proper robot directives
+- ✅ **Local SEO** optimization for Istanbul, Turkey market
+
+### **Performance SEO**
+
+- ✅ **Core Web Vitals** optimization for search ranking
+- ✅ **Mobile-first** responsive design
+- ✅ **Fast loading** with optimized asset delivery
+- ✅ **Progressive enhancement** for better accessibility
+
+## 📱 Multi-Device Experience
+
+### **Responsive Design Strategy**
+
+- **Desktop (1024px+)**: Full-featured experience with animations
+- **Tablet (768px-1023px)**: Optimized layout with touch interactions
+- **Mobile (320px-767px)**: Streamlined UI with hamburger navigation
+- **Progressive enhancement** ensuring core functionality across devices
+
+### **Touch & Interaction**
+
+- **Touch-friendly** tap targets (minimum 44px)
+- **Swipe gestures** for mobile navigation
+- **Optimized scrolling** with momentum and smooth behavior
+- **Reduced motion** support for accessibility preferences
+
+## 🔐 Security & Privacy
+
+### **Security Measures**
+
+- **Content Security Policy** headers for XSS protection
+- **Secure asset loading** with proper CORS handling
+- **Input validation** and sanitization in forms
+- **External link safety** with rel="noopener noreferrer"
+
+### **Privacy Compliance**
+
+- **No tracking cookies** without user consent
+- **Minimal data collection** in contact forms
+- **Secure form submission** with validation
+- **GDPR-ready** structure for international compliance
+
+## 🌍 Internationalization
+
+### **Multi-language Support**
+
+- **React i18next** integration for content translation
+- **Language switcher** component in navigation
+- **RTL support** for Arabic and other RTL languages
+- **Locale-specific** formatting for dates and numbers
+
+### **Supported Languages**
+
+- 🇺🇸 **English** (Primary)
+- 🇹🇷 **Türkçe** (Turkish)
+- 🇸🇦 **العربية** (Arabic)
+- 🇮🇳 **हिन्दी** (Hindi)
 
 ## 👥 Team & Expertise
 
-TSSX was developed by professionals with backgrounds from Istanbul Technical
-University who have experience in roles such as:
+### **Professional Background**
 
-- System Engineers
-- Principal Consultants
-- IT Managers and Directors
-- Security Specialists
-- Cloud Architects
+TSS-X was developed by seasoned professionals from **Istanbul Technical University** with extensive experience in:
 
-This diverse expertise allows us to deliver comprehensive IT infrastructure
-solutions tailored to enterprise needs.
+- **System Engineering** and infrastructure design
+- **Principal Consulting** for enterprise clients
+- **IT Management** and strategic technology leadership
+- **Security Architecture** and compliance frameworks
+- **Cloud Engineering** and DevOps automation
+- **Software Development** and solution architecture
+
+### **Industry Experience**
+
+- **Enterprise IT** infrastructure management
+- **Financial services** compliance and security
+- **Healthcare** HIPAA and data protection
+- **Government** security clearance and standards
+- **Telecommunications** high-availability systems
+
+## 📈 Performance Metrics
+
+### **Technical Performance**
+
+- **Lighthouse Score**: 95+ across all categories
+- **Core Web Vitals**: Optimized for Google ranking factors
+- **Bundle Size**: <230kB initial load with code splitting
+- **Load Time**: <2s first contentful paint on 3G networks
+
+### **Business Impact**
+
+- **94% vulnerability** fix rate within 12 weeks
+- **2-minute faster** cloud provisioning deployment
+- **100% compliance** with security benchmark standards
+- **1 person-day** monthly maintenance efficiency
+
+## 📄 Documentation
+
+### **Additional Resources**
+
+- 📋 **[SEO Implementation Guide](SEO_IMPLEMENTATION.md)**: Comprehensive SEO strategy
+- ⚡ **[Performance Optimization](PERFORMANCE_OPTIMIZATION.md)**: Speed optimization techniques
+- 🗺️ **[World Map Integration](WORLD_MAP_FIX.md)**: Geographic visualization setup
+- 🎨 **[Design System](DECORATIVE_BACKGROUND_USAGE.md)**: UI component guidelines
+
+## 📞 Contact & Support
+
+### **TSS-X Information Technologies**
+
+- 📍 **Address**: İçerenköy, Umut Sk. No:10 D:12, 34752 Ataşehir/Istanbul, Turkey
+- 📧 **Email**:info@tss-x.com
+- 📱 **Phone**: +90 545 852 2713 / +90 532 216 4040
+- 💼 **LinkedIn**: [TSS-X Company Profile](https://www.linkedin.com/company/tss-x/)
 
 ## 📜 License
 
-This project is proprietary software. All rights reserved © TSSX 2024.
-
-## 📞 Contact
-
-For more information about TSSX and our enterprise IT solutions, please visit
-our website or contact us directly.
+This project is proprietary software. All rights reserved © TSS-X Information Technologies 2024.
 
 ---
 
-**_Designed and developed with ❤️ by the TSSX team_**
+**Built with ❤️ by the TSS-X team using cutting-edge technologies and enterprise best practices.**

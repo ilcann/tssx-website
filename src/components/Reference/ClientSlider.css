@@ -1,0 +1,30 @@
+.logo-container {
+  position: relative;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.logo-light {
+  filter: brightness(0.2) contrast(1.6) saturate(0.8);
+  transition: all 0.3s ease;
+}
+
+.logo-dark {
+  filter: contrast(1.2) saturate(1.1);
+  transition: all 0.3s ease;
+}
+
+.logo-image {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}

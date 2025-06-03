@@ -1,6 +1,8 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 // Lazy load heavy components
-export const LazyReferences = lazy(() => import('../sections/References'));
-export const LazyDetailedSolutions = lazy(() => import('../sections/DetailedSolutions'));
-export const LazyAbout = lazy(() => import('../sections/About')); 
+
+export const LazyReferences = lazy(() => import("./MainPage/references/References"));
+export const LazyFAQSection = lazy(() => import("./MainPage/FAQSection"));
+export const LazyContactSection = lazy(() => import("./MainPage/ContactSection"));
+export const LazyTestimonials = lazy(() => import("./MainPage/testimonials/Testimonials"));

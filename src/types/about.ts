@@ -1,9 +1,11 @@
 export type CaseStudyProps = {
-    title: string;
-    subtitle: string;
-    description: string;
-    points: Array<{
-      label: string;
-      value: string;
-    }>;
-  };
+  title?: string;
+  subtitle?: string;
+  icon?: React.ReactNode;
+  description: string;
+  image?: string;
+  points: Array<{
+    label: string;
+    value: string;
+  }>;
+};
