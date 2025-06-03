@@ -17,7 +17,7 @@ const Header = () => {
     const updateHeader = () => {
       const scrollY = window.scrollY;
       const scrollDirection = scrollY > lastScrollY ? "down" : "up";
-      const scrollThreshold = window.innerHeight * 0.5;
+      const scrollThreshold = window.innerHeight * 0.3;
 
       if (headerRef.current) {
         if (scrollY <= 10) {

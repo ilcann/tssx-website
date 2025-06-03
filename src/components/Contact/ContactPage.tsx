@@ -3,14 +3,11 @@ import ContactInfo from "./ContactInfo";
 
 const ContactPage = () => {
   return (
-    <div className="grid grid-cols-2 w-full">
-      <div id="left-side" className="col-span-1 h-full flex flex-col gap-4 p-4">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full py-12 max-w-7xl mx-auto px-4">
+      <div className="flex flex-col h-full">
         <ContactInfo />
       </div>
-      <div
-        id="right-side"
-        className="col-span-1 h-full flex flex-col w-full gap-4 p-4"
-      >
+      <div className="flex flex-col h-full">
         <ContactForm />
       </div>
     </div>
