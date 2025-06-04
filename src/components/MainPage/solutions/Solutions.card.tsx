@@ -15,7 +15,7 @@ export const SolutionCard = ({
   services,
   id,
   index = 0,
-}: SolutionCardProps & { id?: number; index?: number }) => {
+}: SolutionCardProps & { id?: string; index?: number }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const iconContainerRef = useRef<HTMLDivElement>(null);
