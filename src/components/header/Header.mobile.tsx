@@ -1,12 +1,13 @@
 import HeaderLink from "./HeaderLink";
 import ContactSales from "./ContactSales";
 import LanguageSwitcher from "./LanguageSwitcher";
+import SolutionsDropdown from "./SolutionsDropdown"; // Artık tek bileşende
 
 const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/solutions", label: "Solutions" },
-  { to: "/about", label: "About Us" },
-  { to: "/contact", label: "Contact Us" },
+  { type: "link", to: "/", label: "Home" },
+  { type: "dropdown", label: "Solutions" },
+  { type: "link", to: "/about", label: "About Us" },
+  { type: "link", to: "/contact", label: "Contact Us" },
 ];
 
 const HeaderMobile = ({
@@ -22,22 +23,37 @@ const HeaderMobile = ({
     }`}
   >
     <div className="flex flex-col p-6 gap-6 h-full justify-between">
+      {/* Üstteki sabit alan: Contact & Dil */}
       <div className="flex flex-col gap-4">
         <div className="flex flex-row justify-between">
-            <ContactSales />
-            <LanguageSwitcher />
+          <ContactSales />
+          <LanguageSwitcher />
         </div>
+
+        {/* Menü butonları */}
         <nav className="flex flex-col gap-4 mt-4">
-          {navItems.map((item, idx) => (
-            <HeaderLink
-              key={item.label}
-              to={item.to}
-              onClick={handleClose}
-              variant={idx === navItems.length - 1 ? "cta" : "default"}
-            >
-              {item.label}
-            </HeaderLink>
-          ))}
+          {navItems.map((item, idx) => {
+            if (item.type === "dropdown") {
+              return (
+                <SolutionsDropdown
+                  key="solutions-mobile"
+                  variant="mobile"
+                  onLinkClick={handleClose}
+                />
+              );
+            }
+
+            return (
+              <HeaderLink
+                key={item.label}
+                to={item.to!}
+                onClick={handleClose}
+                variant={idx === navItems.length - 1 ? "cta" : "default"}
+              >
+                {item.label}
+              </HeaderLink>
+            );
+          })}
         </nav>
       </div>
     </div>
