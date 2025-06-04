@@ -1,11 +1,12 @@
 import { Menu, X } from "lucide-react";
 import HeaderLink from "./HeaderLink";
+import SolutionsDropdown from "./SolutionsDropdown";
 
 const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/solutions", label: "Solutions" },
-  { to: "/about", label: "About Us" },
-  { to: "/contact", label: "Contact Us" },
+  { type: "link", to: "/", label: "Home" },
+  { type: "dropdown", label: "Solutions" },
+  { type: "link", to: "/about", label: "About Us" },
+  { type: "link", to: "/contact", label: "Contact Us" },
 ];
 
 const HeaderBottom = ({
@@ -36,22 +37,28 @@ const HeaderBottom = ({
       <div className="hidden md:flex flex-1 justify-between items-center ml-6">
         {/* Left links */}
         <div className="flex space-x-6">
-          {navItems.slice(0, -1).map((item) => (
-            <HeaderLink
-              key={item.label}
-              to={item.to}
-              onClick={handleNavClick}
-              variant="default"
-            >
-              {item.label}
-            </HeaderLink>
-          ))}
+          {navItems.slice(0, -1).map((item) => {
+            if (item.type === "dropdown") {
+              return <SolutionsDropdown variant="desktop" key="solutions-dropdown" />;
+            }
+
+            return (
+              <HeaderLink
+                key={item.label}
+                to={item.to!}
+                onClick={handleNavClick}
+                variant="default"
+              >
+                {item.label}
+              </HeaderLink>
+            );
+          })}
         </div>
 
         {/* Right CTA */}
         <div>
           <HeaderLink
-            to={navItems[navItems.length - 1].to}
+            to={navItems[navItems.length - 1].to!}
             onClick={handleNavClick}
             variant="cta"
           >

@@ -86,7 +86,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/solutions/:solutionId" element={<Solution />} />
+        <Route path="/solutions/:slug" element={<Solution />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

@@ -17,12 +17,11 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 const Solution = () => {
-  const { solutionId } = useParams<{ solutionId: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // Find the solution by id
   const solution = detailedSolutionData.find(
-    (sol) => sol.id === parseInt(solutionId || "0")
+    (sol) => sol.slug === slug
   );
 
   useEffect(() => {

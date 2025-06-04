@@ -95,7 +95,7 @@ export const detailedSolutionData: DetailedSolution[] = [
   },
   {
     id: 2,
-    slug: "it-discovery-asset-management",
+    slug: "asset-management",
     title: "IT Discovery & Asset Management",
     titleTr: "IT Keşfi ve Varlık Yönetimi",
     description: "Achieve complete IT visibility with automated discovery, comprehensive asset management, and intelligent optimization across your entire technology landscape",
