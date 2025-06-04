@@ -1,25 +1,16 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router";
-
-const solutions = [
-  { label: "👁 Monitor & Predict Issues", sub: "Observability & AIOps", to: "/solutions/1" },
-  { label: "🔍 Track IT Assets in Real Time", sub: "IT Discovery & Asset Management", to: "/solutions/2" },
-  { label: "⚙️ Automate Operations", sub: "IT Automation", to: "/solutions/3" },
-  { label: "🛡 Ensure Security & Compliance", sub: "Security Management", to: "/solutions/4" },
-  { label: "💰 Optimize Cloud Costs", sub: "FinOps & Optimization", to: "/solutions/5" },
-];
+import { solutionsDropdown } from "@/staticComponents/solutionsDropdown";
 
 type Props = {
   variant?: "desktop" | "mobile";
   onLinkClick?: () => void;
 };
 
-
 const SolutionsDropdown = ({ variant = "desktop", onLinkClick }: Props) => {
   const [open, setOpen] = useState(false);
 
-  // 🖥 Desktop hover menu
   if (variant === "desktop") {
     return (
       <div className="relative group">
@@ -30,13 +21,13 @@ const SolutionsDropdown = ({ variant = "desktop", onLinkClick }: Props) => {
 
         <div className="absolute left-0 top-full p-2 w-[300px] bg-neutral-900 rounded-md shadow-xl hidden group-hover:block z-50">
           <ul className="flex flex-col">
-            {solutions.map(({ to, label, sub }) => (
+            {solutionsDropdown.map(({ to, label, sub }) => (
               <li key={to}>
                 <Link
                   to={to}
                   className="block px-4 py-3 rounded-md text-neutral-200 hover:text-amber-400 hover:bg-neutral-800 transition-colors duration-200"
                 >
-                  <div className="text-sm font-semibold ">{label}</div>
+                  <div className="text-sm font-semibold">{label}</div>
                   <div className="text-xs text-neutral-400">{sub}</div>
                 </Link>
               </li>
@@ -47,7 +38,7 @@ const SolutionsDropdown = ({ variant = "desktop", onLinkClick }: Props) => {
     );
   }
 
-  // 📱 Mobile click-toggle menu
+  // Mobile variant
   return (
     <div className="flex flex-col w-full">
       <button
@@ -60,7 +51,7 @@ const SolutionsDropdown = ({ variant = "desktop", onLinkClick }: Props) => {
 
       {open && (
         <ul className="mt-2 flex flex-col gap-2">
-          {solutions.map(({ to, label, sub }) => (
+          {solutionsDropdown.map(({ to, label, sub }) => (
             <li key={to}>
               <Link
                 to={to}
