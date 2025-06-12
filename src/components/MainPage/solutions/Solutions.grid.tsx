@@ -6,7 +6,7 @@ interface SolutionsGridProps {
     title: string;
     titleTr: string;
     services: string[];
-    id?: number;
+    id?: string;
   }[];
 }
 
