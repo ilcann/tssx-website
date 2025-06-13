@@ -8,7 +8,7 @@ const HeroTagline = forwardRef<HTMLDivElement>((_, ref) => (
   >
     <CodeIcon className="text-white mr-2 size-4" />
     <h1 className="text-white font-medium text-sm">
-      Intelligent Automation & Development
+      Smart Solutions for Your Future
     </h1>
   </div>
 ));

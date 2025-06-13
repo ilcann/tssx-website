@@ -91,7 +91,24 @@ export const detailedSolutionData: DetailedSolution[] = [
         description: "Comprehensive architecture diagram showing integrated monitoring and observability stack"
       }
     ],
-    category: "observability"
+    category: "observability",
+    heroMetrics: [
+      {
+        label: "System Uptime",
+        value: "99.99%",
+        icon: <EyeIcon className="h-8 w-8" />,
+      },
+      {
+        label: "Incident Reduction",
+        value: "85%",
+        icon: <EyeIcon className="h-8 w-8" />,
+      },
+      {
+        label: "MTTR Improvement",
+        value: "78%",
+        icon: <EyeIcon className="h-8 w-8" />,
+      },
+    ],
   },
   {
     id: 2,
@@ -218,7 +235,24 @@ export const detailedSolutionData: DetailedSolution[] = [
         description: "Built-in remote control for secure, real-time endpoint management and troubleshooting"
       }
     ],
-    category: "discovery"
+    category: "discovery",
+    heroMetrics: [
+      {
+        label: "Asset Visibility",
+        value: "100%",
+        icon: <SearchIcon className="h-8 w-8" />,
+      },
+      {
+        label: "Compliance Rate",
+        value: "99.2%",
+        icon: <SearchIcon className="h-8 w-8" />,
+      },
+      {
+        label: "Discovery Accuracy",
+        value: "98.7%",
+        icon: <SearchIcon className="h-8 w-8" />,
+      },
+    ],
   },
   {
     id: 3,
@@ -321,7 +355,24 @@ export const detailedSolutionData: DetailedSolution[] = [
         description: "Real-time visibility into missing patches across all endpoints for proactive vulnerability management"
       }
     ],
-    category: "automation"
+    category: "automation",
+    heroMetrics: [
+      {
+        label: "Deployment Speed",
+        value: "96% faster",
+        icon: <SettingsIcon className="h-8 w-8" />,
+      },
+      {
+        label: "Error Reduction",
+        value: "92%",
+        icon: <SettingsIcon className="h-8 w-8" />,
+      },
+      {
+        label: "Release Frequency",
+        value: "15x increase",
+        icon: <SettingsIcon className="h-8 w-8" />,
+      },
+    ],
   },
   {
     id: 4,
@@ -424,7 +475,24 @@ export const detailedSolutionData: DetailedSolution[] = [
         description: "Automated policy enforcement and compliance tracking with instant audit evidence generation"
       }
     ],
-    category: "security"
+    category: "security",
+    heroMetrics: [
+      {
+        label: "Vulnerability Reduction",
+        value: "96%",
+        icon: <ShieldCheckIcon className="h-8 w-8" />,
+      },
+      {
+        label: "Compliance Score",
+        value: "100%",
+        icon: <ShieldCheckIcon className="h-8 w-8" />,
+      },
+      {
+        label: "Incident Prevention",
+        value: "88%",
+        icon: <ShieldCheckIcon className="h-8 w-8" />,
+      },
+    ],
   },
   {
     id: 5,
@@ -528,6 +596,23 @@ export const detailedSolutionData: DetailedSolution[] = [
         description: "Advanced reporting capabilities for tracking ROI and total cost of ownership across IT assets"
       }
     ],
-    category: "finops"
+    category: "finops",
+    heroMetrics: [
+      {
+        label: "Total Cost Reduction",
+        value: "52%",
+        icon: <DollarSignIcon className="h-8 w-8" />,
+      },
+      {
+        label: "Budget Accuracy",
+        value: "97%",
+        icon: <DollarSignIcon className="h-8 w-8" />,
+      },
+      {
+        label: "Annual Savings",
+        value: "$18M+",
+        icon: <DollarSignIcon className="h-8 w-8" />,
+      },
+    ],
   }
 ]; 

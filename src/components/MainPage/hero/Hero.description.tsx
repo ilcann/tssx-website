@@ -6,9 +6,10 @@ const HeroDescription = forwardRef<HTMLDivElement>((_, ref) => (
     className="text-base md:text-lg text-white mt-6 mb-8 max-w-3xl mx-auto"
   >
     Experience the power of
-    <span className="font-semibold text-white">intelligent automation</span>
-    and development tools that streamline your workflow, enhance productivity, and accelerate digital transformation. Our cutting-edge solutions combine
-    <span className="font-semibold text-white">AI-driven automation</span>
+    <span className="font-semibold text-white"> smart solutions </span>
+    that streamline your workflow, enhance productivity, and accelerate digital
+    transformation. Our cutting-edge solutions combine
+    <span className="font-semibold text-white"> AI-driven solutions </span>
     with robust development frameworks.
   </div>
 ));

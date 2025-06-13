@@ -39,4 +39,9 @@ export type DetailedSolution = {
     | "security"
     | "finops"
     | "discovery";
+  heroMetrics?: {
+    label: string;
+    value: string;
+    icon: React.ReactNode;
+  }[];
 };

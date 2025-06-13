@@ -1,6 +1,8 @@
 export interface ReferenceClient {
   name: string;
   logo: string;
+  link?: string;
+  logoType?: string;
 }
 
 export interface ReferenceLocation {
@@ -14,31 +16,40 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Doğuş Teknoloji",
-        logo: "/img/companies/dogus-teknoloji.svg"
+        logo: "/img/companies/dogus-teknoloji.svg",
+        link: "https://www.d-teknoloji.com.tr/",
       },
       {
         name: "Koç Sistem",
-        logo: "/img/companies/koc-sistem.png"
+        logo: "/img/companies/koc-sistem.png",
+        link: "https://www.kocsistem.com.tr/",
       },
       {
         name: "Turkcell",
-        logo: "/img/companies/turkcell.png"
+        logo: "/img/companies/turkcell.png",
+        link: "https://www.turkcell.com.tr/kurumsal",
       },
       {
         name: "Garanti Bankası",
-        logo: "/img/companies/garanti-bankasi.svg"
+        logo: "/img/companies/garanti-bankasi.svg",
+        link: "https://www.garantibbva.com.tr/",
       },
       {
         name: "Sigorta Bilgi ve Gözetim Merkezi",
-        logo: "/img/companies/sbgm.png"
+        logo: "/img/companies/sbgm.png",
+        link: "https://www.sbm.org.tr/",
       },
       {
         name: "Türkiye Finans Katılım Bankası",
-        logo: "/img/companies/turkiye-finans.png"
+        logo: "/img/companies/turkiye-finans.png",
+        link: "https://www.turkiyefinans.com.tr/tr-tr/Sayfalar/default.aspx",
+        logoType: "light",
       },
       {
         name: "TatMetal",
-        logo: "/img/companies/tatmetal.svg"
+        logo: "/img/companies/tatmetal.svg",
+        link: "https://www.tatmetal.com/",
+        logoType: "light",
       },
     ],
   },
@@ -47,8 +58,10 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Rakbank",
-        logo: "/img/companies/rakbank.png"
-      }
+        logo: "/img/companies/rakbank.png",
+        link: "https://www.rakbank.ae/",
+        logoType: "light",
+      },
     ],
   },
   {
@@ -56,8 +69,9 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Ministry of Environment, Water and Agriculture",
-        logo: "/img/companies/mewa-saudi.svg"
-      }
+        logo: "/img/companies/mewa-saudi.svg",
+        link: "https://www.mewa.gov.sa/en/pages/default.aspx",
+      },
     ],
   },
   {
@@ -65,8 +79,9 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Malomatia",
-        logo: "/img/companies/malomatia.png"
-      }
+        logo: "/img/companies/malomatia.png",
+        link: "https://www.malomatia.com/",
+      },
     ],
   },
   {
@@ -74,8 +89,9 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "Umniah Telecom",
-        logo: "/img/companies/umniah.png"
-      }
+        logo: "/img/companies/umniah.png",
+        link: "https://www.umniah.com/",
+      },
     ],
   },
   {
@@ -83,8 +99,9 @@ export const referenceLocations: ReferenceLocation[] = [
     clients: [
       {
         name: "A1 Telecom",
-        logo: "/img/companies/a1-telecom.png"
-      }
+        logo: "/img/companies/a1-telecom.png",
+        link: "https://www.a1.mk/",
+      },
     ],
   },
 ];

@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ArrowLeft, Clock, TrendingUp, Shield } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import DecorativeBackground from "@/components/ui/DecorativeBackground";
@@ -13,24 +13,8 @@ interface SolutionHeroProps {
 const SolutionHero = ({ solution }: SolutionHeroProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
 
-  // Mock metrics for hero section - you can customize these per solution
-  const metrics = [
-    {
-      value: "65%",
-      label: "Faster Problem Resolution",
-      icon: <Clock className="h-8 w-8" />,
-    },
-    {
-      value: "99%",
-      label: "Improvement in Service Quality",
-      icon: <TrendingUp className="h-8 w-8" />,
-    },
-    {
-      value: "90%",
-      label: "Issue Prevention Rate",
-      icon: <Shield className="h-8 w-8" />,
-    },
-  ];
+  // Use heroMetrics from solution if available, otherwise fallback to default
+  const metrics = solution.heroMetrics || [];
 
   useEffect(() => {
     if (heroRef.current) {

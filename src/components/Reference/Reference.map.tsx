@@ -10,19 +10,19 @@ const ReferenceMap = () => {
   useInteractiveMap(mapRef, tooltipRef, mapGroupRef);
 
   return (
-    <div className="mb-16 rounded-xl p-6 overflow-hidden">
+    <div className="mb-16 rounded-xl p-6 overflow-hidden bg-white/80 shadow">
       <div className="map-container h-[450px] mx-auto max-w-5xl relative rounded-lg overflow-hidden">
         <svg id="world-map" ref={mapRef} className="w-full h-full"></svg>
-        <div id="map-tooltip" ref={tooltipRef} className="map-tooltip"></div>
+        <div id="map-tooltip" ref={tooltipRef} className="map-tooltip fixed z-50 pointer-events-none bg-white/80 backdrop-blur border border-amber-200 shadow-lg rounded-lg text-neutral-900 px-4 py-2 transition-all" style={{minWidth: '220px', maxWidth: '280px', display: 'none'}}></div>
 
         <div className="absolute top-4 right-4 flex flex-col space-y-2 z-10">
-          <button id="zoom-in" className="bg-black/40 hover:bg-amber-700/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none">
+          <button id="zoom-in" className="bg-white/80 hover:bg-amber-700/90 text-neutral-900 hover:text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-colors focus:outline-none">
             <ZoomIn className="size-5" />
           </button>
-          <button id="zoom-reset" className="bg-black/40 hover:bg-amber-700/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none">
+          <button id="zoom-reset" className="bg-white/80 hover:bg-amber-700/90 text-neutral-900 hover:text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-colors focus:outline-none">
             <RefreshCcw className="size-5" />
           </button>
-          <button id="zoom-out" className="bg-black/40 hover:bg-amber-700/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors focus:outline-none">
+          <button id="zoom-out" className="bg-white/80 hover:bg-amber-700/90 text-neutral-900 hover:text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-colors focus:outline-none">
             <ZoomOut className="size-5" />
           </button>
         </div>

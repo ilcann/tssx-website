@@ -6,6 +6,8 @@ const navItems = [
   { type: "link", to: "/", label: "Home" },
   { type: "dropdown", label: "Solutions" },
   { type: "link", to: "/about", label: "About Us" },
+  { type: "link", to: "/references", label: "References" },
+  { type: "link", to: "/partners", label: "Partners" },
   { type: "link", to: "/contact", label: "Contact Us" },
 ];
 

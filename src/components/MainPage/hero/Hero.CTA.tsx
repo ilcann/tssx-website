@@ -11,7 +11,7 @@ const HeroCTA = forwardRef<HTMLDivElement>((_, ref) => (
       offset={-10}
       className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium flex items-center hover:bg-gray-800 transition-colors duration-200 cursor-pointer"
     >
-      <span>Explore Solutions</span>
+      <span>Explore Our Solutions</span>
       <ArrowRightIcon className="ml-2 h-4 w-4" />
     </Link>
   </div>

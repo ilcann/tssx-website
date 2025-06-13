@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import ReactCompilerConfig from "babel-plugin-react-compiler";
+import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,6 +14,7 @@ export default defineConfig({
       },
     }),
     tailwindcss(),
+    visualizer({ open: true }),
   ],
   resolve: {
     alias: {
@@ -24,10 +26,11 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ["react", "react-dom"],
-          d3: ["d3", "topojson-client"],
+          d3: ['d3', 'topojson-client'],
+          react: ['react', 'react-dom'],
           ui: ["lucide-react", "react-scroll", "react-countup"],
           helmet: ["react-helmet-async"],
+          gsap: ["gsap"],
           slidedown: ["react-slidedown"],
         },
       },

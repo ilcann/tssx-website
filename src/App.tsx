@@ -8,6 +8,8 @@ import Footer from "./components/Footer/Footer";
 import Solution from "./pages/Solution";
 import Contact from "./pages/Contact";
 import BackToTop from "./components/ui/BackToTop";
+import References from "./pages/References";
+import PartnersPage from "./pages/Partners";
 
 function App() {
   const location = useLocation();
@@ -89,6 +91,8 @@ function App() {
         <Route path="/solutions/:slug" element={<Solution />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/references" element={<References />} />
+        <Route path="/partners" element={<PartnersPage />} />
       </Routes>
       <Footer />
       <BackToTop />

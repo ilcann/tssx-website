@@ -21,7 +21,7 @@ const HeaderLink = ({
   const defaultClasses =
     "text-neutral-200 hover:text-amber-400 hover:bg-neutral-800 cursor-pointer";
   const ctaClasses =
-    "bg-amber-600 text-white hover:bg-amber-700 cursor-pointer";
+    "bg-amber-700 text-white hover:bg-amber-800 cursor-pointer";
 
   const classes = `${baseClasses} ${
     variant === "cta" ? ctaClasses : defaultClasses

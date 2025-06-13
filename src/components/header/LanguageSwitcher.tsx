@@ -35,6 +35,7 @@ export default function LanguageSwitcher() {
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-sm text-neutral-200 hover:text-amber-400 hover:bg-neutral-800 transition-colors duration-200 font-medium cursor-pointer"
+        aria-label="Language"
       >
         <Globe size={16} />
         <ChevronDown size={14} />

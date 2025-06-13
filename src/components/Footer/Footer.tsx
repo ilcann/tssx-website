@@ -57,7 +57,10 @@ const Footer = () => {
                 <FooterLink href="#solutions">Our Solutions</FooterLink>
               </li>
               <li>
-                <FooterLink href="#references">References</FooterLink>
+                <FooterLink href="/references">References</FooterLink>
+              </li>
+              <li>
+                <FooterLink href="/partners">Partners</FooterLink>
               </li>
             </ul>
           </div>
@@ -65,27 +68,25 @@ const Footer = () => {
           {/* Solutions */}
           <div className="md:col-span-3">
             <h3 className="text-lg font-semibold mb-4 text-white">Solutions</h3>
-            <ul className="space-y-2">  
+            <ul className="space-y-2">
               <li>
-                <FooterLink href="#solutions">
-                  Hybrid Cloud Provisioning
+                <FooterLink href="/solutions/observability">
+                  Observability
                 </FooterLink>
               </li>
               <li>
-                <FooterLink href="#solutions">
-                  AIOps Observability Platform
+                <FooterLink href="/solutions/asset-management">
+                  IT Discovery & Asset Management
                 </FooterLink>
               </li>
               <li>
-                <FooterLink href="#solutions">Compliance Automation</FooterLink>
+                <FooterLink href="/solutions/automation">Automation</FooterLink>
               </li>
               <li>
-                <FooterLink href="#solutions">Security Automation</FooterLink>
+                <FooterLink href="/solutions/security">Security</FooterLink>
               </li>
               <li>
-                <FooterLink href="#solutions">
-                  Patch Management Automation
-                </FooterLink>
+                <FooterLink href="/solutions/finops">FinOPS</FooterLink>
               </li>
             </ul>
           </div>
@@ -102,9 +103,11 @@ const Footer = () => {
                   size={16}
                 />
                 <span className="text-neutral-300 text-sm leading-relaxed">
-                  İçerenköy, Umut Sk. No:10 D:12
+                  İçerenköy yolu cd. Bodur İş Merkezi
                   <br />
-                  34752 Ataşehir/Istanbul, Turkey
+                  No:8-11, Ataşehir, İstanbul
+                  <br />
+                  34752
                 </span>
               </li>
               <li className="flex items-center">

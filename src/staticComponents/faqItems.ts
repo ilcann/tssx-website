@@ -7,29 +7,28 @@ const faqItems: FAQItemData[] = [
   {
     question: "What IT infrastructure solutions do you offer?",
     answer:
-      "We offer a comprehensive range of IT infrastructure solutions including Hybrid Cloud Provisioning, AIOps Observability, Compliance Management, Patch Management, Business Process Automation, Threat & Vulnerability Management, Configuration Management, Endpoint Management, and IT Security Automation.",
+      "We offer a comprehensive range of IT infrastructure solutions, including: Business and IT Automation, Observability, Asset Management and Infrastructure Dependency Mapping, Vulnerability and Patch Management, IT Compliance Management and Remediation, Privileged Access Management, Identity and Access Management",
   },
   {
     question: "How can your automation solutions help my business?",
     answer:
-      "Our automation solutions streamline complex workflows, reduce manual intervention, and enable consistent, error-free processes across your IT infrastructure. This leads to increased operational efficiency, reduced costs, improved compliance, and allows your team to focus on strategic initiatives rather than routine tasks.",
+      "Our automation solutions are designed to: Significantly reduce manual efforts—from days to minutes, Establish well-defined and standardized business workflows, Minimize vulnerabilities and security findings, Enable faster and standardized provisioning of infrastructure services, Ensure infrastructure is compliance-ready",
   },
   {
     question:
       "What experience does your team have in IT infrastructure management?",
     answer:
-      "Our team consists of experienced professionals with backgrounds from Istanbul Technical University who have worked in diverse roles such as System Engineers, Principal Consultants, Managers, and Directors at prominent companies. We have extensive experience in application, database, server, storage, network, and security infrastructure management.",
+      "Our team brings extensive experience from both the customer and consultancy sides. Members have held engineering, managerial, and director roles, and have successfully delivered dozens of projects across more than 10 countries. Our expertise spans various sectors, including telecommunications, banking, energy, and the public sector.",
   },
   {
-    question:
-      "Do you provide compliance management for specific industry standards?",
+    question: "How can your Observability solutions help my business?",
     answer:
-      "Yes, our Infrastructure Compliance Management solutions help businesses adhere to global security benchmarks like PCI-DSS, CIS, DISA, SOX, and HIPAA across Unix, Linux, and Windows environments. We automate compliance checks and provide instant remediation for unmatched compliance.",
+      "We take a consultative approach rather than recommending tools on day one. Our process begins with a detailed assessment to understand your unique observability needs. Based on the findings, we collaboratively define the best-fit approach and select the most suitable tools. This ensures that you gain complete visibility into the processes that matter most to your business.",
   },
   {
-    question: "What are the performance benefits of your solutions?",
+    question: "What is your project approach?",
     answer:
-      "Our solutions provide significant performance improvements, including 2 minutes faster provision time, 100% regulatory compliance, 94% of vulnerabilities fixed within 12 weeks, and patching that requires only 1 person-day per month with 999% success rate.",
+      "From day one, our team focuses on understanding your business needs and identifying existing gaps. Upon completing the assessment, we deliver a tailored solution architecture and implementation roadmap that addresses your requirements within a defined timeline.",
   },
 ];
 
