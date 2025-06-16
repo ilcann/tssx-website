@@ -1,6 +1,6 @@
 import { useParams, Navigate } from "react-router";
 import { Helmet } from "react-helmet-async";
-import { detailedSolutionData } from "@/staticComponents/detailedSolutions";
+import { getDetailedSolutionData } from "@/staticComponents/detailedSolutions";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,13 +13,16 @@ import {
   SolutionSuccessStories,
   SolutionCTA
 } from "@/components/Solution";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Solution = () => {
   const { slug } = useParams<{ slug: string }>();
   const contentRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
+  const detailedSolutionData = getDetailedSolutionData(t);
   const solution = detailedSolutionData.find(
     (sol) => sol.slug === slug
   );

@@ -5,12 +5,14 @@ import gsap from "gsap";
 import DecorativeBackground from "@/components/ui/DecorativeBackground";
 import AnimatedText from "@/components/ui/AnimatedText";
 import type { DetailedSolution } from "@/types/solution";
+import { useTranslation } from 'react-i18next';
 
 interface SolutionHeroProps {
   solution: DetailedSolution;
 }
 
 const SolutionHero = ({ solution }: SolutionHeroProps) => {
+  const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
 
   // Use heroMetrics from solution if available, otherwise fallback to default
@@ -44,7 +46,7 @@ const SolutionHero = ({ solution }: SolutionHeroProps) => {
             className="inline-flex items-center text-amber-300 hover:text-amber-200 transition-colors mb-8 group"
           >
             <ArrowLeft className="mr-2 size-5 group-hover:-translate-x-1 transition-transform" />
-            Back to Home
+            {t('back_to_home')}
           </Link>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -71,7 +73,7 @@ const SolutionHero = ({ solution }: SolutionHeroProps) => {
                   to="/contact"
                   className="bg-amber-500 text-white px-8 py-3 rounded-full font-medium hover:bg-amber-600 transition-colors text-center"
                 >
-                  Connect with an Expert
+                  {t('connect_with_expert')}
                 </Link>
               </div>
             </div>

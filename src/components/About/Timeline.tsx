@@ -1,15 +1,19 @@
-import { milestones } from "@/staticComponents/about";
+import { getMilestones } from "@/staticComponents/about";
 import SpecialText from "../ui/SpecialText";
 import AnimatedText from "../ui/AnimatedText";
+import { useTranslation } from "react-i18next";
 
 const Timeline = () => {
+  const { t } = useTranslation();
+  const milestones = getMilestones(t);
+
   return (
     <div className="relative mt-16">
       <SpecialText
         id="about-our-journey"
         className="text-2xl font-bold text-neutral-900 mb-8 text-center"
       >
-        <AnimatedText text="Our Journey" />
+        <AnimatedText text={t("about_journey_title")} />
       </SpecialText>
       <div className="absolute h-full w-0.5 bg-amber-200 left-1/2 transform -translate-x-1/2 top-12 z-0"></div>
 

@@ -2,12 +2,15 @@ import SpecialText from "@/components/ui/SpecialText";
 import AnimatedText from "@/components/ui/AnimatedText";
 import CaseStudy from "@/components/About/CaseStudy";
 import type { DetailedSolution } from "@/types/solution";
+import { useTranslation } from 'react-i18next';
 
 interface SolutionSuccessStoriesProps {
   solution: DetailedSolution;
 }
 
 const SolutionSuccessStories = ({ solution }: SolutionSuccessStoriesProps) => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 bg-gradient-to-r from-amber-50/30 via-white to-amber-50/30 animate-section">
       <div className="container mx-auto px-4">
@@ -17,12 +20,11 @@ const SolutionSuccessStories = ({ solution }: SolutionSuccessStoriesProps) => {
               id="success-stories-title"
               className="text-3xl font-bold mb-6 text-neutral-900"
             >
-              <AnimatedText text="Success Stories" />
+              <AnimatedText text={t('solution_success_stories_title')} />
             </SpecialText>
             <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-neutral-700">
-              See how our solutions have transformed businesses across
-              industries
+              {t('solution_success_stories_description')}
             </p>
           </div>
 
@@ -30,7 +32,7 @@ const SolutionSuccessStories = ({ solution }: SolutionSuccessStoriesProps) => {
             {solution.examples.map((example, index) => (
               <CaseStudy
                 key={index}
-                title="Success Story"
+                title={t('solution_success_story')}
                 subtitle={example.title}
                 icon={solution.icon}
                 image={solution.image}

@@ -1,8 +1,10 @@
 import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import FooterLink from "./FooterLink";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer id="contact" className="bg-neutral-900 text-neutral-200 pt-12 pb-4">
@@ -20,13 +22,10 @@ const Footer = () => {
                 className="h-7 mb-4 brightness-100"
               />
               <p className="text-neutral-300 text-sm leading-relaxed mb-4 max-w-sm">
-                TSS-X focuses on IT Infrastructure management and automation
-                services, offering best-fit automation solutions for specialized
-                environments with end-to-end lifecycle management.
+                {t("footer_description")}
               </p>
               <p className="text-neutral-400 text-xs mb-4">
-                Providing customer-specific solutions with BMC Software and
-                HashiCorp products.
+                {t("footer_tagline")}
               </p>
             </div>
             <div className="flex space-x-2">
@@ -35,8 +34,8 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-neutral-800 p-2 rounded-md hover:bg-amber-700 transition-all duration-300 group"
-                aria-label="Connect with us on LinkedIn"
-                title="Connect with us on LinkedIn"
+                aria-label={t("footer_linkedin_aria")}
+                title={t("footer_linkedin_title")}
               >
                 <Linkedin
                   size={16}
@@ -48,45 +47,45 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-4 text-white">Company</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t("footer_company_heading")}</h3>
             <ul className="space-y-2">
               <li>
-                <FooterLink href="/about">About Us</FooterLink>
+                <FooterLink href="/about">{t("footer_about_us")}</FooterLink>
               </li>
               <li>
-                <FooterLink href="#solutions">Our Solutions</FooterLink>
+                <FooterLink href="#solutions">{t("footer_our_solutions")}</FooterLink>
               </li>
               <li>
-                <FooterLink href="/references">References</FooterLink>
+                <FooterLink href="/references">{t("footer_references")}</FooterLink>
               </li>
               <li>
-                <FooterLink href="/partners">Partners</FooterLink>
+                <FooterLink href="/partners">{t("footer_partners")}</FooterLink>
               </li>
             </ul>
           </div>
 
           {/* Solutions */}
           <div className="md:col-span-3">
-            <h3 className="text-lg font-semibold mb-4 text-white">Solutions</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t("footer_solutions_heading")}</h3>
             <ul className="space-y-2">
               <li>
                 <FooterLink href="/solutions/observability">
-                  Observability
+                  {t("footer_solution_observability")}
                 </FooterLink>
               </li>
               <li>
                 <FooterLink href="/solutions/asset-management">
-                  IT Discovery & Asset Management
+                  {t("footer_solution_asset_management")}
                 </FooterLink>
               </li>
               <li>
-                <FooterLink href="/solutions/automation">Automation</FooterLink>
+                <FooterLink href="/solutions/automation">{t("footer_solution_automation")}</FooterLink>
               </li>
               <li>
-                <FooterLink href="/solutions/security">Security</FooterLink>
+                <FooterLink href="/solutions/security">{t("footer_solution_security")}</FooterLink>
               </li>
               <li>
-                <FooterLink href="/solutions/finops">FinOPS</FooterLink>
+                <FooterLink href="/solutions/finops">{t("footer_solution_finops")}</FooterLink>
               </li>
             </ul>
           </div>
@@ -94,7 +93,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="md:col-span-3">
             <h3 className="text-lg font-semibold mb-4 text-white">
-              Contact Us
+              {t("footer_contact_us_heading")}
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -146,17 +145,16 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-neutral-700 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-neutral-400 text-sm mb-3 md:mb-0">
-            &copy; {currentYear} TSS-X Information Technologies. All rights
-            reserved.
+            {t("footer_copyright", { year: currentYear })}
           </p>
           <div className="flex flex-wrap justify-center space-x-6 text-neutral-400 text-sm">
-            <FooterLink href="/about">About Us</FooterLink>
-            <FooterLink href="#contact">Contact</FooterLink>
+            <FooterLink href="/about">{t("footer_about_us")}</FooterLink>
+            <FooterLink href="#contact">{t("footer_contact_us_heading")}</FooterLink>
             <FooterLink
               href="https://www.linkedin.com/company/tss-x/"
               isExternal
             >
-              LinkedIn
+              {t("footer_linkedin")}
             </FooterLink>
           </div>
         </div>

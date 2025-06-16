@@ -3,36 +3,38 @@ import { CheckCircle, Cpu, Target, Zap } from "lucide-react";
 import SpecialText from "@/components/ui/SpecialText";
 import AnimatedText from "@/components/ui/AnimatedText";
 import type { DetailedSolution } from "@/types/solution";
+import { useTranslation } from "react-i18next";
 
 interface SolutionUseCasesProps {
   solution: DetailedSolution;
 }
 
 const SolutionUseCases = ({ solution }: SolutionUseCasesProps) => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState(0);
 
   const useCaseTabs = [
     {
       id: "overview",
-      label: "Overview",
+      label: t("solution_details_overview"),
       icon: <Target className="w-4 h-4" />,
       content: solution.detailedDescription,
     },
     {
       id: "features",
-      label: "Features",
+      label: t("solution_details_features"),
       icon: <Zap className="w-4 h-4" />,
       content: solution.features,
     },
     {
       id: "benefits",
-      label: "Benefits",
+      label: t("solution_details_benefits"),
       icon: <CheckCircle className="w-4 h-4" />,
       content: solution.benefits,
     },
     {
       id: "technologies",
-      label: "Technologies",
+      label: t("solution_details_technologies"),
       icon: <Cpu className="w-4 h-4" />,
       content: solution.technologies,
     },
@@ -48,11 +50,11 @@ const SolutionUseCases = ({ solution }: SolutionUseCasesProps) => {
               id="use-cases-title"
               className="text-3xl font-bold mb-4 text-neutral-900"
             >
-              <AnimatedText text="Solution Details" />
+              <AnimatedText text={t("solution_details_title")} />
             </SpecialText>
             <div className="w-16 h-1 bg-amber-500 mx-auto mb-4 rounded-full"></div>
             <p className="text-neutral-600 max-w-2xl mx-auto">
-              Explore comprehensive information about our solution capabilities
+              {t("solution_details_comprehensive")}
             </p>
           </div>
 

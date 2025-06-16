@@ -1,8 +1,11 @@
 import { Link } from "react-router";
 import { ExternalLink } from "lucide-react";
 import DecorativeBackground from "@/components/ui/DecorativeBackground";
+import { useTranslation } from 'react-i18next';
 
 const ContactSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <DecorativeBackground
       elements={[
@@ -35,18 +38,16 @@ const ContactSection = () => {
 
                 <div className="relative z-10 p-8 text-center">
                     <h3 className="text-2xl font-bold text-white mb-4">
-                    Join Our Growing List of Satisfied Clients
+                      {t('reference_ctu_title')}
                     </h3>
                     <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-                    Experience the same level of exceptional service and innovative
-                    solutions that have helped organizations across the globe
-                    transform their IT infrastructure.
+                      {t('reference_ctu_description')}
                     </p>
                     <Link
                     to="/contact"
                     className="inline-flex items-center bg-white text-amber-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-amber-50 transition-colors shadow-lg"
                     >
-                    Contact Us Today
+                    {t('contact_us_today')}
                     <ExternalLink className="ml-2 size-4" />
                     </Link>
                 </div>

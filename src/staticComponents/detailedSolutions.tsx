@@ -6,63 +6,64 @@ import {
   DollarSignIcon,
 } from "lucide-react";
 import type { DetailedSolution } from "@/types/solution";
+import type { TFunction } from "i18next";
 
-export const detailedSolutionData: DetailedSolution[] = [
+export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
   {
     id: 1,
     slug: "observability",
-    title: "Observability & AIOps",
-    titleTr: "Gözlemlenebilirlik ve AI Operasyonları",
-    description: "Transform IT operations with AI-powered observability solutions that provide comprehensive monitoring, predictive insights, and automated incident response",
-    detailedDescription: "Our advanced observability solutions leverage artificial intelligence and machine learning to deliver comprehensive monitoring, alerting, and analytics capabilities across your entire IT infrastructure. With real-time insights, predictive analytics, and automated incident response, we help organizations achieve operational excellence while reducing costs and improving service quality.",
+    title: t("solution_title_observability"),
+    titleTr: t("solution_title_observability"),
+    description: t("solution_description_observability"),
+    detailedDescription: t("solution_detailed_description_observability"),
     icon: <EyeIcon className="size-10 text-primary" />,
     services: [
       "BMC Helix Operations Management",
       "BMC TrueSight Capacity Optimization",
       "Zabbix Enterprise Monitoring",
-      "AI-Powered Anomaly Detection",
-      "Real-time Service Analytics",
-      "Automated Incident Response"
+      t("observability_service_ai_detection"),
+      t("observability_service_realtime_analytics"),
+      t("observability_service_automated_response")
     ],
     features: [
-      "AI-driven anomaly detection and root cause analysis",
-      "Real-time monitoring across hybrid and multi-cloud environments",
-      "Predictive analytics for proactive issue prevention",
-      "Unified observability dashboard with customizable views",
-      "Automated incident correlation and escalation",
-      "Machine learning-based performance optimization",
-      "Integration with popular DevOps and ITSM tools",
-      "Advanced alerting with intelligent noise reduction"
+      t("observability_feature_ai_driven"),
+      t("observability_feature_realtime_monitoring"),
+      t("observability_feature_predictive_analytics"),
+      t("observability_feature_unified_dashboard"),
+      t("observability_feature_automated_incident"),
+      t("observability_feature_ml_optimization"),
+      t("observability_feature_devops_integration"),
+      t("observability_feature_advanced_alerting")
     ],
     benefits: [
-      "Reduce mean time to resolution (MTTR) by up to 75%",
-      "Prevent 90% of critical incidents before they impact business",
-      "Achieve 99.9% system uptime and availability",
-      "Decrease operational costs by 45% through automation",
-      "Improve team productivity by 60% with AI-assisted operations",
-      "Enhance customer satisfaction with proactive service management",
-      "Accelerate digital transformation initiatives",
-      "Ensure compliance with industry standards and regulations"
+      t("observability_benefit_reduce_mttr"),
+      t("observability_benefit_prevent_incidents"),
+      t("observability_benefit_system_uptime"),
+      t("observability_benefit_decrease_costs"),
+      t("observability_benefit_improve_productivity"),
+      t("observability_benefit_enhance_satisfaction"),
+      t("observability_benefit_accelerate_transformation"),
+      t("observability_benefit_ensure_compliance")
     ],
     examples: [
       {
-        title: "Global Financial Services Transformation",
-        description: "Implemented comprehensive AIOps solution for a Fortune 500 bank with 10,000+ servers across 15 countries, achieving unprecedented operational efficiency and regulatory compliance.",
+        title: t("observability_example_1_title"),
+        description: t("observability_example_1_description"),
         metrics: [
-          { label: "System Uptime", value: "99.99%" },
-          { label: "Incident Reduction", value: "85%" },
-          { label: "MTTR Improvement", value: "78%" },
-          { label: "Cost Savings", value: "$12M annually" }
+          { label: t("observability_example_1_metric_1_label"), value: t("observability_example_1_metric_1_value") },
+          { label: t("observability_example_1_metric_2_label"), value: t("observability_example_1_metric_2_value") },
+          { label: t("observability_example_1_metric_3_label"), value: t("observability_example_1_metric_3_value") },
+          { label: t("observability_example_1_metric_4_label"), value: t("observability_example_1_metric_4_value") }
         ]
       },
       {
-        title: "E-commerce Platform Optimization",
-        description: "Deployed AI-powered observability for a leading e-commerce platform processing 1M+ transactions daily during peak seasons, ensuring seamless customer experience.",
+        title: t("observability_example_2_title"),
+        description: t("observability_example_2_description"),
         metrics: [
-          { label: "Performance Improvement", value: "55%" },
-          { label: "Transaction Success Rate", value: "99.8%" },
-          { label: "Alert Accuracy", value: "96%" },
-          { label: "Revenue Protection", value: "$50M+" }
+          { label: t("observability_example_2_metric_1_label"), value: t("observability_example_2_metric_1_value") },
+          { label: t("observability_example_2_metric_2_label"), value: t("observability_example_2_metric_2_value") },
+          { label: t("observability_example_2_metric_3_label"), value: t("observability_example_2_metric_3_value") },
+          { label: t("observability_example_2_metric_4_label"), value: t("observability_example_2_metric_4_value") }
         ]
       }
     ],
@@ -82,30 +83,30 @@ export const detailedSolutionData: DetailedSolution[] = [
     screenshots: [
       {
         url: "/img/solutions/smart_reporting_1.png",
-        title: "Smart Reporting Dashboard",
-        description: "Advanced reporting and analytics dashboard providing real-time insights into system performance"
+        title: t("observability_screenshot_1_title"),
+        description: t("observability_screenshot_1_description")
       },
       {
         url: "/img/solutions/tssa_architecture_2002.png", 
-        title: "TrueSight Architecture",
-        description: "Comprehensive architecture diagram showing integrated monitoring and observability stack"
+        title: t("observability_screenshot_2_title"),
+        description: t("observability_screenshot_2_description")
       }
     ],
     category: "observability",
     heroMetrics: [
       {
-        label: "System Uptime",
-        value: "99.99%",
+        label: t("observability_example_1_metric_1_label"),
+        value: t("observability_example_1_metric_1_value"),
         icon: <EyeIcon className="h-8 w-8" />,
       },
       {
-        label: "Incident Reduction",
-        value: "85%",
+        label: t("observability_example_1_metric_2_label"),
+        value: t("observability_example_1_metric_2_value"),
         icon: <EyeIcon className="h-8 w-8" />,
       },
       {
-        label: "MTTR Improvement",
-        value: "78%",
+        label: t("observability_example_1_metric_3_label"),
+        value: t("observability_example_1_metric_3_value"),
         icon: <EyeIcon className="h-8 w-8" />,
       },
     ],
@@ -113,64 +114,64 @@ export const detailedSolutionData: DetailedSolution[] = [
   {
     id: 2,
     slug: "asset-management",
-    title: "IT Discovery & Asset Management",
-    titleTr: "IT Keşfi ve Varlık Yönetimi",
-    description: "Achieve complete IT visibility with automated discovery, comprehensive asset management, and intelligent optimization across your entire technology landscape",
-    detailedDescription: "Our comprehensive IT Discovery and Asset Management solutions provide complete visibility and control over your technology landscape through automated discovery, real-time inventory management, and intelligent asset optimization. From hardware and software to cloud resources and dependencies, we help organizations make informed decisions, optimize costs, and ensure compliance across complex IT environments.",
+    title: t("solution_title_asset_management"),
+    titleTr: t("solution_title_asset_management"),
+    description: t("solution_description_asset_management"),
+    detailedDescription: t("solution_detailed_description_asset_management"),
     icon: <SearchIcon className="size-10 text-primary" />,
     services: [
       "BMC Helix Discovery",
       "BMC Client Management (BCM)",
       "Snow Software Asset Management",
-      "Configuration Management Database (CMDB)",
-      "Software License Optimization",
-      "Cloud Asset Discovery",
-      "Dependency Mapping & Analysis"
+      t("asset_management_service_cmdb"),
+      t("asset_management_service_license_optimization"),
+      t("asset_management_service_cloud_discovery"),
+      t("asset_management_service_dependency_mapping")
     ],
     features: [
-      "Automated network and cloud discovery across hybrid environments",
-      "Real-time asset inventory with continuous updates",
-      "Comprehensive CMDB with relationship mapping",
-      "Software license management and compliance tracking",
-      "Business service dependency visualization",
-      "Cost allocation and chargeback capabilities",
-      "Risk assessment and vulnerability correlation",
-      "API integrations with existing IT tools",
-      "Endpoint profile management with detailed properties",
-      "Hardware and software bill of materials tracking",
-      "Integrated remote control capabilities"
+      t("asset_management_feature_automated_discovery"),
+      t("asset_management_feature_real_time_inventory"),
+      t("asset_management_feature_comprehensive_cmdb"),
+      t("asset_management_feature_license_management"),
+      t("asset_management_feature_dependency_visualization"),
+      t("asset_management_feature_cost_allocation"),
+      t("asset_management_feature_risk_assessment"),
+      t("asset_management_feature_api_integrations"),
+      t("asset_management_feature_endpoint_profile"),
+      t("asset_management_feature_bom_tracking"),
+      t("asset_management_feature_remote_control")
     ],
     benefits: [
-      "Reduce software licensing costs by 30-40%",
-      "Improve asset utilization rates by 50%",
-      "Achieve 100% visibility into IT infrastructure",
-      "Ensure 99% compliance with licensing agreements",
-      "Accelerate change management processes by 65%",
-      "Optimize IT spending with data-driven insights",
-      "Reduce security risks through complete asset visibility",
-      "Enable faster incident resolution with accurate dependency maps",
-      "Eliminate costly on-site visits with remote diagnostics",
-      "Stay audit-ready with automated asset tracking"
+      t("asset_management_benefit_reduce_license_costs"),
+      t("asset_management_benefit_improve_utilization"),
+      t("asset_management_benefit_achieve_visibility"),
+      t("asset_management_benefit_ensure_compliance"),
+      t("asset_management_benefit_accelerate_change"),
+      t("asset_management_benefit_optimize_spending"),
+      t("asset_management_benefit_reduce_security_risks"),
+      t("asset_management_benefit_enable_faster_resolution"),
+      t("asset_management_benefit_eliminate_on_site_visits"),
+      t("asset_management_benefit_stay_audit_ready")
     ],
     examples: [
       {
-        title: "Multinational Corporation Asset Optimization",
-        description: "Implemented comprehensive asset discovery and management for a global technology company with 50,000+ devices across 40 countries, uncovering significant cost savings and compliance improvements.",
+        title: t("asset_management_example_1_title"),
+        description: t("asset_management_example_1_description"),
         metrics: [
-          { label: "License Cost Savings", value: "$8.5M+" },
-          { label: "Asset Visibility", value: "100%" },
-          { label: "Compliance Rate", value: "99.2%" },
-          { label: "Discovery Accuracy", value: "98.7%" }
+          { label: t("asset_management_example_1_metric_1_label"), value: t("asset_management_example_1_metric_1_value") },
+          { label: t("asset_management_example_1_metric_2_label"), value: t("asset_management_example_1_metric_2_value") },
+          { label: t("asset_management_example_1_metric_3_label"), value: t("asset_management_example_1_metric_3_value") },
+          { label: t("asset_management_example_1_metric_4_label"), value: t("asset_management_example_1_metric_4_value") }
         ]
       },
       {
-        title: "Healthcare System Infrastructure Mapping",
-        description: "Deployed automated discovery across a large healthcare network's hybrid cloud environment, mapping 15,000+ dependencies and enabling secure digital transformation.",
+        title: t("asset_management_example_2_title"),
+        description: t("asset_management_example_2_description"),
         metrics: [
-          { label: "Dependencies Mapped", value: "15,000+" },
-          { label: "Discovery Speed", value: "95% faster" },
-          { label: "Change Success Rate", value: "97%" },
-          { label: "Risk Reduction", value: "70%" }
+          { label: t("asset_management_example_2_metric_1_label"), value: t("asset_management_example_2_metric_1_value") },
+          { label: t("asset_management_example_2_metric_2_label"), value: t("asset_management_example_2_metric_2_value") },
+          { label: t("asset_management_example_2_metric_3_label"), value: t("asset_management_example_2_metric_3_value") },
+          { label: t("asset_management_example_2_metric_4_label"), value: t("asset_management_example_2_metric_4_value") }
         ]
       }
     ],
@@ -191,65 +192,65 @@ export const detailedSolutionData: DetailedSolution[] = [
     screenshots: [
       {
         url: "/img/solutions/explore_data.png",
-        title: "Discovery Dashboard - Explore Data",
-        description: "Comprehensive dashboard displaying every CI discovered in the environment—servers, VMs, software instances, databases, network devices, and storage"
+        title: t("asset_management_screenshot_1_title"),
+        description: t("asset_management_screenshot_1_description")
       },
       {
         url: "/img/solutions/service-model.png",
-        title: "Service Modeling & Dependency Maps",
-        description: "Automatically generated service maps showing how servers, databases, network elements relate within business services"
+        title: t("asset_management_screenshot_2_title"),
+        description: t("asset_management_screenshot_2_description")
       },
       {
         url: "/img/solutions/host_list.png",
-        title: "Detailed Host Inventory",
-        description: "Complete server inventory with OS version, hardware vendor, virtualization state for lifecycle planning"
+        title: t("asset_management_screenshot_3_title"),
+        description: t("asset_management_screenshot_3_description")
       },
       {
         url: "/img/solutions/report_software_inventory.png",
-        title: "Software Inventory Detail",
-        description: "Version details and host locations for software products supporting license compliance and upgrade planning"
+        title: t("asset_management_screenshot_4_title"),
+        description: t("asset_management_screenshot_4_description")
       },
       {
         url: "/img/solutions/explore_reports.png",
-        title: "Built-in Reports & Analytics",
-        description: "Ready-to-run analyses including infrastructure distribution, endpoint access, and CMDB sync status"
+        title: t("asset_management_screenshot_5_title"),
+        description: t("asset_management_screenshot_5_description")
       },
       {
         url: "/img/solutions/detailed_properties.png",
-        title: "Endpoint Profile - Detailed Properties",
-        description: "Complete device profile with user, OS build, IP address, encryption status, and virtualization data"
+        title: t("asset_management_screenshot_6_title"),
+        description: t("asset_management_screenshot_6_description")
       },
       {
         url: "/img/solutions/inventories_hardware.png",
-        title: "Hardware Inventory",
-        description: "Full hardware bill of materials with expandable nodes for slot-level details and capacities"
+        title: t("asset_management_screenshot_7_title"),
+        description: t("asset_management_screenshot_7_description")
       },
       {
         url: "/img/solutions/inventories_hardware_ram.png",
-        title: "Physical Memory Details",
-        description: "Granular hardware inventory showing memory configurations and specifications"
+        title: t("asset_management_screenshot_8_title"),
+        description: t("asset_management_screenshot_8_description")
       },
       {
         url: "/img/solutions/remote_control.png",
-        title: "Integrated Remote Control Console",
-        description: "Built-in remote control for secure, real-time endpoint management and troubleshooting"
+        title: t("asset_management_screenshot_9_title"),
+        description: t("asset_management_screenshot_9_description")
       }
     ],
     category: "discovery",
     heroMetrics: [
       {
-        label: "Asset Visibility",
-        value: "100%",
+        label: t("asset_management_hero_metric_1_label"),
+        value: t("asset_management_hero_metric_1_value"),
         icon: <SearchIcon className="h-8 w-8" />,
       },
       {
-        label: "Compliance Rate",
-        value: "99.2%",
+        label: t("asset_management_hero_metric_2_label"),
+        value: t("asset_management_hero_metric_2_value"),
         icon: <SearchIcon className="h-8 w-8" />,
       },
       {
-        label: "Discovery Accuracy",
-        value: "98.7%",
+        label: t("asset_management_hero_metric_3_label"),
+        value: t("asset_management_hero_metric_3_value"),
         icon: <SearchIcon className="h-8 w-8" />,
       },
     ],
@@ -257,63 +258,63 @@ export const detailedSolutionData: DetailedSolution[] = [
   {
     id: 3,
     slug: "automation",
-    title: "IT Automation & Orchestration",
-    titleTr: "IT Otomasyon ve Orkestrasyon",
-    description: "Accelerate digital transformation with intelligent automation solutions that streamline operations, reduce costs, and enhance reliability across your IT landscape",
-    detailedDescription: "Our comprehensive automation and orchestration solutions transform complex IT operations through intelligent workflow automation, advanced job scheduling, and seamless integration capabilities. From infrastructure provisioning to application deployment and business process automation, we help organizations achieve operational excellence, reduce human error, and accelerate innovation cycles.",
+    title: t("solution_title_automation"),
+    titleTr: t("solution_title_automation"),
+    description: t("solution_description_automation"),
+    detailedDescription: t("solution_detailed_description_automation"),
     icon: <SettingsIcon className="size-10 text-primary" />,
     services: [
       "BMC TrueSight Server Automation",
       "BMC Control-M Workload Automation",
       "BMC TrueSight Orchestration",
       "BMC Client Management Deployment",
-      "Infrastructure as Code (IaC)",
-      "CI/CD Pipeline Automation",
-      "Business Process Automation"
+      t("automation_service_iac"),
+      t("automation_service_cicd"),
+      t("automation_service_bpa")
     ],
     features: [
-      "End-to-end workflow automation and orchestration",
-      "Advanced job scheduling with SLA management",
-      "Configuration management and compliance automation",
-      "Self-healing infrastructure capabilities",
-      "Integration with cloud platforms and DevOps tools",
-      "Real-time monitoring and automated remediation",
-      "Policy-driven automation with role-based access",
-      "Scalable automation across hybrid environments",
-      "Automated software deployment and migration",
-      "Patch evaluation, distribution, and monitoring"
+      t("automation_feature_workflow_automation"),
+      t("automation_feature_advanced_scheduling"),
+      t("automation_feature_config_management"),
+      t("automation_feature_self_healing"),
+      t("automation_feature_cloud_integration"),
+      t("automation_feature_real_time_monitoring"),
+      t("automation_feature_policy_driven"),
+      t("automation_feature_scalable_automation"),
+      t("automation_feature_automated_deployment"),
+      t("automation_feature_patch_evaluation")
     ],
     benefits: [
-      "Reduce manual tasks and human errors by 85%",
-      "Improve deployment success rates to 99.5%",
-      "Decrease operational costs by 55% through automation",
-      "Accelerate time-to-market by 70% for new services",
-      "Enhance system reliability and consistency",
-      "Enable 24/7 operations with minimal human intervention",
-      "Improve compliance with automated policy enforcement",
-      "Scale operations efficiently without proportional staff increases",
-      "Eliminate costly on-site deployments with remote automation",
-      "Keep endpoints protected with automated patch management"
+      t("automation_benefit_reduce_manual_tasks"),
+      t("automation_benefit_improve_deployment_rates"),
+      t("automation_benefit_decrease_costs"),
+      t("automation_benefit_accelerate_time_to_market"),
+      t("automation_benefit_enhance_reliability"),
+      t("automation_benefit_enable_247_operations"),
+      t("automation_benefit_improve_compliance"),
+      t("automation_benefit_scale_operations"),
+      t("automation_benefit_eliminate_on_site_deployments"),
+      t("automation_benefit_keep_endpoints_protected")
     ],
     examples: [
       {
-        title: "DevOps Transformation for Software Company",
-        description: "Implemented comprehensive automation platform for a leading software company, transforming their CI/CD pipeline and reducing deployment times from hours to minutes while improving quality.",
+        title: t("automation_example_1_title"),
+        description: t("automation_example_1_description"),
         metrics: [
-          { label: "Deployment Speed", value: "96% faster" },
-          { label: "Error Reduction", value: "92%" },
-          { label: "Release Frequency", value: "15x increase" },
-          { label: "Developer Productivity", value: "65% improvement" }
+          { label: t("automation_example_1_metric_1_label"), value: t("automation_example_1_metric_1_value") },
+          { label: t("automation_example_1_metric_2_label"), value: t("automation_example_1_metric_2_value") },
+          { label: t("automation_example_1_metric_3_label"), value: t("automation_example_1_metric_3_value") },
+          { label: t("automation_example_1_metric_4_label"), value: t("automation_example_1_metric_4_value") }
         ]
       },
       {
-        title: "Enterprise Infrastructure Automation",
-        description: "Deployed automated infrastructure provisioning and management for a Fortune 100 company, enabling rapid scaling and ensuring consistent compliance across global operations.",
+        title: t("automation_example_2_title"),
+        description: t("automation_example_2_description"),
         metrics: [
-          { label: "Provisioning Time", value: "90% faster" },
-          { label: "Consistency Rate", value: "100%" },
-          { label: "Cost Optimization", value: "45%" },
-          { label: "Compliance Score", value: "99.8%" }
+          { label: t("automation_example_2_metric_1_label"), value: t("automation_example_2_metric_1_value") },
+          { label: t("automation_example_2_metric_2_label"), value: t("automation_example_2_metric_2_value") },
+          { label: t("automation_example_2_metric_3_label"), value: t("automation_example_2_metric_3_value") },
+          { label: t("automation_example_2_metric_4_label"), value: t("automation_example_2_metric_4_value") }
         ]
       }
     ],
@@ -336,40 +337,40 @@ export const detailedSolutionData: DetailedSolution[] = [
     screenshots: [
       {
         url: "/img/solutions/main_dashboard.png",
-        title: "Main Automation Dashboard",
-        description: "Centralized dashboard for managing all automation tasks, deployments, and system health monitoring"
+        title: t("automation_screenshot_1_title"),
+        description: t("automation_screenshot_1_description")
       },
       {
         url: "/img/solutions/deploy.png",
-        title: "Software Deployment Console",
-        description: "Roll out, upgrade, or migrate software with automated deployment ensuring secure and consistent installations"
+        title: t("automation_screenshot_2_title"),
+        description: t("automation_screenshot_2_description")
       },
       {
         url: "/img/solutions/patch_management_bulletins.png",
-        title: "Patch Management Bulletins",
-        description: "Comprehensive patch bulletin management for evaluating and distributing security updates"
+        title: t("automation_screenshot_3_title"),
+        description: t("automation_screenshot_3_description")
       },
       {
         url: "/img/solutions/patch_management_missingpatches.png",
-        title: "Missing Patches Overview",
-        description: "Real-time visibility into missing patches across all endpoints for proactive vulnerability management"
+        title: t("automation_screenshot_4_title"),
+        description: t("automation_screenshot_4_description")
       }
     ],
     category: "automation",
     heroMetrics: [
       {
-        label: "Deployment Speed",
-        value: "96% faster",
+        label: t("automation_hero_metric_1_label"),
+        value: t("automation_hero_metric_1_value"),
         icon: <SettingsIcon className="h-8 w-8" />,
       },
       {
-        label: "Error Reduction",
-        value: "92%",
+        label: t("automation_hero_metric_2_label"),
+        value: t("automation_hero_metric_2_value"),
         icon: <SettingsIcon className="h-8 w-8" />,
       },
       {
-        label: "Release Frequency",
-        value: "15x increase",
+        label: t("automation_hero_metric_3_label"),
+        value: t("automation_hero_metric_3_value"),
         icon: <SettingsIcon className="h-8 w-8" />,
       },
     ],
@@ -377,63 +378,63 @@ export const detailedSolutionData: DetailedSolution[] = [
   {
     id: 4,
     slug: "security",
-    title: "Security & Compliance Management",
-    titleTr: "Güvenlik ve Uyumluluk Yönetimi",
-    description: "Protect your organization with comprehensive security solutions featuring advanced threat detection, vulnerability management, and zero-trust access controls",
-    detailedDescription: "Our advanced security and compliance management solutions provide comprehensive protection against modern cyber threats through continuous vulnerability assessment, privileged access management, and multi-factor authentication. With AI-powered threat detection, automated remediation workflows, and comprehensive compliance reporting, we help organizations maintain robust security postures while meeting regulatory requirements.",
+    title: t("solution_title_security"),
+    titleTr: t("solution_title_security"),
+    description: t("solution_description_security"),
+    detailedDescription: t("solution_detailed_description_security"),
     icon: <ShieldCheckIcon className="size-10 text-primary" />,
     services: [
       "BMC Helix Vulnerability Management",
       "BMC TrueSight Security & Compliance (TSAC)",
       "MonoSign Multi-Factor Authentication",
       "MonoPAM Privileged Access Management",
-      "Security Information and Event Management (SIEM)",
-      "Zero Trust Security Implementation",
-      "Compliance Automation & Reporting"
+      t("security_service_siem"),
+      t("security_service_zero_trust"),
+      t("security_service_compliance_automation")
     ],
     features: [
-      "Continuous vulnerability scanning and assessment",
-      "AI-powered threat detection and response",
-      "Privileged access management with session recording",
-      "Multi-factor authentication with biometric support",
-      "Automated security policy enforcement",
-      "Real-time security monitoring and alerting",
-      "Compliance dashboard with automated reporting",
-      "Integration with security orchestration platforms",
-      "Patch compliance tracking and management",
-      "Automated policy enforcement across endpoints"
+      t("security_feature_vulnerability_scanning"),
+      t("security_feature_ai_threat_detection"),
+      t("security_feature_pam"),
+      t("security_feature_mfa"),
+      t("security_feature_automated_policy"),
+      t("security_feature_real_time_monitoring"),
+      t("security_feature_compliance_dashboard"),
+      t("security_feature_orchestration_integration"),
+      t("security_feature_patch_compliance"),
+      t("security_feature_automated_endpoint_policy")
     ],
     benefits: [
-      "Reduce security incidents by 80% through proactive measures",
-      "Achieve 95% vulnerability remediation rate within SLA",
-      "Improve compliance scores by 90% with automated controls",
-      "Decrease privileged access risks by 95%",
-      "Accelerate incident response times by 70%",
-      "Ensure regulatory compliance with major standards",
-      "Reduce security management overhead by 60%",
-      "Enhance overall security posture and resilience",
-      "Generate instant compliance evidence for auditors",
-      "Track ROI and total cost of ownership for security investments"
+      t("security_benefit_reduce_incidents"),
+      t("security_benefit_achieve_remediation_rate"),
+      t("security_benefit_improve_compliance_scores"),
+      t("security_benefit_decrease_access_risks"),
+      t("security_benefit_accelerate_response_times"),
+      t("security_benefit_ensure_regulatory_compliance"),
+      t("security_benefit_reduce_management_overhead"),
+      t("security_benefit_enhance_security_posture"),
+      t("security_benefit_generate_audit_evidence"),
+      t("security_benefit_track_roi")
     ],
     examples: [
       {
-        title: "Financial Institution Security Transformation",
-        description: "Implemented comprehensive security management platform for a major regional bank, achieving SOX compliance and protecting against advanced persistent threats while maintaining operational efficiency.",
+        title: t("security_example_1_title"),
+        description: t("security_example_1_description"),
         metrics: [
-          { label: "Vulnerability Reduction", value: "96%" },
-          { label: "Compliance Score", value: "100%" },
-          { label: "Incident Prevention", value: "88%" },
-          { label: "Audit Readiness", value: "99.9%" }
+          { label: t("security_example_1_metric_1_label"), value: t("security_example_1_metric_1_value") },
+          { label: t("security_example_1_metric_2_label"), value: t("security_example_1_metric_2_value") },
+          { label: t("security_example_1_metric_3_label"), value: t("security_example_1_metric_3_value") },
+          { label: t("security_example_1_metric_4_label"), value: t("security_example_1_metric_4_value") }
         ]
       },
       {
-        title: "Healthcare Data Protection Program",
-        description: "Deployed advanced security controls for a large healthcare provider with 25+ facilities, ensuring HIPAA compliance and protecting sensitive patient data while enabling digital health initiatives.",
+        title: t("security_example_2_title"),
+        description: t("security_example_2_description"),
         metrics: [
-          { label: "Data Breach Prevention", value: "100%" },
-          { label: "Access Control Accuracy", value: "99.95%" },
-          { label: "HIPAA Compliance", value: "100%" },
-          { label: "Security Training Completion", value: "98%" }
+          { label: t("security_example_2_metric_1_label"), value: t("security_example_2_metric_1_value") },
+          { label: t("security_example_2_metric_2_label"), value: t("security_example_2_metric_2_value") },
+          { label: t("security_example_2_metric_3_label"), value: t("security_example_2_metric_3_value") },
+          { label: t("security_example_2_metric_4_label"), value: t("security_example_2_metric_4_value") }
         ]
       }
     ],
@@ -456,40 +457,40 @@ export const detailedSolutionData: DetailedSolution[] = [
     screenshots: [
       {
         url: "/img/solutions/tsac_compliance.png",
-        title: "TSAC Compliance Dashboard",
-        description: "Comprehensive compliance monitoring and reporting dashboard for security policy enforcement"
+        title: t("security_screenshot_1_title"),
+        description: t("security_screenshot_1_description")
       },
       {
         url: "/img/solutions/tsac_patch_dashboard.png",
-        title: "TSAC Patch Dashboard",
-        description: "Advanced patch management dashboard showing security update status across the enterprise"
+        title: t("security_screenshot_2_title"),
+        description: t("security_screenshot_2_description")
       },
       {
         url: "/img/solutions/tsac_patch.png",
-        title: "Patch Management Interface",
-        description: "Detailed patch management interface for tracking and deploying security updates"
+        title: t("security_screenshot_3_title"),
+        description: t("security_screenshot_3_description")
       },
       {
         url: "/img/solutions/compliance.png",
-        title: "Compliance Management Console",
-        description: "Automated policy enforcement and compliance tracking with instant audit evidence generation"
+        title: t("security_screenshot_4_title"),
+        description: t("security_screenshot_4_description")
       }
     ],
     category: "security",
     heroMetrics: [
       {
-        label: "Vulnerability Reduction",
-        value: "96%",
+        label: t("security_hero_metric_1_label"),
+        value: t("security_hero_metric_1_value"),
         icon: <ShieldCheckIcon className="h-8 w-8" />,
       },
       {
-        label: "Compliance Score",
-        value: "100%",
+        label: t("security_hero_metric_2_label"),
+        value: t("security_hero_metric_2_value"),
         icon: <ShieldCheckIcon className="h-8 w-8" />,
       },
       {
-        label: "Incident Prevention",
-        value: "88%",
+        label: t("security_hero_metric_3_label"),
+        value: t("security_hero_metric_3_value"),
         icon: <ShieldCheckIcon className="h-8 w-8" />,
       },
     ],
@@ -497,63 +498,63 @@ export const detailedSolutionData: DetailedSolution[] = [
   {
     id: 5,
     slug: "finops",
-    title: "FinOps & Cloud Cost Optimization",
-    titleTr: "FinOps ve Bulut Maliyet Optimizasyonu",
-    description: "Maximize ROI on cloud investments with intelligent cost optimization, budget management, and financial governance solutions for modern IT operations",
-    detailedDescription: "Our comprehensive FinOps and cloud cost optimization solutions help organizations maximize the return on their technology investments through intelligent cost management, advanced analytics, and automated optimization strategies. With real-time visibility into cloud spending, predictive budget forecasting, and automated cost controls, we enable organizations to balance performance, innovation, and fiscal responsibility.",
+    title: t("solution_title_finops"),
+    titleTr: t("solution_title_finops"),
+    description: t("solution_description_finops"),
+    detailedDescription: t("solution_detailed_description_finops"),
     icon: <DollarSignIcon className="size-10 text-primary" />,
     services: [
-      "Cloud Cost Optimization & Analytics",
-      "Multi-Cloud Financial Management",
-      "Budget Planning & Forecasting",
-      "Resource Right-Sizing & Automation",
-      "Cost Allocation & Chargeback",
-      "FinOps Practice Implementation",
-      "Software License Cost Optimization"
+      t("finops_service_cost_optimization"),
+      t("finops_service_multi_cloud"),
+      t("finops_service_budget_planning"),
+      t("finops_service_resource_right_sizing"),
+      t("finops_service_cost_allocation"),
+      t("finops_service_practice_implementation"),
+      t("finops_service_license_optimization")
     ],
     features: [
-      "Real-time cloud cost monitoring and analysis",
-      "AI-powered spend optimization recommendations",
-      "Automated resource scheduling and right-sizing",
-      "Multi-cloud cost visibility and governance",
-      "Predictive budget forecasting with machine learning",
-      "Granular cost allocation and departmental chargeback",
-      "Policy-driven spending controls and alerts",
-      "ROI tracking and financial performance metrics",
-      "Software license consumption monitoring",
-      "Automated asset tracking for cost optimization"
+      t("finops_feature_real_time_cost_monitoring"),
+      t("finops_feature_ai_spend_optimization"),
+      t("finops_feature_automated_scheduling"),
+      t("finops_feature_multi_cloud_visibility"),
+      t("finops_feature_predictive_budget_forecasting"),
+      t("finops_feature_granular_cost_allocation"),
+      t("finops_feature_policy_driven_spending"),
+      t("finops_feature_roi_tracking"),
+      t("finops_feature_license_consumption_monitoring"),
+      t("finops_feature_automated_asset_tracking")
     ],
     benefits: [
-      "Reduce cloud costs by 35-60% through optimization",
-      "Improve budget accuracy by 95% with predictive analytics",
-      "Optimize resource utilization rates by 50%",
-      "Achieve complete financial visibility across cloud environments",
-      "Accelerate cost optimization decisions with real-time insights",
-      "Ensure cost governance with automated policy enforcement",
-      "Enable innovation within budget constraints",
-      "Maximize ROI on cloud and technology investments",
-      "Cut software licensing costs by 30-40%",
-      "Stay audit-ready with automated cost tracking"
+      t("finops_benefit_reduce_cloud_costs"),
+      t("finops_benefit_improve_budget_accuracy"),
+      t("finops_benefit_optimize_resource_utilization"),
+      t("finops_benefit_achieve_financial_visibility"),
+      t("finops_benefit_accelerate_cost_optimization"),
+      t("finops_benefit_ensure_cost_governance"),
+      t("finops_benefit_enable_innovation"),
+      t("finops_benefit_maximize_roi"),
+      t("finops_benefit_cut_software_licensing_costs"),
+      t("finops_benefit_stay_audit_ready")
     ],
     examples: [
       {
-        title: "Enterprise Multi-Cloud Cost Optimization",
-        description: "Implemented comprehensive FinOps platform for a global technology company utilizing AWS, Azure, and GCP, achieving significant cost reductions while improving performance and governance.",
+        title: t("finops_example_1_title"),
+        description: t("finops_example_1_description"),
         metrics: [
-          { label: "Total Cost Reduction", value: "52%" },
-          { label: "Budget Accuracy", value: "97%" },
-          { label: "Waste Elimination", value: "68%" },
-          { label: "Annual Savings", value: "$18M+" }
+          { label: t("finops_example_1_metric_1_label"), value: t("finops_example_1_metric_1_value") },
+          { label: t("finops_example_1_metric_2_label"), value: t("finops_example_1_metric_2_value") },
+          { label: t("finops_example_1_metric_3_label"), value: t("finops_example_1_metric_3_value") },
+          { label: t("finops_example_1_metric_4_label"), value: t("finops_example_1_metric_4_value") }
         ]
       },
       {
-        title: "Startup Growth Cost Management",
-        description: "Deployed automated cost optimization for a rapidly scaling SaaS startup, enabling sustainable growth while maintaining cost efficiency during 300% user growth.",
+        title: t("finops_example_2_title"),
+        description: t("finops_example_2_description"),
         metrics: [
-          { label: "Cost per Customer", value: "45% reduction" },
-          { label: "Resource Efficiency", value: "60% improvement" },
-          { label: "Automated Savings", value: "$2.5M annually" },
-          { label: "Scaling Efficiency", value: "3x better" }
+          { label: t("finops_example_2_metric_1_label"), value: t("finops_example_2_metric_1_value") },
+          { label: t("finops_example_2_metric_2_label"), value: t("finops_example_2_metric_2_value") },
+          { label: t("finops_example_2_metric_3_label"), value: t("finops_example_2_metric_3_value") },
+          { label: t("finops_example_2_metric_4_label"), value: t("finops_example_2_metric_4_value") }
         ]
       }
     ],
@@ -577,42 +578,45 @@ export const detailedSolutionData: DetailedSolution[] = [
     screenshots: [
       {
         url: "/img/solutions/ocp.png",
-        title: "Optimization Control Panel",
-        description: "Advanced cost optimization dashboard providing insights into spending patterns and optimization opportunities"
+        title: t("finops_screenshot_1_title"),
+        description: t("finops_screenshot_1_description")
       },
       {
         url: "/img/solutions/software_inventory.png",
-        title: "Software Inventory Cost Analysis",
-        description: "Detailed software inventory tracking for license optimization and cost management"
+        title: t("finops_screenshot_2_title"),
+        description: t("finops_screenshot_2_description")
       },
       {
         url: "/img/solutions/reports_global_software.png",
-        title: "Global Software Reports",
-        description: "Comprehensive software usage reporting for license compliance and cost optimization"
+        title: t("finops_screenshot_3_title"),
+        description: t("finops_screenshot_3_description")
       },
       {
         url: "/img/solutions/reports.png",
-        title: "Financial Analytics Dashboard",
-        description: "Advanced reporting capabilities for tracking ROI and total cost of ownership across IT assets"
+        title: t("finops_screenshot_4_title"),
+        description: t("finops_screenshot_4_description")
       }
     ],
     category: "finops",
     heroMetrics: [
       {
-        label: "Total Cost Reduction",
-        value: "52%",
+        label: t("finops_hero_metric_1_label"),
+        value: t("finops_hero_metric_1_value"),
         icon: <DollarSignIcon className="h-8 w-8" />,
       },
       {
-        label: "Budget Accuracy",
-        value: "97%",
+        label: t("finops_hero_metric_2_label"),
+        value: t("finops_hero_metric_2_value"),
         icon: <DollarSignIcon className="h-8 w-8" />,
       },
       {
-        label: "Annual Savings",
-        value: "$18M+",
+        label: t("finops_hero_metric_3_label"),
+        value: t("finops_hero_metric_3_value"),
         icon: <DollarSignIcon className="h-8 w-8" />,
       },
     ],
   }
-]; 
+];
+
+// Keep the old export for backward compatibility until we update all imports
+export const detailedSolutionData: DetailedSolution[] = []; 

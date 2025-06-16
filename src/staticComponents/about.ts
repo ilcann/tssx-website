@@ -1,73 +1,67 @@
 import type { CaseStudyProps } from "../types/about";
+import type { TFunction } from "i18next";
 
-export const caseStudies: CaseStudyProps[] = [
+export const getCaseStudies = (t: TFunction): CaseStudyProps[] => [
   {
-    title: "Success Story",
-    subtitle: "Achieving turbocharged performance with our custom solutions",
-    description:
-      "Our specialized solutions delivered significant performance improvements:",
+    title: t("case_study_1_title"),
+    subtitle: t("case_study_1_subtitle"),
+    description: t("case_study_1_description"),
     points: [
       {
-        label: "+23 points",
-        value: "higher accuracy compared to other solutions",
+        label: t("case_study_1_point_1_label"),
+        value: t("case_study_1_point_1_value"),
       },
       {
-        label: "+19 points",
-        value: "higher accuracy than competitive solutions",
+        label: t("case_study_1_point_2_label"),
+        value: t("case_study_1_point_2_value"),
       },
     ],
   },
   {
-    title: "Real-world benefits",
-    subtitle: "Results achieved by our clients",
-    description:
-      "Clients using our solutions have achieved the following results:",
+    title: t("case_study_2_title"),
+    subtitle: t("case_study_2_subtitle"),
+    description: t("case_study_2_description"),
     points: [
       {
-        label: "94%",
-        value: "reduction in cost per token",
+        label: t("case_study_2_point_1_label"),
+        value: t("case_study_2_point_1_value"),
       },
       {
-        label: "70%",
-        value: "improvement in latency",
+        label: t("case_study_2_point_2_label"),
+        value: t("case_study_2_point_2_value"),
       },
       {
-        label: "billions of requests/week",
-        value: "Optimization for processing",
+        label: t("case_study_2_point_3_label"),
+        value: t("case_study_2_point_3_value"),
       },
     ],
   },
 ];
 
-export const milestones = [
+export const getMilestones = (t: TFunction) => [
   {
     year: "2018",
-    title: "Company Founded",
-    description:
-      "TSS X was established in Istanbul with a vision to transform IT infrastructure management",
+    title: t("milestone_2018_title"),
+    description: t("milestone_2018_description"),
   },
   {
     year: "2019",
-    title: "First Enterprise Client",
-    description:
-      "Successfully delivered automation solutions to our first major enterprise client",
+    title: t("milestone_2019_title"),
+    description: t("milestone_2019_description"),
   },
   {
     year: "2021",
-    title: "International Expansion",
-    description:
-      "Expanded operations to serve clients across Europe and the Middle East",
+    title: t("milestone_2021_title"),
+    description: t("milestone_2021_description"),
   },
   {
     year: "2023",
-    title: "Innovation Award",
-    description:
-      "Recognized for excellence in IT infrastructure automation solutions",
+    title: t("milestone_2023_title"),
+    description: t("milestone_2023_description"),
   },
   {
     year: "2024",
-    title: "Advanced AI Integration",
-    description:
-      "Launched next-generation AI-powered infrastructure management solutions",
+    title: t("milestone_2024_title"),
+    description: t("milestone_2024_description"),
   },
 ];

@@ -1,8 +1,10 @@
 import { useRef } from "react";
 import { Info, RefreshCcw, ZoomIn, ZoomOut } from "lucide-react";
 import { useInteractiveMap } from "./useInteractiveMap";
+import { useTranslation } from 'react-i18next';
 
 const ReferenceMap = () => {
+  const { t } = useTranslation();
   const mapRef = useRef<SVGSVGElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const mapGroupRef = useRef<SVGGElement | null>(null);
@@ -30,17 +32,17 @@ const ReferenceMap = () => {
 
       <div className="text-center text-neutral-600 mt-4 mb-2 flex items-center justify-center">
         <Info className="size-5 mr-1 text-amber-700" />
-        <p>Hover or tap on highlighted countries to see our clients</p>
+        <p>{t('reference_map_hover')}</p>
       </div>
 
       <div className="flex items-center justify-center gap-8 max-w-xl mx-auto">
         <div className="flex items-center">
           <span className="inline-block size-4 rounded-sm bg-white/80 mr-2"></span>
-          <span className="text-neutral-600">Other Countries</span>
+          <span className="text-neutral-600">{t('reference_other_countries')}</span>
         </div>
         <div className="flex items-center">
           <span className="inline-block size-4 rounded-sm bg-amber-700 mr-2"></span>
-          <span className="text-neutral-600">Client Locations</span>
+          <span className="text-neutral-600">{t('reference_client_locations')}</span>
         </div>
       </div>
     </div>

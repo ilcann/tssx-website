@@ -1,18 +1,21 @@
 import { Helmet } from "react-helmet-async";
 import ContactPage from "@/components/Contact/ContactPage"
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+  
   return (
     <>
       <Helmet>
         <title>Contact TSS-X | Get Expert IT Infrastructure Consultation</title>
         <meta
           name="description"
-          content="Contact TSS-X for expert IT infrastructure and automation solutions. Reach our team in Istanbul, Turkey for personalized consultation, rapid implementation, and 24/7 support."
+          content={t("meta_contact_description")}
         />
         <meta
           name="keywords"
-          content="contact TSS-X, IT consultation, automation services, enterprise IT support, Istanbul IT company, infrastructure management, technical support, get quote"
+          content={t("meta_contact_keywords")}
         />
         
         {/* Open Graph / Facebook */}
@@ -24,7 +27,7 @@ const Contact = () => {
         />
         <meta
           property="og:description"
-          content="Ready to transform your IT infrastructure? Contact our team of experts for personalized automation solutions and enterprise-grade support."
+          content={t("meta_contact_description")}
         />
         <meta property="og:image" content="https://tssx.com/img/tssx/contact-og.png" />
 
@@ -37,7 +40,7 @@ const Contact = () => {
         />
         <meta
           property="twitter:description"
-          content="Get in touch with TSS-X for expert IT infrastructure consultation and automation solutions tailored to your needs."
+          content={t("meta_contact_description")}
         />
         <meta property="twitter:image" content="https://tssx.com/img/tssx/contact-og.png" />
 

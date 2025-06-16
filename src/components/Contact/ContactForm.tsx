@@ -10,8 +10,10 @@ import {
 } from "lucide-react";
 import Input from "../ui/Input";
 import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -113,10 +115,10 @@ const ContactForm = () => {
     <div className="flex flex-col items-center justify-start h-full w-full">
       <div className="text-center w-full max-w-lg">
         <SpecialText className="text-4xl font-bold">
-          <AnimatedText text="Contact Form" />
+          <AnimatedText text={t("contact_form_title")} />
         </SpecialText>
         <p className="text-lg text-neutral-600 font-medium mb-8">
-          Please fill out the form below and we'll get back to you.
+          {t("contact_form_description")}
         </p>
 
         <form
@@ -128,14 +130,14 @@ const ContactForm = () => {
           {/* Full Name Field */}
           <div className="group">
             <Input
-              label="Full Name"
+              label={t("form_full_name")}
               leftIcon={UserIcon}
               type="text"
               id="fullName"
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              placeholder="Enter your full name"
+              placeholder={t("form_full_name_placeholder")}
               required
             />
           </div>
@@ -143,14 +145,14 @@ const ContactForm = () => {
           {/* Email Field */}
           <div className="group">
             <Input
-              label="Work Email Address"
+              label={t("form_work_email")}
               leftIcon={MailIcon}
               type="email"
               id="workEmail"
               name="workEmail"
               value={formData.workEmail}
               onChange={handleChange}
-              placeholder="Enter your work email address"
+              placeholder={t("form_work_email_placeholder")}
               required
             />
           </div>
@@ -158,14 +160,14 @@ const ContactForm = () => {
           {/* Role Field */}
           <div className="group">
             <Input
-              label="Role"
+              label={t("form_role")}
               leftIcon={UserIcon}
               type="text"
               id="role"
               name="role"
               value={formData.role}
               onChange={handleChange}
-              placeholder="Enter your role"
+              placeholder={t("form_role_placeholder")}
               required
             />
           </div>
@@ -173,14 +175,14 @@ const ContactForm = () => {
           {/* Phone Field */}
           <div className="group">
             <Input
-              label="Phone Number"
+              label={t("form_phone")}
               leftIcon={PhoneIcon}
               type="tel"
               id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="Enter your phone number"
+              placeholder={t("form_phone_placeholder")}
               required
             />
           </div>
@@ -188,14 +190,14 @@ const ContactForm = () => {
           {/* Service Field */}
           <div className="group">
             <Input
-              label="Service"
+              label={t("form_service")}
               leftIcon={MessageCircleIcon}
               type="text"
               id="service"
               name="service"
               value={formData.service}
               onChange={handleChange}
-              placeholder="What service are you interested in?"
+              placeholder={t("form_service_placeholder")}
               required
             />
           </div>
@@ -209,7 +211,7 @@ const ContactForm = () => {
               <div className="p-1 rounded-md bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-sm">
                 <MessageCircleIcon className="w-3 h-3" />
               </div>
-              Message
+              {t("form_message")}
             </label>
             <textarea
               id="message"
@@ -218,7 +220,7 @@ const ContactForm = () => {
               onChange={handleChange}
               rows={10}
               className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all duration-200 resize-vertical bg-white/80 backdrop-blur-sm hover:bg-white focus:bg-white shadow-sm hover:shadow-md focus:shadow-lg"
-              placeholder="Please describe your inquiry in detail..."
+              placeholder={t("form_message_placeholder")}
               required
             />
           </div>

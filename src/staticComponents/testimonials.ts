@@ -1,16 +1,16 @@
-export const testimonials = [
+import type { TFunction } from "i18next";
+
+export const getTestimonials = (t: TFunction) => [
   {
-    name: "Ayşe Yılmaz",
-    title: "IT Manager, Garanti BBVA",
-    comment:
-      "Working with TSS-X was a turning point for us. Our systems are now faster, safer, and more efficient.",
+    name: t("testimonial_1_name"),
+    title: t("testimonial_1_title"),
+    comment: t("testimonial_1_comment"),
     avatar: "/img/people/ayse.png",
   },
   {
-    name: "Mert Can",
-    title: "CTO, Doğuş Teknoloji",
-    comment:
-      "They didn’t just provide a solution — they delivered a vision. Their professionalism set them apart.",
+    name: t("testimonial_2_name"),
+    title: t("testimonial_2_title"),
+    comment: t("testimonial_2_comment"),
     avatar: "/img/people/mert.png",
   },
 ];

@@ -5,11 +5,15 @@ import CaseStudy from "./CaseStudy";
 import TeamSection from "./Team";
 import Timeline from "./Timeline";
 import DecorativeBackground from "../ui/DecorativeBackground";
-import { caseStudies } from "@/staticComponents/about";
+import { getCaseStudies } from "@/staticComponents/about";
 import SpecialText from "../ui/SpecialText";
 import AnimatedText from "../ui/AnimatedText";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
+  const caseStudies = getCaseStudies(t);
+
   return (
     <DecorativeBackground
       variant="neutral"
@@ -39,13 +43,12 @@ const About = () => {
               id="about-special-text"
               className="text-4xl font-bold mb-2 text-neutral-900"
             >
-              <AnimatedText text="About TSSX" />
+              <AnimatedText text={t("about_title")} />
             </SpecialText>
 
             <div className="w-24 h-1 bg-amber-600 mx-auto mb-6 rounded-full"></div>
             <span className="text-lg text-neutral-700 leading-relaxed">
-              Your trusted <AnimatedText text="IT infrastructure management" />{" "}
-              partner
+              {t("about_tagline")}
             </span>
           </div>
 
@@ -54,22 +57,22 @@ const About = () => {
             <AnimatedStat
               icon={<Zap size={20} />}
               value="2 Min."
-              label="Faster Provision"
+              label={t("about_stats_faster")}
             />
             <AnimatedStat
               icon={<Shield size={20} />}
               value="100%"
-              label="Regulatory Compliance"
+              label={t("about_stats_compliance")}
             />
             <AnimatedStat
               icon={<Shield size={20} />}
               value="94%"
-              label="Vulnerabilities Fixed"
+              label={t("about_stats_vulnerabilities")}
             />
             <AnimatedStat
               icon={<Clock size={20} />}
               value="1/999%"
-              label="Patch Person Day"
+              label={t("about_stats_patch")}
             />
           </div>
 
@@ -81,21 +84,10 @@ const About = () => {
                   id="about-our-legacy"
                   className="text-2xl font-bold text-neutral-900 mb-6"
                 >
-                  <AnimatedText text="Our Legacy" />
+                  <AnimatedText text={t("about_legacy_title")} />
                 </SpecialText>
                 <p className="text-neutral-700 leading-relaxed">
-                  Rooted in a legacy of excellence, we are a team of dynamic
-                  professionals who honed our expertise while working in pivotal
-                  roles at prominent companies. With our origins tracing back to
-                  Istanbul Technical University, our journey has taken us through
-                  diverse roles such as System Engineers, Principal Consultants,
-                  Managers, and Directors. Drawing from this rich experience, we
-                  possess an intricate understanding of IT infrastructure
-                  management. Our mission is to seamlessly transfer this wealth of
-                  knowledge to our clients, offering bespoke solutions that pave
-                  the path to their success. At the heart of our approach lies the
-                  commitment to tailoring strategies that align with their unique
-                  goals and aspirations.
+                  {t("about_legacy_description")}
                 </p>
               </div>
 
@@ -104,18 +96,10 @@ const About = () => {
                   id="about-our-expertise"
                   className="text-2xl font-bold text-neutral-900 mb-6"
                 >
-                  <AnimatedText text="Our Expertise" />
+                  <AnimatedText text={t("about_expertise_title")} />
                 </SpecialText>
                 <p className="text-neutral-700 leading-relaxed mb-8">
-                  At TSS-X Information Technologies, our team of IT professionals
-                  is dedicated to helping our clients get the most out of their IT
-                  infrastructure. We specialize in{" "}
-                  <span className="text-amber-600 font-medium">
-                    IT automation services
-                  </span>
-                  , with an experienced team that has worked in many areas of IT
-                  infrastructure, including application, database, server,
-                  storage, network, and security.
+                  {t("about_expertise_description")}
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -125,10 +109,10 @@ const About = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-neutral-900 mb-1">
-                        Automation
+                        {t("about_automation_title")}
                       </h4>
                       <p className="text-sm text-neutral-600">
-                        Expert development of automation workflows and processes
+                        {t("about_automation_description")}
                       </p>
                     </div>
                   </div>
@@ -139,10 +123,10 @@ const About = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-neutral-900 mb-1">
-                        Security
+                        {t("about_security_title")}
                       </h4>
                       <p className="text-sm text-neutral-600">
-                        End-to-end infrastructure security and compliance
+                        {t("about_security_description")}
                       </p>
                     </div>
                   </div>
@@ -153,10 +137,10 @@ const About = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-neutral-900 mb-1">
-                        Analytics
+                        {t("about_analytics_title")}
                       </h4>
                       <p className="text-sm text-neutral-600">
-                        Real-time monitoring and performance analytics
+                        {t("about_analytics_description")}
                       </p>
                     </div>
                   </div>

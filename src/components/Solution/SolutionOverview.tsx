@@ -2,12 +2,14 @@ import { CheckCircle } from "lucide-react";
 import SpecialText from "@/components/ui/SpecialText";
 import AnimatedText from "@/components/ui/AnimatedText";
 import type { DetailedSolution } from "@/types/solution";
+import { useTranslation } from "react-i18next";
 
 interface SolutionOverviewProps {
   solution: DetailedSolution;
 }
 
 const SolutionOverview = ({ solution }: SolutionOverviewProps) => {
+  const { t } = useTranslation();
   // Get top 6 benefits for display
   const topBenefits = solution.benefits.slice(0, 6);
 
@@ -21,7 +23,7 @@ const SolutionOverview = ({ solution }: SolutionOverviewProps) => {
               id="overview-title"
               className="text-3xl font-bold mb-4 text-neutral-900"
             >
-              <AnimatedText text="Why Choose Our Solution" />
+              <AnimatedText text={t("solution_overview_why_choose")} />
             </SpecialText>
             <div className="w-16 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
@@ -56,7 +58,7 @@ const SolutionOverview = ({ solution }: SolutionOverviewProps) => {
             <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-6 py-3">
               <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
               <span className="text-amber-700 font-medium text-sm">
-                Ready to transform your operations?
+                {t("solution_cta_transform")}
               </span>
             </div>
           </div>

@@ -32,6 +32,7 @@ export default defineConfig({
           helmet: ["react-helmet-async"],
           gsap: ["gsap"],
           slidedown: ["react-slidedown"],
+          i18n: ["react-i18next"],
         },
       },
     },
@@ -46,7 +47,7 @@ export default defineConfig({
   },
   // Optimize dependencies
   optimizeDeps: {
-    include: ["react", "react-dom", "lucide-react"],
+    include: ["react", "react-dom", "lucide-react", "react-i18next"],
     exclude: ["d3", "topojson-client"], // Lazy load these heavy dependencies
   },
   // Enable tree shaking

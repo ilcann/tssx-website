@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router";
-import { solutionsDropdown } from "@/staticComponents/solutionsDropdown";
+import { getSolutionsDropdown } from "@/staticComponents/solutionsDropdown";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   variant?: "desktop" | "mobile";
@@ -15,6 +16,8 @@ const SolutionsDropdown = ({
   label,
 }: Props) => {
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation();
+  const solutionsDropdown = getSolutionsDropdown(t);
 
   if (variant === "desktop") {
     return (

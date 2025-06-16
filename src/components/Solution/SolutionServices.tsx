@@ -1,4 +1,7 @@
-import { Zap } from "lucide-react";
+import { 
+  Zap
+} from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import SpecialText from "@/components/ui/SpecialText";
 import AnimatedText from "@/components/ui/AnimatedText";
 import type { DetailedSolution } from "@/types/solution";
@@ -8,6 +11,8 @@ interface SolutionServicesProps {
 }
 
 const SolutionServices = ({ solution }: SolutionServicesProps) => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-16 bg-neutral-50 animate-section">
       <div className="container mx-auto px-4">
@@ -18,12 +23,11 @@ const SolutionServices = ({ solution }: SolutionServicesProps) => {
               id="services-title"
               className="text-3xl font-bold mb-4 text-neutral-900"
             >
-              <AnimatedText text="Our Services" />
+              <AnimatedText text={t('our_services')} />
             </SpecialText>
             <div className="w-16 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Comprehensive {solution.title.toLowerCase()} services designed to
-              accelerate your digital transformation
+              {t('comprehensive_services_description', { solutionTitle: solution.title.toLowerCase() })}
             </p>
           </div>
 
@@ -61,15 +65,15 @@ const SolutionServices = ({ solution }: SolutionServicesProps) => {
               <div className="text-2xl font-bold text-amber-600 mb-1">
                 {solution.services.length}+
               </div>
-              <div className="text-sm text-neutral-600">Services</div>
+              <div className="text-sm text-neutral-600">{t('services')}</div>
             </div>
             <div className="group">
               <div className="text-2xl font-bold text-amber-600 mb-1">24/7</div>
-              <div className="text-sm text-neutral-600">Support</div>
+              <div className="text-sm text-neutral-600">{t('support')}</div>
             </div>
             <div className="group">
               <div className="text-2xl font-bold text-amber-600 mb-1">100%</div>
-              <div className="text-sm text-neutral-600">Satisfaction</div>
+              <div className="text-sm text-neutral-600">{t('solution_services_satisfaction')}</div>
             </div>
           </div>
         </div>

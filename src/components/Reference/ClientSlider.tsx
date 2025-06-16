@@ -1,11 +1,13 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { referenceLocations } from "@/staticComponents/reference";
+import { useTranslation } from "react-i18next";
 import "./ClientSlider.css";
 import SpecialText from "../ui/SpecialText";
 import AnimatedText from "../ui/AnimatedText";
 
 const ClientSlider = () => {
+  const { t } = useTranslation();
   const sliderRef = useRef<HTMLDivElement>(null);
   const sliderTrackRef = useRef<HTMLDivElement>(null);
 
@@ -85,18 +87,17 @@ const ClientSlider = () => {
                 id="references-special-text"
                 className="text-2xl font-bold text-center text-neutral-900 mb-2"
               >
-                <AnimatedText text="Trusted by Leading Organizations" />
+                <AnimatedText text={t("references_trusted_by")} />
               </SpecialText>
 
               <span className="text-center text-neutral-600">
-                Our clients across the globe trust us with their IT
-                infrastructure
+                {t("references_description")}
               </span>
             </div>
       <div className="container mx-auto px-4 mb-8">
         <div className="text-center">
           <h3 className="text-xl font-bold text-neutral-900 mb-2">
-            Our Trusted Clients
+            {t("references_title")}
           </h3>
         </div>
       </div>

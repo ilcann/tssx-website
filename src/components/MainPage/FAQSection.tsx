@@ -1,9 +1,13 @@
 import FAQ from "@/components/MainPage/FAQ";
 import SpecialText from "@/components/ui/SpecialText";
 import DecorativeBackground from "@/components/ui/DecorativeBackground";
-import faqItems from "@/staticComponents/faqItems";
+import getFaqItems from "@/staticComponents/faqItems";
+import { useTranslation } from "react-i18next";
 
 const FAQSection = () => {
+  const { t } = useTranslation();
+  const faqItems = getFaqItems(t);
+
   return (
     <DecorativeBackground
       variant="light"
@@ -51,7 +55,7 @@ const FAQSection = () => {
             <div className="flex justify-center lg:justify-start">
               <img
                 src="/img/tssx/faq.png"
-                alt="Frequently Asked Questions"
+                alt={t("faq_alt_text")}
                 width="512"
                 height="512"
                 className="h-auto w-full max-w-lg rounded-lg"

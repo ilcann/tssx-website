@@ -1,18 +1,21 @@
 import { Helmet } from "react-helmet-async";
 import About from "@/components/About/AboutPage";
+import { useTranslation } from "react-i18next";
 
 const AboutPage = () => {
+  const { t } = useTranslation();
+  
   return (
     <>
       <Helmet>
         <title>About TSS-X | IT Infrastructure & Automation Experts</title>
         <meta
           name="description"
-          content="Learn about TSS-X Information Technologies - Your trusted IT infrastructure management partner. Discover our team of experts from Istanbul Technical University with proven track record in enterprise automation solutions."
+          content={t("meta_about_description")}
         />
         <meta
           name="keywords"
-          content="about TSS-X, IT infrastructure experts, automation specialists, enterprise IT, Istanbul Technical University, system engineers, principal consultants, IT management team, technology leadership"
+          content={t("meta_about_keywords")}
         />
         
         {/* Open Graph / Facebook */}
@@ -24,7 +27,7 @@ const AboutPage = () => {
         />
         <meta
           property="og:description"
-          content="Discover TSS-X's legacy of excellence in IT infrastructure management. Meet our dynamic team of professionals with expertise from prominent companies and ITU background."
+          content={t("meta_about_description")}
         />
         <meta property="og:image" content="https://tssx.com/img/tssx/about-og.png" />
 
@@ -37,7 +40,7 @@ const AboutPage = () => {
         />
         <meta
           property="twitter:description"
-          content="Learn about our team's expertise in IT infrastructure management and automation solutions for enterprise clients."
+          content={t("meta_about_description")}
         />
         <meta property="twitter:image" content="https://tssx.com/img/tssx/about-og.png" />
 

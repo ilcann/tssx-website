@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import { Users, Award, Code, BarChart4 } from "lucide-react";
 import StatCounter from "../ui/StatCounter";
 import SpecialText from "../ui/SpecialText";
@@ -9,6 +9,7 @@ const TeamSection = () => {
   const [activeTab, setActiveTab] = useState<"vision" | "mission" | "values">(
     "vision"
   );
+  const { t } = useTranslation();
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-8 border border-neutral-200">
@@ -18,13 +19,10 @@ const TeamSection = () => {
             id="about-our-team"
             className="text-2xl font-bold text-neutral-900 mb-6"
           >
-            <AnimatedText text="Our Team" />
+            <AnimatedText text={t("about_team_title")} />
           </SpecialText>
           <p className="text-neutral-700 mb-6 leading-relaxed">
-            Our team consists of experienced IT professionals with backgrounds
-            from Istanbul Technical University who have worked in diverse roles
-            such as System Engineers, Principal Consultants, Managers, and
-            Directors at prominent companies.
+            {t("about_team_description")}
           </p>
 
           <div className="flex border-b border-neutral-200 mb-6">
@@ -36,7 +34,7 @@ const TeamSection = () => {
               }`}
               onClick={() => setActiveTab("vision")}
             >
-              Our Vision
+              {t("about_vision_tab")}
             </button>
             <button
               className={`px-4 py-2 font-medium text-sm ${
@@ -46,7 +44,7 @@ const TeamSection = () => {
               }`}
               onClick={() => setActiveTab("mission")}
             >
-              Our Mission
+              {t("about_mission_tab")}
             </button>
             <button
               className={`px-4 py-2 font-medium text-sm ${
@@ -56,7 +54,7 @@ const TeamSection = () => {
               }`}
               onClick={() => setActiveTab("values")}
             >
-              Our Values
+              {t("about_values_tab")}
             </button>
           </div>
 
@@ -64,12 +62,10 @@ const TeamSection = () => {
             {activeTab === "vision" && (
               <div className="animate-fadeIn">
                 <h4 className="text-neutral-900 font-bold mb-2">
-                  Shaping the Future of IT Infrastructure
+                  {t("about_vision_title")}
                 </h4>
                 <p className="text-neutral-600 leading-relaxed">
-                  We envision a world where IT infrastructure management is
-                  fully automated, secure, and optimized, allowing businesses to
-                  focus on innovation and growth rather than maintenance.
+                  {t("about_vision_description")}
                 </p>
               </div>
             )}
@@ -77,12 +73,10 @@ const TeamSection = () => {
             {activeTab === "mission" && (
               <div className="animate-fadeIn">
                 <h4 className="text-neutral-900 font-bold mb-2">
-                  Empowering Through Automation
+                  {t("about_mission_title")}
                 </h4>
                 <p className="text-neutral-600 leading-relaxed">
-                  Our mission is to empower organizations with cutting-edge
-                  automation solutions that streamline IT operations, enhance
-                  security, and accelerate digital transformation.
+                  {t("about_mission_description")}
                 </p>
               </div>
             )}
@@ -90,24 +84,24 @@ const TeamSection = () => {
             {activeTab === "values" && (
               <div className="animate-fadeIn">
                 <h4 className="text-neutral-900 font-bold mb-2">
-                  Our Core Values
+                  {t("about_values_title")}
                 </h4>
                 <ul className="text-neutral-600 leading-relaxed space-y-2">
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-amber-700 rounded-full mr-2"></span>
-                    Excellence in service delivery
+                    {t("about_values_excellence")}
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-amber-700 rounded-full mr-2"></span>
-                    Continuous innovation
+                    {t("about_values_innovation")}
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-amber-700 rounded-full mr-2"></span>
-                    Client-centered approach
+                    {t("about_values_client")}
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-amber-700 rounded-full mr-2"></span>
-                    Integrity and transparency
+                    {t("about_values_integrity")}
                   </li>
                 </ul>
               </div>
@@ -124,7 +118,7 @@ const TeamSection = () => {
               <div className="text-2xl font-bold text-neutral-900">
                 <StatCounter value="15+" enableScrollSpy={true} />
               </div>
-              <div className="text-neutral-600 text-sm">Team Members</div>
+              <div className="text-neutral-600 text-sm">{t("about_team_members")}</div>
             </div>
 
             <div className="bg-neutral-50 rounded-lg p-4 text-center flex flex-col items-center">
@@ -134,7 +128,7 @@ const TeamSection = () => {
               <div className="text-2xl font-bold text-neutral-900">
                 <StatCounter value="10+" enableScrollSpy={true} />
               </div>
-              <div className="text-neutral-600 text-sm">Years Experience</div>
+              <div className="text-neutral-600 text-sm">{t("about_team_experience")}</div>
             </div>
 
             <div className="bg-neutral-50 rounded-lg p-4 text-center flex flex-col items-center">
@@ -144,7 +138,7 @@ const TeamSection = () => {
               <div className="text-2xl font-bold text-neutral-900">
                 <StatCounter value="100+" enableScrollSpy={true} />
               </div>
-              <div className="text-neutral-600 text-sm">Projects Delivered</div>
+              <div className="text-neutral-600 text-sm">{t("about_team_projects")}</div>
             </div>
 
             <div className="bg-neutral-50 rounded-lg p-4 text-center flex flex-col items-center">
@@ -155,7 +149,7 @@ const TeamSection = () => {
                 <StatCounter value="98%" enableScrollSpy={true} />
               </div>
               <div className="text-neutral-600 text-sm">
-                Client Satisfaction
+                {t("references_stats_satisfaction")}
               </div>
             </div>
           </div>

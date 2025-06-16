@@ -4,12 +4,14 @@ import SpecialText from "@/components/ui/SpecialText";
 import AnimatedText from "@/components/ui/AnimatedText";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import type { DetailedSolution } from "@/types/solution";
+import { useTranslation } from "react-i18next";
 
 interface SolutionScreenshotsProps {
   solution: DetailedSolution;
 }
 
 const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
+  const { t, i18n } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
 
@@ -59,12 +61,13 @@ const SolutionScreenshots = ({ solution }: SolutionScreenshotsProps) => {
                 id="screenshots-title"
                 className="text-3xl font-bold mb-6 text-neutral-900"
               >
-                <AnimatedText text="Product Screenshots" />
+                <AnimatedText text={t("solution_screenshots_title")} />
               </SpecialText>
               <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
               <p className="text-lg text-neutral-700 max-w-3xl mx-auto">
-                See our {solution.title.toLowerCase()} solutions in action with
-                real product interfaces and dashboards
+                {t("solution_screenshots_description", { 
+                  solutionTitle: i18n.language === 'tr' ? solution.titleTr : solution.title 
+                })}
               </p>
             </div>
 

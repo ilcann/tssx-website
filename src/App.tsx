@@ -1,16 +1,18 @@
 import { Routes, Route, useLocation } from "react-router";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "./components/header/Header";
-import About from "./pages/About";
-import MainPage from "./pages/MainPage";
 import Footer from "./components/Footer/Footer";
-import Solution from "./pages/Solution";
-import Contact from "./pages/Contact";
 import BackToTop from "./components/ui/BackToTop";
-import References from "./pages/References";
-import PartnersPage from "./pages/Partners";
 import { useTranslation } from "react-i18next";
+import { Loader2 } from "lucide-react";
+
+const MainPage = lazy(() => import("./pages/MainPage"));
+const About = lazy(() => import("./pages/About"));
+const Solution = lazy(() => import("./pages/Solution"));
+const Contact = lazy(() => import("./pages/Contact"));
+const References = lazy(() => import("./pages/References"));
+const PartnersPage = lazy(() => import("./pages/Partners"));
 
 function App() {
   const { t } = useTranslation();
@@ -86,14 +88,16 @@ function App() {
       </Helmet>
 
       <Header />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/solutions/:slug" element={<Solution />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/references" element={<References />} />
-        <Route path="/partners" element={<PartnersPage />} />
-      </Routes>
+      <Suspense fallback={<Loader2 className="animate-spin" size={32} />}>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/solutions/:slug" element={<Solution />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/references" element={<References />} />
+          <Route path="/partners" element={<PartnersPage />} />
+        </Routes>
+      </Suspense>
       <Footer />
       <BackToTop />
     </>
