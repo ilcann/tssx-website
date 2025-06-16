@@ -6,16 +6,21 @@ import { solutionsDropdown } from "@/staticComponents/solutionsDropdown";
 type Props = {
   variant?: "desktop" | "mobile";
   onLinkClick?: () => void;
+  label: string;
 };
 
-const SolutionsDropdown = ({ variant = "desktop", onLinkClick }: Props) => {
+const SolutionsDropdown = ({
+  variant = "desktop",
+  onLinkClick,
+  label,
+}: Props) => {
   const [open, setOpen] = useState(false);
 
   if (variant === "desktop") {
     return (
       <div className="relative group">
         <button className="flex items-center rounded-md gap-1 px-3 py-2 text-md font-medium text-neutral-200 hover:text-amber-400 transition-colors duration-200 hover:bg-neutral-800 cursor-pointer">
-          Solutions
+          {label}
           <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
         </button>
 
@@ -43,14 +48,14 @@ const SolutionsDropdown = ({ variant = "desktop", onLinkClick }: Props) => {
     <div className="flex flex-col w-full">
       <button
         onClick={() => setOpen(!open)}
-        className="flex justify-between items-center px-2 py-3 bg-neutral-900 rounded-md text-white text-md font-medium w-full"
+        className="flex justify-between items-center w-full text-left px-3 py-2 rounded-md text-md font-medium text-neutral-200 hover:text-amber-400 hover:bg-neutral-800 transition-colors duration-200"
       >
-        <span>Solutions</span>
+        <span>{label}</span>
         {open ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
       </button>
 
       {open && (
-        <ul className="mt-2 flex flex-col gap-2">
+        <ul className="mt-2 flex flex-col gap-2 pl-4">
           {solutionsDropdown.map(({ to, label, sub }) => (
             <li key={to}>
               <Link

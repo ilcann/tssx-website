@@ -11,14 +11,15 @@ import {
 import IntersectionObserver from "@/components/IntersectionObserver";
 import Solutions from "@/components/MainPage/solutions/Solutions";
 import ReferenceSection from "@/components/MainPage/ReferenceSection";
+import { useTranslation } from "react-i18next";
 
 const MainPage = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Helmet>
-        <title>
-          TSS-X | Enterprise IT Infrastructure & Automation Solutions
-        </title>
+        <title>{t("main_page_title")}</title>
         <meta
           name="description"
           content="TSS-X Information Technologies provides enterprise IT infrastructure management and automation solutions. Specializing in hybrid cloud provisioning, AIOps observability, compliance management, and security automation in Istanbul, Turkey."
@@ -33,7 +34,7 @@ const MainPage = () => {
         <meta property="og:url" content="https://tssx.com/" />
         <meta
           property="og:title"
-          content="TSS-X | Enterprise IT Infrastructure & Automation Solutions"
+          content={t("main_page_title")}
         />
         <meta
           property="og:description"
@@ -49,7 +50,7 @@ const MainPage = () => {
         <meta property="twitter:url" content="https://tssx.com/" />
         <meta
           property="twitter:title"
-          content="TSS-X | Enterprise IT Infrastructure & Automation Solutions"
+          content={t("main_page_title")}
         />
         <meta
           property="twitter:description"
@@ -67,7 +68,7 @@ const MainPage = () => {
         <meta name="author" content="TSS-X Information Technologies" />
         <meta name="geo.region" content="TR" />
         <meta name="geo.placename" content="Istanbul" />
-        <meta name="language" content="English" />
+        <meta name="language" content={t("language")} />
         <meta name="rating" content="General" />
         <meta name="revisit-after" content="7 days" />
 

@@ -1,15 +1,7 @@
 import { Menu, X } from "lucide-react";
 import HeaderLink from "./HeaderLink";
 import SolutionsDropdown from "./SolutionsDropdown";
-
-const navItems = [
-  { type: "link", to: "/", label: "Home" },
-  { type: "dropdown", label: "Solutions" },
-  { type: "link", to: "/about", label: "About Us" },
-  { type: "link", to: "/references", label: "References" },
-  { type: "link", to: "/partners", label: "Partners" },
-  { type: "link", to: "/contact", label: "Contact Us" },
-];
+import { useTranslation } from "react-i18next";
 
 const HeaderBottom = ({
   mobileMenuOpen,
@@ -18,6 +10,17 @@ const HeaderBottom = ({
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
 }) => {
+  const { t } = useTranslation();
+
+  const navItems = [
+    { type: "link", to: "/", label: t("nav_home") },
+    { type: "dropdown", label: t("nav_solutions") },
+    { type: "link", to: "/about", label: t("nav_about") },
+    { type: "link", to: "/references", label: t("nav_references") },
+    { type: "link", to: "/partners", label: t("nav_partners") },
+    { type: "link", to: "/contact", label: t("nav_contact") },
+  ];
+
   const handleNavClick = () => setMobileMenuOpen(false);
 
   return (
@@ -41,7 +44,13 @@ const HeaderBottom = ({
         <div className="flex space-x-6">
           {navItems.slice(0, -1).map((item) => {
             if (item.type === "dropdown") {
-              return <SolutionsDropdown variant="desktop" key="solutions-dropdown" />;
+              return (
+                <SolutionsDropdown
+                  variant="desktop"
+                  key="solutions-dropdown"
+                  label={item.label}
+                />
+              );
             }
 
             return (

@@ -4,10 +4,8 @@ import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 
 const languages = [
-  { code: "tr", label: "Türkçe" },
-  { code: "en", label: "English" },
-  { code: "ar", label: "العربية" },
-  { code: "hi", label: "हिन्दी" },
+  { code: "en", label: "English", flag: "🇺🇸" },
+  { code: "tr", label: "Türkçe", flag: "🇹🇷" },
 ];
 
 export default function LanguageSwitcher() {
@@ -52,7 +50,7 @@ export default function LanguageSwitcher() {
                 i18n.language === lang.code && "bg-neutral-800"
               )}
             >
-              {lang.label}
+              {lang.flag} {lang.label}
             </button>
           ))}
         </div>

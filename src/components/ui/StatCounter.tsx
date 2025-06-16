@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import CountUp from "react-countup";
+import { CountUp } from "countup.js";
 
 interface StatCounterProps {
   value: string;
@@ -17,83 +17,98 @@ const StatCounter = ({
   const [end, setEnd] = useState<number>(0);
   const [suffix, setSuffix] = useState<string>("");
   const [prefix, setPrefix] = useState<string>("");
-  const [hasAnimated, setHasAnimated] = useState<boolean>(false);
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const ref = useRef<HTMLSpanElement>(null);
+  const countUpRef = useRef<HTMLSpanElement>(null);
+  const countUpInstance = useRef<CountUp | null>(null);
 
   useEffect(() => {
-    // Parse the value string to extract numerical value and any prefix/suffix
     const parseValue = (val: string) => {
-      // Handle percentage values
       if (val.includes("%")) {
-        const numVal = parseFloat(val.replace("%", ""));
-        setEnd(numVal);
+        setEnd(parseFloat(val.replace("%", "")));
         setSuffix("%");
-        return;
-      }
-
-      // Handle values with + symbol
-      if (val.includes("+")) {
-        const numVal = parseFloat(val.replace("+", ""));
-        setEnd(numVal);
-        setPrefix("+");
-        return;
-      }
-
-      // Handle fraction values like 24/7
-      if (val.includes("/")) {
-        setSuffix("");
         setPrefix("");
-        return val;
+        return;
       }
-
-      // Handle values with units like "Min." or similar
+      if (val.includes("+")) {
+        setEnd(parseFloat(val.replace("+", "")));
+        setPrefix("+");
+        setSuffix("");
+        return;
+      }
+      if (val.includes("/")) {
+        setPrefix("");
+        setSuffix("");
+        return;
+      }
       const matches = val.match(/^(\d+(?:\.\d+)?)\s*(.*)$/);
       if (matches) {
         const [, numPart, unit] = matches;
         setEnd(parseFloat(numPart));
         setSuffix(unit ? ` ${unit.trim()}` : "");
+        setPrefix("");
         return;
       }
-
-      // Default case - just a number
       setEnd(parseFloat(val) || 0);
+      setPrefix("");
+      setSuffix("");
     };
 
     parseValue(value);
-    
-    // Show the final value immediately on initial load
-    setIsVisible(true);
   }, [value]);
 
-  // Special case for fractions like 24/7
+  useEffect(() => {
+    if (countUpRef.current && end > 0) {
+      // Clean up previous instance
+      if (countUpInstance.current) {
+        countUpInstance.current = null;
+      }
+
+      const startAnimation = () => {
+        if (countUpRef.current) {
+          // Create new CountUp instance
+          countUpInstance.current = new CountUp(countUpRef.current, end, {
+            startVal: 0,
+            duration: duration,
+            enableScrollSpy: enableScrollSpy,
+            scrollSpyOnce: true,
+          });
+
+          // Start the animation
+          if (!countUpInstance.current.error) {
+            countUpInstance.current.start();
+          } else {
+            console.error('CountUp error:', countUpInstance.current.error);
+            // Fallback to static display
+            if (countUpRef.current) {
+              countUpRef.current.textContent = end.toString();
+            }
+          }
+        }
+      };
+
+      // Apply delay if specified
+      if (delay > 0) {
+        setTimeout(startAnimation, delay * 1000);
+      } else {
+        startAnimation();
+      }
+    }
+
+    return () => {
+      if (countUpInstance.current) {
+        countUpInstance.current = null;
+      }
+    };
+  }, [end, duration, delay, enableScrollSpy]);
+
   if (value.includes("/")) {
-    return <span ref={ref}>{value}</span>;
+    return <span>{value}</span>;
   }
 
   return (
-    <span ref={ref}>
-      {!isVisible ? (
-        // Show the final value immediately
-        <>{prefix}{end}{suffix}</>
-      ) : (
-        <>
-          {prefix}
-          <CountUp
-            start={0}
-            end={end}
-            duration={duration}
-            delay={delay}
-            enableScrollSpy={enableScrollSpy && !hasAnimated}
-            scrollSpyDelay={100}
-            scrollSpyOnce={true}
-            onEnd={() => setHasAnimated(true)}
-            preserveValue={true}
-            redraw={false}
-          />
-          {suffix}
-        </>
-      )}
+    <span>
+      {prefix}
+      <span ref={countUpRef} />
+      {suffix}
     </span>
   );
 };

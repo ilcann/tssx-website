@@ -5,6 +5,8 @@ import App from "./App.tsx";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router";
 import LoadingPage from "./components/ui/LoadingPage.tsx";
+import { I18nextProvider } from "react-i18next";
+import i18n from "./i18n.ts";
 
 const rootElement = document.getElementById("root");
 if (rootElement) {
@@ -12,9 +14,11 @@ if (rootElement) {
     <StrictMode>
       <HelmetProvider>
         <BrowserRouter>
-          <Suspense fallback={<LoadingPage />}>
-            <App />
-          </Suspense>
+          <I18nextProvider i18n={i18n}>
+            <Suspense fallback={<LoadingPage />}>
+              <App />
+            </Suspense>
+          </I18nextProvider>
         </BrowserRouter>
       </HelmetProvider>
     </StrictMode>

@@ -10,8 +10,10 @@ import Contact from "./pages/Contact";
 import BackToTop from "./components/ui/BackToTop";
 import References from "./pages/References";
 import PartnersPage from "./pages/Partners";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const { t } = useTranslation();
   const location = useLocation();
   // Scroll to top when route changes
   useEffect(() => {
@@ -21,9 +23,7 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>
-          TSS-X | Enterprise IT Infrastructure & Automation Solutions
-        </title>
+        <title>{t("app_title")}</title>
         <meta
           name="description"
           content="TSS-X Information Technologies provides enterprise IT infrastructure management and automation solutions. Our services include hybrid cloud provisioning, AIOps, compliance management, and security."
@@ -43,7 +43,7 @@ function App() {
         <meta property="og:url" content="https://tssx.com/" />
         <meta
           property="og:title"
-          content="TSS-X | Enterprise IT Infrastructure & Automation Solutions"
+          content={t("app_title")}
         />
         <meta
           property="og:description"
@@ -56,7 +56,7 @@ function App() {
         <meta property="twitter:url" content="https://tssx.com/" />
         <meta
           property="twitter:title"
-          content="TSS-X | Enterprise IT Infrastructure & Automation Solutions"
+          content={t("app_title")}
         />
         <meta
           property="twitter:description"
@@ -68,7 +68,7 @@ function App() {
         {/* Additional SEO tags */}
         <meta name="geo.region" content="TR" />
         <meta name="geo.placename" content="Istanbul" />
-        <meta name="language" content="English" />
+        <meta name="language" content={t("language")} />
         <meta name="rating" content="General" />
         <meta name="revisit-after" content="7 days" />
         {/* Performance and accessibility */}
