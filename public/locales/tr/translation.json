@@ -220,7 +220,6 @@
   "solution_screenshots_title": "Ürün Ekran Görüntüleri",
   "solution_details_title": "Çözüm Detayları",
   "testimonials_trusted_partners": "dünya çapındaki güvenilir ortaklardan",
-  "faq_alt_text": "Sıkça Sorulan Sorular",
   "meta_about_description": "TSS-X Bilişim Teknolojileri hakkında bilgi edinin - Güvenilir BT altyapı yönetimi ortağınız. İstanbul Teknik Üniversitesi'nden kurumsal çözümlerde kanıtlanmış başarı geçmişine sahip uzman ekibimizi keşfedin.",
   "meta_about_keywords": "TSS-X hakkında, BT altyapı uzmanları, otomasyon uzmanları, kurumsal BT, İstanbul Teknik Üniversitesi, sistem mühendisleri, baş danışmanlar, BT yönetim ekibi, teknoloji liderliği",
   "meta_contact_description": "Uzman BT altyapı danışmanlığı ve otomasyon çözümleri için TSS-X ile iletişime geçin. İstanbul'daki sertifikalı profesyonellerimizden kişiselleştirilmiş teklifler ve teknik destek alın.",
@@ -532,5 +531,9 @@
   "finops_hero_metric_2_label": "Bütçe Doğruluğu",
   "finops_hero_metric_2_value": "%97",
   "finops_hero_metric_3_label": "Yıllık Tasarruf",
-  "finops_hero_metric_3_value": "18 Milyon Dolar+"
+  "finops_hero_metric_3_value": "18 Milyon Dolar+",
+  "faq_description_part1": "Hakkında en sık sorulan soruların yanıtlarını alın",
+  "faq_description_part2": "BT altyapı çözümlerimiz",
+  "faq_alt_text": "Sıkça sorulan sorular bölümünü temsil eden, soru işareti gösteren stilize bir resim.",
+  "faq_title": "Sıkça Sorulan Sorular"
 }

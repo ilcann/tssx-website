@@ -1,4 +1,3 @@
-import { ExternalLink } from "lucide-react";
 import React from "react";
 import "@/components/Reference/ClientSlider.css";
 
@@ -21,7 +20,7 @@ const ClientCard: React.FC<ClientCardProps> = ({ client }) => {
 
   const content = (
     <>
-      <div className="flex items-center justify-center h-16 w-24 rounded-xl bg-white/80 border border-gray-200 shadow-sm transition group-hover:shadow-md">
+      <div className="flex items-center justify-center w-32 h-24">
         <img
           src={client.logo}
           alt={client.name}
@@ -29,16 +28,15 @@ const ClientCard: React.FC<ClientCardProps> = ({ client }) => {
         />
       </div>
       <div className="flex flex-col min-w-0">
-        <span className="font-semibold truncate max-w-[120px] text-neutral-900">
+        <span className="font-semibold truncate text-neutral-900">
           {client.name}
         </span>
         {client.country && (
-          <span className="text-xs text-amber-700 mt-0.5">{client.country}</span>
+          <span className="text-xs text-amber-700 mt-0.5">
+            {client.country}
+          </span>
         )}
       </div>
-      {client.url && (
-        <ExternalLink className="ml-1 h-4 w-4 opacity-60 group-hover:opacity-100 transition" />
-      )}
     </>
   );
 

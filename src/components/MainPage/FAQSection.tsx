@@ -38,14 +38,14 @@ const FAQSection = () => {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <SpecialText>
               <h2 className="text-4xl font-bold mb-6 text-neutral-900">
-                Frequently Asked Questions
+                {t("faq_title")}
               </h2>
             </SpecialText>
             <div className="w-24 h-1 bg-amber-700 mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-neutral-700 leading-relaxed">
-              Get answers to the most common questions about our{" "}
+              {t("faq_description_part1")}{" "}
               <span className="text-amber-700 font-semibold">
-                IT infrastructure solutions
+                {t("faq_description_part2")}
               </span>
             </p>
           </div>

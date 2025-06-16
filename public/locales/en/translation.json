@@ -220,7 +220,6 @@
   "solution_screenshots_title": "Product Screenshots",
   "solution_details_title": "Solution Details",
   "testimonials_trusted_partners": "from trusted partners worldwide",
-  "faq_alt_text": "Frequently Asked Questions",
   "meta_about_description": "Learn about TSS-X Information Technologies - Your trusted partner in IT infrastructure management. Discover our team of experts from Istanbul Technical University and our proven track record in enterprise solutions.",
   "meta_about_keywords": "about TSS-X, IT infrastructure experts, automation specialists, enterprise IT, Istanbul Technical University, systems engineers, principal consultants, IT management team, technology leadership",
   "meta_contact_description": "Get in touch with TSS-X for expert IT infrastructure consulting and automation solutions. Get personalized quotes and technical support from our certified professionals in Istanbul.",
@@ -532,5 +531,9 @@
   "finops_hero_metric_2_label": "Budget Accuracy",
   "finops_hero_metric_2_value": "97%",
   "finops_hero_metric_3_label": "Annualized Savings",
-  "finops_hero_metric_3_value": "$18M+"
+  "finops_hero_metric_3_value": "$18M+",
+  "faq_description_part1": "Get answers to the most common questions about our",
+  "faq_description_part2": "IT infrastructure solutions",
+  "faq_alt_text": "A stylized image showing a question mark, representing the frequently asked questions section.",
+  "faq_title": "Frequently Asked Questions"
 } 

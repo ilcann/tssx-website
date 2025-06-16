@@ -6,7 +6,7 @@ import LazySection from "@/components/LazySection";
 import {
   LazyFAQSection,
   LazyContactSection,
-  LazyTestimonials,
+  //LazyTestimonials,
 } from "@/components/LazyComponents";
 import IntersectionObserver from "@/components/IntersectionObserver";
 import Solutions from "@/components/MainPage/solutions/Solutions";
@@ -156,11 +156,11 @@ const MainPage = () => {
           <Hero />
           <ReferenceSection />
           <Solutions />
-          <IntersectionObserver>
+          {/* <IntersectionObserver>
             <LazySection>
               <LazyTestimonials />
             </LazySection>
-          </IntersectionObserver>
+          </IntersectionObserver> */}
           <IntersectionObserver>
             <LazySection>
               <LazyFAQSection />

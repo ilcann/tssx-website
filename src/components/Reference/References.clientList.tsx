@@ -11,7 +11,7 @@ const allClients = referenceLocations.flatMap((loc) =>
 
 const ReferencesClientList: React.FC = () => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-2 sm:p-4 md:p-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 sm:p-2 md:p-4">
       {allClients.map((client) => (
         <ClientCard
           key={client.name + client.country}
