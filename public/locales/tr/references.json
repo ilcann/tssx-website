@@ -1,0 +1,18 @@
+{
+  "title": "Referanslarımız",
+  "description": "Lider Şirketlerin Tercihi",
+  "meta_description": "Lider kuruluşların bize neden güvendiğini görün. BT altyapısı ve dijital dönüşümdeki küresel müşteri referanslarımızı ve başarı hikayelerimizi keşfedin.",
+  "stats": {
+    "team": "Takım Üyeleri",
+    "experience": "Yıllık Deneyim",
+    "projects": "Projeler",
+    "customers": "Müşteriler",
+    "satisfaction": "Müşteri Memnuniyeti"
+  },
+  "map": {
+    "hover": "Müşterilerimizi görmek için vurgulanan ülkelerin üzerine gelin veya dokunun",
+    "other_countries": "Diğer Ülkeler",
+    "client_locations": "Müşteri Konumları",
+    "error": "Üzgünüz, etkileşimli haritayı yükleyemedik. Lütfen daha sonra tekrar deneyin."
+  }
+}

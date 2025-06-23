@@ -1,0 +1,48 @@
+import { Link } from "react-router";
+import { ExternalLink } from "lucide-react";
+import { useTranslation } from 'react-i18next';
+
+const ContactBanner = () => {
+  const { t } = useTranslation('common');
+  
+  return (
+      <section
+        id="contact"
+        className="w-full container mx-auto"
+      >
+        <div className="relative rounded-xl overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            onError={(e) => {
+              e.currentTarget.style.display = "none";
+            }}
+            aria-hidden="true"
+          >
+            <source src="/img/tssx/background.mp4" type="video/mp4" />
+          </video>
+
+          <div className="relative z-10 p-8 text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {t('contact_banner.title')}
+            </h3>
+            <p className="text-white/90 mb-6 max-w-2xl mx-auto">
+              {t('contact_banner.description')}
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center bg-white text-amber-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-amber-50 transition-colors shadow-lg"
+            >
+              {t('contact_banner.cta')}
+              <ExternalLink className="ml-2 size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+  );
+};
+
+export default ContactBanner;

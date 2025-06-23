@@ -1,5 +1,5 @@
 import React from "react";
-import ClientCard from "@/components/Reference/ClientCard";
+import ClientCard from "@/components/Shared/ClientSlider/ClientCard";
 import { referenceLocations } from "@/staticComponents/reference";
 
 const allClients = referenceLocations.flatMap((loc) =>

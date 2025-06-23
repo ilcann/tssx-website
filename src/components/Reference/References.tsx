@@ -1,8 +1,8 @@
 import DecorativeBackground from "@/components/ui/DecorativeBackground";
 import ReferencesMap from "./Reference.map";
-import ReferencesClientList from "./References.clientList";
 import ReferenceStats from "./References.stats";
 import ReferencesHeader from "./Reference.header";
+import { ContactBanner } from "../Shared";
 
 const References = () => {
   return (
@@ -30,14 +30,12 @@ const References = () => {
       ]}
       className="bg-gradient-to-b from-neutral-50 to-neutral-100"
     >
-      <section id="references">
-        <div className="container mx-auto px-4">
-          <ReferencesHeader />
-          <ReferenceStats />
-          <ReferencesMap />
-          <ReferencesClientList />
-        </div>
-      </section>
+      <main id="references" className="container mx-auto flex flex-col">
+        <ReferencesHeader />
+        <ReferenceStats />
+        <ReferencesMap />
+        <ContactBanner />
+      </main>
     </DecorativeBackground>
   );
 };

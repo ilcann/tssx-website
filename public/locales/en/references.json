@@ -1,0 +1,18 @@
+{
+    "title": "References",
+    "description": "Trusted By Leading Organizations",
+    "meta_description": "See why leading organizations trust us. Explore our global client references and success stories in IT infrastructure and digital transformation.",
+    "stats" : {
+        "team": "Team Members",
+        "experience": "Years Experience",
+        "projects": "Projects",
+        "customers": "Customers",
+        "satisfaction": "Customer Satisfaction"
+    },
+    "map": {
+        "hover": "Hover over or tap on the highlighted countries to see our clients",
+        "other_countries": "Other Countries",
+        "client_locations": "Client Locations",
+        "error": "Sorry, we couldn't load the interactive map. Please try again later."
+    }
+}

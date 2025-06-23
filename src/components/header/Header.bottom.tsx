@@ -34,7 +34,7 @@ const HeaderBottom = ({
           src="img/tssx/tssx-light-logo.png"
           alt="TSS-X Logo"
           height="25"
-          className="h-7 brightness-100"
+          className="h-8 brightness-100"
         />
       </div>
 

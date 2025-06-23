@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "description": "TSS-X Bilişim Teknolojileri hakkında bilgi edinin - Güvenilir BT altyapı yönetimi ortağınız. İstanbul Teknik Üniversitesi'nden kurumsal çözümlerde kanıtlanmış başarı geçmişine sahip uzman ekibimizi keşfedin.",
+    "keywords": "TSS-X hakkında, BT altyapı uzmanları, otomasyon uzmanları, kurumsal BT, İstanbul Teknik Üniversitesi, sistem mühendisleri, baş danışmanlar, BT yönetim ekibi, teknoloji liderliği"
+  },
+  "title": "Hakkımızda",
+  "description": "Güvenilir BT altyapı yönetimi ortağınız",
+  "stats": {
+    "faster": "Daha Hızlı Tedarik",
+    "compliance": "Mevzuat Uyumluluğu",
+    "vulnerabilities": "Giderilen Güvenlik Açıkları",
+    "patch": "Yama Adam/Gün"
+  },
+  "overview": {
+    "legacy": {
+      "title": "Mirasımız",
+      "description": "Mükemmellik mirasıyla kök salmış, önde gelen şirketlerde önemli rollerde çalışırken uzmanlıklarını geliştirmiş dinamik profesyonellerden oluşan bir ekibiz. Kökenimiz İstanbul Teknik Üniversitesi'ne dayanan yolculuğumuz, bizi Sistem Mühendisleri, Baş Danışmanlar, Yöneticiler ve Direktörler gibi çeşitli rollerden geçirdi. Bu zengin deneyimden yararlanarak, BT altyapı yönetimi konusunda karmaşık bir anlayışa sahibiz. Misyonumuz, bu bilgi birikimini müşterilerimize sorunsuz bir şekilde aktarmak, onların başarısına giden yolu açan özel çözümler sunmaktır. Yaklaşımımızın merkezinde, onların benzersiz hedefleri ve beklentileriyle uyumlu stratejiler oluşturma taahhüdü yatmaktadır."
+    },
+    "expertise": {
+      "title": "Uzmanlığımız",
+      "description": "TSS-X Bilişim Teknolojileri'nde, BT profesyonellerinden oluşan ekibimiz, müşterilerimizin BT altyapılarından en iyi şekilde yararlanmalarına yardımcı olmaya kendini adamıştır. Uygulama, veritabanı, sunucu, depolama, ağ ve güvenlik de dahil olmak üzere BT altyapısının birçok alanında çalışmış deneyimli bir ekiple BT otomasyon hizmetlerinde uzmanız."
+    },
+    "stats": {
+      "automation": {
+        "title": "Otomasyon",
+        "description": "Otomasyon iş akışları ve süreçlerinin uzman gelişimi"
+      },
+      "security": {
+        "title": "Güvenlik",
+        "description": "Uçtan uca altyapı güvenliği ve uyumluluğu"
+      },
+      "analytics": {
+        "title": "Analitik",
+        "description": "Gerçek zamanlı izleme ve performans analitiği"
+      }
+    }
+  },
+  "team": {
+    "title": "Ekibimiz",
+    "description": "Ekibimiz, İstanbul Teknik Üniversitesi'nden mezun, önde gelen şirketlerde Sistem Mühendisi, Baş Danışman, Yönetici ve Direktör gibi çeşitli rollerde çalışmış deneyimli BT profesyonellerinden oluşmaktadır.",
+    "stats": {
+      "members": "Takım Üyeleri",
+      "experience": "Yıllık Deneyim",
+      "projects": "Teslim Edilen Projeler",
+      "satisfaction": "Müşteri Memnuniyeti"
+    },
+    "tabs": {
+      "vision": {
+        "label": "Vizyonumuz",
+        "title": "BT Altyapısının Geleceğini Şekillendirmek",
+        "description": "BT altyapı yönetiminin tamamen otomatikleştirildiği, güvenli ve optimize edildiği, işletmelerin bakım yerine yenilik ve büyümeye odaklanmasını sağlayan bir dünya tasavvur ediyoruz."
+      },
+      "mission": {
+        "label": "Misyonumuz",
+        "title": "Otomasyonla Güçlendirme",
+        "description": "Misyonumuz, kuruluşları BT operasyonlarını kolaylaştıran, güvenliği artıran ve dijital dönüşümü hızlandıran en son otomasyon çözümleriyle güçlendirmektir."
+      },
+      "values": {
+        "label": "Değerlerimiz",
+        "title": "Temel Değerlerimiz",
+        "list": {
+          "excellence": "Hizmet sunumunda mükemmellik",
+          "innovation": "Sürekli yenilik",
+          "client": "Müşteri odaklı yaklaşım",
+          "integrity": "Dürüstlük ve şeffaflık"
+        }
+      }
+    }
+  },
+  "timeline": {
+    "title": "Yolculuğumuz",
+    "milestones": {
+      "2024": {
+        "title": "Gelişmiş Yapay Zeka Entegrasyonu",
+        "description": "Yeni nesil yapay zeka destekli altyapı yönetimi çözümlerini başlattı"
+      },
+      "2023": {
+        "title": "İnovasyon Ödülü",
+        "description": "BT altyapı otomasyon çözümlerinde mükemmellik için tanındı"
+      },
+      "2021": {
+        "title": "Uluslararası Genişleme",
+        "description": "Avrupa ve Orta Doğu'daki müşterilere hizmet vermek için operasyonlarımızı genişlettik"
+      },
+      "2019": {
+        "title": "İlk Kurumsal Müşteri",
+        "description": "İlk büyük kurumsal müşterimize otomasyon çözümlerini başarıyla teslim ettik"
+      },
+      "2018": {
+        "title": "Şirket Kuruldu",
+        "description": "TSS X, BT altyapı yönetimini dönüştürme vizyonuyla İstanbul'da kuruldu"
+      }
+    }
+  },
+  "success": {
+    "title": "Başarı Hikayeleri",
+    "items": [
+      {
+        "id": "1",
+        "title": "Başarı Hikayesi",
+        "subtitle": "Özel çözümlerimizle turboşarjlı performansa ulaşma",
+        "description": "Özel çözümlerimiz önemli performans iyileştirmeleri sağladı:",
+        "points": [
+          {
+            "label": "+23 puan",
+            "value": "diğer çözümlere göre daha yüksek doğruluk"
+          },
+          {
+            "label": "+19 puan",
+            "value": "rakip çözümlere göre daha yüksek doğruluk"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Gerçek Dünya Faydaları",
+        "subtitle": "Müşterilerimizin elde ettiği sonuçlar",
+        "description": "Çözümlerimizi kullanan müşteriler aşağıdaki sonuçları elde etti:",
+        "points": [
+          {
+            "label": "%94",
+            "value": "token başına maliyette azalma"
+          },
+          {
+            "label": "%70",
+            "value": "gecikmede iyileşme"
+          },
+          {
+            "label": "Milyarlarca istek/hafta",
+            "value": " işlem optimizasyonu"
+          }
+        ]
+      }
+    ]
+  }
+}

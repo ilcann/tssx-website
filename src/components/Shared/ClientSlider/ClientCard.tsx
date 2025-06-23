@@ -1,5 +1,5 @@
 import React from "react";
-import "@/components/Reference/ClientSlider.css";
+import "./ClientSlider.css";
 
 export type Client = {
   name: string;

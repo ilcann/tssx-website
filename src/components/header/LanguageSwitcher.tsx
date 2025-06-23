@@ -40,13 +40,13 @@ export default function LanguageSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-40 bg-neutral-900 rounded shadow-lg ring-1 ring-white/10 z-20">
+        <div className="absolute right-0 w-40 bg-neutral-900 rounded shadow-lg ring-1 ring-white/10 z-20">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => changeLang(lang.code)}
               className={clsx(
-                "w-full text-left px-4 py-2 text-sm text-neutral-200 hover:text-amber-400 hover:bg-neutral-800 transition-colors duration-200 font-medium cursor-pointer",
+                "w-full text-left px-6 py-3 text-sm text-neutral-200 hover:text-amber-400 hover:bg-neutral-800 transition-colors duration-200 font-medium cursor-pointer",
                 i18n.language === lang.code && "bg-neutral-800"
               )}
             >

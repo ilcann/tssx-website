@@ -61,10 +61,12 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header ref={headerRef} className="w-full sticky top-0 z-40 bg-neutral-900 border-b border-b-black shadow-xl py-3">
-      {!mobileMenuOpen && <HeaderTop />}
-      <HeaderBottom mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
-      <MobileNavigation mobileMenuOpen={mobileMenuOpen} handleClose={() => setMobileMenuOpen(false)} />
+    <header ref={headerRef} className="w-full sticky top-0 z-40 bg-neutral-900 border-b border-b-black shadow-xl py-5">
+      <div className="flex flex-col gap-y-3">
+        {!mobileMenuOpen && <HeaderTop />}
+        <HeaderBottom mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+        <MobileNavigation mobileMenuOpen={mobileMenuOpen} handleClose={() => setMobileMenuOpen(false)} />
+      </div>
     </header>
   );
 };

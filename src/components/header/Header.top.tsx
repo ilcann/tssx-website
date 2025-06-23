@@ -15,14 +15,14 @@ const HeaderTop = () => {
   };
 
   return (
-    <div className="hidden md:flex container mx-auto px-6 mb-2 justify-between items-center">
+    <div className="hidden md:flex container mx-auto px-6 justify-between items-center">
       {/* Left: Logo */}
       <div className="flex items-center cursor-pointer ml-8" onClick={handleLogoClick}>
         <img
           src="img/tssx/tssx-light-logo.png"
           alt="TSS-X Logo"
           height="25"
-          className="h-5 brightness-100"
+          className="h-8 brightness-100"
         />
       </div>
 

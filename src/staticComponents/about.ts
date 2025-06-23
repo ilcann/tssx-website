@@ -3,36 +3,36 @@ import type { TFunction } from "i18next";
 
 export const getCaseStudies = (t: TFunction): CaseStudyProps[] => [
   {
-    title: t("case_study_1_title"),
-    subtitle: t("case_study_1_subtitle"),
-    description: t("case_study_1_description"),
+    title: t("success.items.0.title"),
+    subtitle: t("success.items.0.subtitle"),
+    description: t("success.items.0.description"),
     points: [
       {
-        label: t("case_study_1_point_1_label"),
-        value: t("case_study_1_point_1_value"),
+        label: t("success.items.0.points.0.label"),
+        value: t("success.items.0.points.0.value"),
       },
       {
-        label: t("case_study_1_point_2_label"),
-        value: t("case_study_1_point_2_value"),
+        label: t("success.items.0.points.1.label"),
+        value: t("success.items.0.points.1.value"),
       },
     ],
   },
   {
-    title: t("case_study_2_title"),
-    subtitle: t("case_study_2_subtitle"),
-    description: t("case_study_2_description"),
+    title: t("success.items.1.title"),
+    subtitle: t("success.items.1.subtitle"),
+    description: t("success.items.1.description"),
     points: [
       {
-        label: t("case_study_2_point_1_label"),
-        value: t("case_study_2_point_1_value"),
+        label: t("success.items.1.points.0.label"),
+        value: t("success.items.1.points.0.value"),
       },
       {
-        label: t("case_study_2_point_2_label"),
-        value: t("case_study_2_point_2_value"),
+        label: t("success.items.1.points.1.label"),
+        value: t("success.items.1.points.1.value"),
       },
       {
-        label: t("case_study_2_point_3_label"),
-        value: t("case_study_2_point_3_value"),
+        label: t("success.items.1.points.2.label"),
+        value: t("success.items.1.points.2.value"),
       },
     ],
   },
@@ -41,27 +41,27 @@ export const getCaseStudies = (t: TFunction): CaseStudyProps[] => [
 export const getMilestones = (t: TFunction) => [
   {
     year: "2018",
-    title: t("milestone_2018_title"),
-    description: t("milestone_2018_description"),
+    title: t("timeline.milestones.2018.title", { ns: "about" }),
+    description: t("timeline.milestones.2018.description", { ns: "about" }),
   },
   {
     year: "2019",
-    title: t("milestone_2019_title"),
-    description: t("milestone_2019_description"),
+    title: t("timeline.milestones.2019.title", { ns: "about" }),
+    description: t("timeline.milestones.2019.description", { ns: "about" }),
   },
   {
     year: "2021",
-    title: t("milestone_2021_title"),
-    description: t("milestone_2021_description"),
+    title: t("timeline.milestones.2021.title", { ns: "about" }),
+    description: t("timeline.milestones.2021.description", { ns: "about" }),
   },
   {
     year: "2023",
-    title: t("milestone_2023_title"),
-    description: t("milestone_2023_description"),
+    title: t("timeline.milestones.2023.title", { ns: "about" }),
+    description: t("timeline.milestones.2023.description", { ns: "about" }),
   },
   {
     year: "2024",
-    title: t("milestone_2024_title"),
-    description: t("milestone_2024_description"),
+    title: t("timeline.milestones.2024.title", { ns: "about" }),
+    description: t("timeline.milestones.2024.description", { ns: "about" }),
   },
 ];

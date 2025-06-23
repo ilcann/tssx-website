@@ -1,0 +1,136 @@
+{
+    "meta": {
+        "description": "Learn about TSS-X Information Technologies - Your trusted partner in IT infrastructure management. Discover our team of experts from Istanbul Technical University and our proven track record in enterprise solutions.",
+        "keywords": "about TSS-X, IT infrastructure experts, automation specialists, enterprise IT, Istanbul Technical University, systems engineers, principal consultants, IT management team, technology leadership"
+    },
+    "title": "About",
+    "description": "Your trusted partner in IT infrastructure management",
+    "stats": {
+        "faster": "Faster Provisioning",
+        "compliance": "Regulatory Compliance",
+        "vulnerabilities": "Vulnerabilities Remediated",
+        "patch": "Patch Man/Day"
+    },
+    "overview": {
+        "legacy": {
+            "title": "Our Legacy",
+            "description": "Rooted in a legacy of excellence, we are a team of dynamic professionals who have honed our expertise while working in pivotal roles at leading companies. With our origins tracing back to Istanbul Technical University, our journey has taken us through a spectrum of roles, including Systems Engineers, Principal Consultants, Managers, and Directors. Drawing from this rich tapestry of experience, we possess an intricate understanding of IT infrastructure management. Our mission is to seamlessly channel this wealth of knowledge to our clients, offering tailored solutions that pave the path to their success. At the core of our approach lies a commitment to crafting strategies that align with their unique objectives and aspirations."
+        },
+        "expertise": {
+            "title": "Our Expertise",
+            "description": "At TSS-X Information Technologies, our team of IT professionals is dedicated to helping our clients get the most out of their IT infrastructure. We specialize in IT automation services, with an experienced team that has worked in many areas of IT infrastructure, including application, database, server, storage, network and security."
+        },
+        "stats": {
+            "automation": {
+                "title": "Automation",
+                "description": "Expert development of automation workflows and processes"
+            },
+            "security": {
+                "title": "Security",
+                "description": "End-to-end infrastructure security and compliance"
+            },
+            "analytics": {
+                "title": "Analytics",
+                "description": "Real-time monitoring and performance analytics"
+            }
+        }
+    },
+    "team": {
+        "title": "Our Team",
+        "description": "Our team consists of experienced IT professionals with a background from Istanbul Technical University who have worked in various roles such as Systems Engineers, Principal Consultants, Managers, and Directors at leading companies.",
+        "stats": {
+            "members": "Team Members",
+            "experience": "Years of Experience",
+            "projects": "Projects Delivered",
+            "satisfaction": "Customer Satisfaction"
+        },
+        "tabs": {
+            "vision": {
+                "label": "Our Vision",
+                "title": "Shaping the Future of IT Infrastructure",
+                "description": "We envision a world where IT infrastructure management is fully automated, secure, and optimized, enabling businesses to focus on innovation and growth rather than maintenance."
+            },
+            "mission": {
+                "label": "Our Mission",
+                "title": "Empowering Through Automation",
+                "description": "Our mission is to empower organizations with cutting-edge automation solutions that streamline IT operations, enhance security, and accelerate digital transformation."
+            },
+            "values": {
+                "label": "Our Values",
+                "title": "Our Core Values",
+                "list": {
+                    "excellence": "Excellence in service delivery",
+                    "innovation": "Continuous innovation",
+                    "client": "Client-centric approach",
+                    "integrity": "Integrity and transparency"
+                }
+            }
+        }
+    },
+    "timeline": {
+        "title": "Our Journey",
+        "milestones": {
+            "2024": {
+                "title": "Advanced AI Integration",
+                "description": "Launched next-generation AI-powered infrastructure management solutions"
+            },
+            "2023": {
+                "title": "Innovation Award",
+                "description": "Recognized for excellence in IT infrastructure automation solutions"
+            },
+            "2021": {
+                "title": "International Expansion",
+                "description": "Expanded operations to serve clients in Europe and the Middle East"
+            },
+            "2019": {
+                "title": "First Enterprise Client",
+                "description": "Successfully delivered automation solutions to our first major enterprise client"
+            },
+            "2018": {
+                "title": "Company Founded",
+                "description": "TSS X was founded in Istanbul with a vision to transform IT infrastructure management"
+            }
+        }
+    },
+    "success": {
+        "title": "Success Stories",
+        "items": [
+            {
+                "id": "1",
+                "title": "Success Story",
+                "subtitle": "Achieving turbocharged performance with our specialized solutions",
+                "description": "Our specialized solutions have delivered significant performance improvements:",
+                "points": [
+                    {
+                        "label": "+23 pts",
+                        "value": "higher accuracy than other solutions"
+                    },
+                    {
+                        "label": "+19 pts",
+                        "value": "higher accuracy than competing solutions"
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "title": "Real-world benefits",
+                "subtitle": "Results obtained by our customers",
+                "description": "Customers who used our solutions obtained the following results:",
+                "points": [
+                    {
+                        "label": "94%",
+                        "value": "reduction in cost per token"
+                    },
+                    {
+                        "label": "70%",
+                        "value": "improvement in latency"
+                    },
+                    {
+                        "label": "billions of reqs/week",
+                        "value": "Optimization for processing"
+                    }
+                ]
+            }
+        ]
+    }
+}

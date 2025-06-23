@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import PageHero from '../Shared/HeroSection';
 
-const PartnersHeader = () => {
-  const { t } = useTranslation('partners');
+const Hero = () => {
+  const { t } = useTranslation('about');
   
   return (
     <PageHero
@@ -12,4 +12,4 @@ const PartnersHeader = () => {
   );
 };
 
-export default PartnersHeader; 
+export default Hero;

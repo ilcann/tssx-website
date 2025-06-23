@@ -1,6 +1,6 @@
 import SpecialText from "@/components/ui/SpecialText";
 import AnimatedText from "@/components/ui/AnimatedText";
-import CaseStudy from "@/components/About/CaseStudy";
+import CaseStudy from "@/components/About/Success/SuccessCard";
 import type { DetailedSolution } from "@/types/solution";
 import { useTranslation } from 'react-i18next';
 

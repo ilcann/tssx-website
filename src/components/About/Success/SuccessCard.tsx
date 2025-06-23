@@ -8,12 +8,12 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-} from "../ui/card";
+} from "../../ui/card";
 import { Check } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CaseStudy = ({
+const SuccessCard = ({
   title,
   subtitle,
   description,
@@ -73,9 +73,9 @@ const CaseStudy = ({
   return (
     <Card
       ref={cardRef}
-      className="bg-white rounded-lg shadow-sm border border-neutral-200 hover:shadow-md transition-shadow duration-200 mt-16"
+      className="bg-white rounded-lg shadow-sm border border-neutral-200 hover:shadow-md transition-shadow duration-200"
     >
-      <CardHeader className="p-6">
+      <CardHeader>
         <div className="flex items-center gap-3 mb-4">
           {/* Icon Display */}
           {icon && (
@@ -102,7 +102,7 @@ const CaseStudy = ({
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="p-6 pt-0">
+      <CardContent>
         <div
           className={`${image ? "grid grid-cols-1 lg:grid-cols-2 gap-6" : ""}`}
         >
@@ -150,4 +150,4 @@ const CaseStudy = ({
   );
 };
 
-export default CaseStudy;
+export default SuccessCard;
