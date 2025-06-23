@@ -1,4 +1,5 @@
-import { solutionData } from "@/staticComponents/solution";
+import { getSolutionData } from "@/staticComponents/solution";
+import { useTranslation } from "react-i18next";
 
 // Mapping between solution card titles and detailed solution IDs
 const titleToIdMapping: Record<string, string> = {
@@ -10,6 +11,9 @@ const titleToIdMapping: Record<string, string> = {
 };
 
 export const useSolutions = () => {
+  const { t } = useTranslation();
+  const solutionData = getSolutionData(t);
+
   return solutionData.map((solution) => {
     const detailedSolutionId = titleToIdMapping[solution.title];
     return {

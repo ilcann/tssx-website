@@ -4,7 +4,7 @@ interface SolutionsGridProps {
   solutions: {
     icon: React.ReactNode;
     title: string;
-    titleTr: string;
+    label: string;
     services: string[];
     id?: string;
   }[];
@@ -17,7 +17,7 @@ const SolutionsGrid = ({ solutions }: SolutionsGridProps) => (
         key={index}
         icon={solution.icon}
         title={solution.title}
-        titleTr={solution.titleTr}
+        label={solution.label}
         services={solution.services}
         id={solution.id}
         index={index}

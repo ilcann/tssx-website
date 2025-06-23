@@ -12,20 +12,20 @@ type TFunction = (key: string) => string;
 export const getSolutionData = (t: TFunction): SolutionCardProps[] => [
   {
     icon: <EyeIcon className="size-10 text-primary" />,
-    title: "Observability",
-    titleTr: t("footer_observability"),
+    title: t("solutions_dropdown_monitor_sub"),
+    label: t("solutions_dropdown_monitor"),
     services: ["BMC Helix AIOPS", "Zabbix", "Netreo"],
   },
   {
     icon: <SearchIcon className="size-10 text-primary" />,
-    title: "IT Discovery & Asset Management",
-    titleTr: t("footer_it_discovery"),
+    title: t("solutions_dropdown_track_sub"),
+    label: t("solutions_dropdown_track"),
     services: ["BMC Helix Discovery", "Snow Software"],
   },
   {
     icon: <SettingsIcon className="size-10 text-primary" />,
-    title: "Automation",
-    titleTr: t("footer_automation"),
+    title: t("solutions_dropdown_automate_sub"),
+    label: t("solutions_dropdown_automate"),
     services: [
       "BMC Truesight Server Automation",
       "BMC Truesight Orchestration",
@@ -34,14 +34,14 @@ export const getSolutionData = (t: TFunction): SolutionCardProps[] => [
   },
   {
     icon: <ShieldCheckIcon className="size-10 text-primary" />,
-    title: "Security",
-    titleTr: t("footer_security"),
+    title: t("solutions_dropdown_security_sub"),
+    label: t("solutions_dropdown_security"),
     services: ["BMC Helix Vulnerability Management", "MonoSign", "MonoPAM"],
   },
   {
     icon: <DollarSignIcon className="size-10 text-primary" />,
-    title: "FinOPS",
-    titleTr: t("footer_finops"),
+    title: t("solutions_dropdown_optimize_sub"),
+    label: t("solutions_dropdown_optimize"),
     services: [t("solution_services_cost_optimization"), t("solution_services_budget_management")],
   },
 ];
@@ -51,19 +51,19 @@ export const solutionData: SolutionCardProps[] = [
   {
     icon: <EyeIcon className="size-10 text-primary" />,
     title: "Observability",
-    titleTr: "Gözlemlenebilirlik",
+    label: "Gözlemlenebilirlik",
     services: ["BMC Helix AIOPS", "Zabbix", "Netreo"],
   },
   {
     icon: <SearchIcon className="size-10 text-primary" />,
     title: "IT Discovery & Asset Management",
-    titleTr: "IT Keşfi ve Varlık Yönetimi",
+    label: "IT Keşfi ve Varlık Yönetimi",
     services: ["BMC Helix Discovery", "Snow Software"],
   },
   {
     icon: <SettingsIcon className="size-10 text-primary" />,
     title: "Automation",
-    titleTr: "Otomasyon",
+    label: "Otomasyon",
     services: [
       "BMC Truesight Server Automation",
       "BMC Truesight Orchestration",
@@ -73,13 +73,13 @@ export const solutionData: SolutionCardProps[] = [
   {
     icon: <ShieldCheckIcon className="size-10 text-primary" />,
     title: "Security",
-    titleTr: "Güvenlik",
+    label: "Güvenlik",
     services: ["BMC Helix Vulnerability Management", "MonoSign", "MonoPAM"],
   },
   {
     icon: <DollarSignIcon className="size-10 text-primary" />,
     title: "FinOPS",
-    titleTr: "Financial Operations",
+    label: "Financial Operations",
     services: ["Cost Optimization", "Budget Management"],
   },
 ];

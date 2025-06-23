@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -11,17 +12,19 @@ gsap.registerPlugin(ScrollTrigger);
 export const SolutionCard = ({
   icon,
   title,
-  titleTr,
+  label,
   services,
   id,
   index = 0,
 }: SolutionCardProps & { id?: string | number; index?: number }) => {
+  const { t } = useTranslation();
+
   const cardRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const iconContainerRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const titleTrRef = useRef<HTMLParagraphElement>(null);
+  const labelRef = useRef<HTMLParagraphElement>(null);
   const servicesRef = useRef<HTMLUListElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -31,7 +34,7 @@ export const SolutionCard = ({
     const iconContainer = iconContainerRef.current;
     const iconElement = iconRef.current;
     const titleElement = titleRef.current;
-    const titleTrElement = titleTrRef.current;
+    const labelElement = labelRef.current;
     const servicesList = servicesRef.current;
     const content = contentRef.current;
 
@@ -41,7 +44,7 @@ export const SolutionCard = ({
       !iconContainer ||
       !iconElement ||
       !titleElement ||
-      !titleTrElement ||
+      !labelElement ||
       !servicesList ||
       !content
     )
@@ -51,7 +54,7 @@ export const SolutionCard = ({
     const serviceItems = servicesList.querySelectorAll("li");
 
     // Initial state - hide elements for entrance animation
-    gsap.set([titleElement, titleTrElement], {
+    gsap.set([titleElement, labelElement], {
       y: 20,
       opacity: 0,
     });
@@ -126,7 +129,7 @@ export const SolutionCard = ({
         "-=0.3"
       )
       .to(
-        titleTrElement,
+        labelElement,
         {
           y: 0,
           opacity: 1,
@@ -193,8 +196,8 @@ export const SolutionCard = ({
         <h3 ref={titleRef} className="text-xl font-bold text-neutral-900 mb-2">
           {title}
         </h3>
-        <p ref={titleTrRef} className="text-amber-700 mb-4 text-sm font-medium">
-          {titleTr}
+        <p ref={labelRef} className="text-amber-700 mb-4 text-sm font-medium">
+          {label}
         </p>
         <ul ref={servicesRef} className="space-y-3 mb-6 flex-grow">
           {services.map((service, serviceIndex) => (
@@ -221,14 +224,12 @@ export const SolutionCard = ({
         </ul>
 
         {/* Learn More Indicator */}
-        {id && (
-          <div className="mt-auto">
-            <div className="flex items-center justify-between text-amber-600 font-medium text-sm group-hover:text-amber-700 transition-colors">
-              <span>Learn More</span>
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </div>
+        <div className="mt-auto">
+          <div className="flex items-center justify-between text-amber-600 font-medium text-sm group-hover:text-amber-700 transition-colors">
+            <span>{t("learn_more")}</span>
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
