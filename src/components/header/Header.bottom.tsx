@@ -28,7 +28,7 @@ const HeaderBottom = ({
       {/* Logo */}
       <div
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="flex md:hidden items-center cursor-pointer"
+        className="flex lg:hidden items-center cursor-pointer"
       >
         <img
           src="img/tssx/tssx-light-logo.png"
@@ -39,7 +39,7 @@ const HeaderBottom = ({
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex flex-1 justify-between items-center ml-6">
+      <div className="hidden lg:flex flex-1 justify-between items-center ml-6">
         {/* Left links */}
         <div className="flex space-x-6">
           {navItems.slice(0, -1).map((item) => {
@@ -80,7 +80,7 @@ const HeaderBottom = ({
 
       {/* Mobile Menu Toggle Button */}
       <button
-        className="md:hidden w-10 h-10 rounded-lg bg-amber-600 text-white hover:bg-amber-700 flex items-center justify-center"
+        className="lg:hidden w-10 h-10 rounded-lg bg-amber-600 text-white hover:bg-amber-700 flex items-center justify-center"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-label={
           mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"

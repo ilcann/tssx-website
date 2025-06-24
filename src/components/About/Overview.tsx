@@ -6,7 +6,7 @@ const Overview = () => {
     const { t } = useTranslation('about');
     
     return (
-        <section id="overview">
+        <section id="overview" className="px-6">
             <div className="bg-white rounded-xl shadow-lg border border-neutral-200 flex flex-col gap-y-6 p-8">
                 <SubSection 
                     id="legacy"

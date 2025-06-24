@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer id="contact" className="bg-neutral-900 text-neutral-200 pt-12 pb-4">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           {/* Company Info */}

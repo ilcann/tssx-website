@@ -1,8 +1,8 @@
 import { partners } from "@/staticComponents/partners";
 
-const PartnersGrid = () => (
-  <section id="partners" className="w-full flex justify-center items-center">
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8">
+const PartnersGrid = () => {
+  return (
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8 py-6 md:py-12 px-6">
       {partners.map((partner) => (
         <a
           key={partner.name}
@@ -22,7 +22,7 @@ const PartnersGrid = () => (
         </a>
       ))}
     </div>
-  </section>
-);
+  );
+  }
 
 export default PartnersGrid;

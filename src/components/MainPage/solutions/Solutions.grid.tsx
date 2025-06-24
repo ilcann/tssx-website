@@ -11,7 +11,7 @@ interface SolutionsGridProps {
 }
 
 const SolutionsGrid = ({ solutions }: SolutionsGridProps) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-7xl">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-7xl py-6 md:py-12">
     {solutions.map((solution, index) => (
       <SolutionCard
         key={index}

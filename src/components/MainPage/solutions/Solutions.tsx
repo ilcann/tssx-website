@@ -20,7 +20,7 @@ const Solutions = () => {
       className="bg-gradient-to-b from-white to-neutral-50"
     >
       <section id="solutions" className="min-h-[100dvh]">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6">
           <SolutionsHeader />
           <SolutionsGrid solutions={solutions} />
         </div>

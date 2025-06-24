@@ -10,7 +10,7 @@ const Team = () => {
   const { t } = useTranslation('about');
 
   return (
-    <section id="team">
+    <section id="team" className="px-6">
       <div className="bg-white rounded-xl shadow-lg p-8 border border-neutral-200">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="">

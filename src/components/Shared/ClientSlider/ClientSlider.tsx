@@ -3,8 +3,7 @@ import gsap from "gsap";
 import { referenceLocations } from "@/staticComponents/reference";
 import { useTranslation } from "react-i18next";
 import "./ClientSlider.css";
-import SpecialText from "../../ui/SpecialText";
-import AnimatedText from "../../ui/AnimatedText";
+import AnimatedTitle from "../AnimatedTitle";
 
 const ClientSlider = () => {
   const { t } = useTranslation('references');
@@ -81,21 +80,13 @@ const ClientSlider = () => {
   }, [allClients.length]);
 
   return (
-    <section id="partners" className="container mx-auto px-4">
-      <div className="overflow-hidden">
-        <div className="container w-full flex flex-col items-center justify-center mx-auto px-4 mb-8">
-          <SpecialText
-            id="references-special-text"
-            className="text-2xl font-bold text-center text-neutral-900 mb-2"
-          >
-            <AnimatedText text={t("title")} />
-          </SpecialText>
-
-          <span className="text-center text-neutral-600">
-            {t("description")}
-          </span>
-        </div>
-
+    <section id="partners">
+      <div className="container mx-auto px-6 overflow-hidden">
+        <AnimatedTitle 
+          title={t("title")}
+          description={t("description")}
+          size="sm"
+        />
         <div ref={sliderRef} className="flex overflow-hidden whitespace-nowrap">
           <div
             ref={sliderTrackRef}

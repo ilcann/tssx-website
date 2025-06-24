@@ -6,7 +6,7 @@ export default function Stats() {
     const { t } = useTranslation('about');
 
     return (
-        <section id="stats" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <section id="stats" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
             <AnimatedStat
                 icon={<Zap size={20} />}
                 value="2 Min."

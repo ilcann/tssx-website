@@ -1,13 +1,14 @@
 import { useTranslation } from 'react-i18next';
-import PageHero from '../Shared/HeroSection';
+import { AnimatedTitle } from '@/components/Shared';
 
 const PartnersHeader = () => {
   const { t } = useTranslation('partners');
   
   return (
-    <PageHero
+    <AnimatedTitle
       title={t('title')}
       description={t('description')}
+      className='px-6'
     />
   );
 };

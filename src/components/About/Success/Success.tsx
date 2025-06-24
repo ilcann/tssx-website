@@ -9,7 +9,7 @@ export default function Success() {
     const caseStudies = getCaseStudies(t);
 
     return (
-      <section id="success" className="flex flex-col gap-10">
+      <section id="success" className="flex flex-col gap-10 px-6">
         <SpecialText
           id="success"
           className="text-3xl font-bold text-neutral-900 text-center"

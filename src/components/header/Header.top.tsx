@@ -15,7 +15,7 @@ const HeaderTop = () => {
   };
 
   return (
-    <div className="hidden md:flex container mx-auto px-6 justify-between items-center">
+    <div className="hidden lg:flex container mx-auto px-6 justify-between items-center">
       {/* Left: Logo */}
       <div className="flex items-center cursor-pointer ml-8" onClick={handleLogoClick}>
         <img

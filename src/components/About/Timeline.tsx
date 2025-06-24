@@ -8,7 +8,7 @@ const Timeline = () => {
   const milestones = getMilestones(t);
 
   return (
-    <section id="timeline">
+    <section id="timeline" className="px-6">
       <div className="flex flex-col gap-y-10">
         <SpecialText
           id="about-our-journey"

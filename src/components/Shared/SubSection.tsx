@@ -17,7 +17,7 @@ const SubSection = ({ id, title, description, className }: SubSectionProps) => {
       {description &&
         <p className="text-neutral-700 leading-relaxed">
           {description}
-        </p>      
+        </p>
       }
     </div>
   );
