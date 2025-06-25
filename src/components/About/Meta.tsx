@@ -1,12 +1,14 @@
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 
+const COMPANY_NAME = "TSS-X";
+
 const Meta = () => {
   const { t } = useTranslation('about');
 
   return (
     <Helmet>
-        <title>{t("title")}</title>
+        <title>{t("title")} | {COMPANY_NAME}</title>
         <meta name="description" content={t("meta.description")} />
         <meta name="keywords" content={t("meta.keywords")} />
 

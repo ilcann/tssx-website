@@ -21,27 +21,38 @@ const SolutionsDropdown = ({
 
   if (variant === "desktop") {
     return (
-      <div className="relative group">
-        <button className="flex items-center rounded-md gap-1 px-3 py-2 text-md font-medium text-neutral-200 hover:text-amber-400 transition-colors duration-200 hover:bg-neutral-800 cursor-pointer">
+      <div
+        className="relative"
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
+      >
+        <button
+          onClick={() => setOpen((prev) => !prev)}
+          className="flex items-center rounded-md gap-1 px-3 py-2 text-md font-medium text-neutral-200 hover:text-amber-400 transition-colors duration-200 hover:bg-neutral-800 cursor-pointer"
+        >
           {label}
-          <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+          <ChevronDown
+            className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`}
+          />
         </button>
 
-        <div className="absolute left-0 top-full p-2 w-[300px] bg-neutral-900 rounded-md shadow-xl hidden group-hover:block z-50">
-          <ul className="flex flex-col">
-            {solutionsDropdown.map(({ to, label, sub }) => (
-              <li key={to}>
-                <Link
-                  to={to}
-                  className="block px-4 py-3 rounded-md text-neutral-200 hover:text-amber-400 hover:bg-neutral-800 transition-colors duration-200"
-                >
-                  <div className="text-sm font-semibold">{label}</div>
-                  <div className="text-xs text-neutral-400">{sub}</div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {open && (
+          <div className="absolute left-0 top-full p-2 w-[300px] bg-neutral-900 rounded-md shadow-xl z-50">
+            <ul className="flex flex-col">
+              {solutionsDropdown.map(({ to, label, sub }) => (
+                <li key={to}>
+                  <Link
+                    to={to}
+                    className="block px-4 py-3 rounded-md text-neutral-200 hover:text-amber-400 hover:bg-neutral-800 transition-colors duration-200"
+                  >
+                    <div className="text-sm font-semibold">{label}</div>
+                    <div className="text-xs text-neutral-400">{sub}</div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     );
   }

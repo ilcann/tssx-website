@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@layer components {
+  .app-footer {
+    @apply w-full bg-neutral-900;
+  }
+  .footer-content {
+    @apply container mx-auto space-y-8 px-6;
+  }
+  .footer-columns {
+    @apply grid grid-cols-1 lg:grid-cols-12 gap-8 py-12;
+  }
+  .footer-column {
+    @apply flex flex-col gap-6;
+  }
+  .footer-list {
+    @apply space-y-3;
+  }
+  .footer-heading {
+    @apply text-lg font-semibold text-white;
+  }
+  .footer-text {
+    @apply text-sm text-neutral-300;
+  }
+  .footer-caption {
+    @apply text-xs text-neutral-400;
+  }
+  .footer-link {
+    @apply text-neutral-300
+    hover:text-amber-700 transition-colors duration-300;
+  }
+}

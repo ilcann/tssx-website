@@ -55,4 +55,9 @@ export default defineConfig({
     treeShaking: true,
     drop: ["console", "debugger"],
   },
+  // Development server configuration
+  server: {
+    host: '0.0.0.0',
+    port: 5173
+  }
 });

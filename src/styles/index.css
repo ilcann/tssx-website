@@ -1,5 +1,7 @@
 /* Import Tailwind CSS */
 @import "tailwindcss";
+@import "./components/common.css";
+@import "./components/footer.css";
 
 @custom-variant dark (&:is(.dark *));
 

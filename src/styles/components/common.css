@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components{
+    .logo {
+        @apply h-7 w-fit;
+    }
+}

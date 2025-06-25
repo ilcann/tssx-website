@@ -3,5 +3,33 @@
         "title": "Join Our Growing List of Satisfied Customers",
         "description": "Experience the same level of exceptional service...",
         "cta": "Contact Us Today"
+    },
+    "footer": {
+        "brand": {
+            "description": "Empowering organizations with purpose-built IT solutions that enhance automation, monitoring, FinOps, client management, and security.",
+            "caption": "Providing customer-specific solutions with BMC Software and HashiCorp products."
+        },
+        "companyLinks": {
+            "title": "Company",
+            "links": {
+                "aboutUs": "About Us",
+                "references": "References",
+                "partners": "Partners"
+            }
+        },
+        "solutionLinks": {
+            "title": "Solutions",
+            "links": {
+                "observability": "Observability",
+                "assetManagement": "IT Discovery & Asset Management",
+                "automation": "Automation",
+                "security": "Security",
+                "finops": "FinOPS"
+            }
+        },
+        "contactUs": {
+            "title": "Contact Us"
+        },
+        "copyright": "© {{year}} TSS-X Information Technologies. All rights reserved."
     }
 }
