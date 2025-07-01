@@ -59,14 +59,14 @@ export function useSolutionCardAnimation({
     });
 
     tl.to(card, {
-      y: 0,
-      opacity: 1,
-      rotateX: 0,
-      scale: 1,
-      duration: 0.8,
-      ease: "back.out(1.7)",
-      delay: index * 0.15,
-    })
+        y: 0,
+        opacity: 1,
+        rotateX: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+        delay: index * 0.15,
+      })
       .to(header, {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 0.6,
@@ -102,7 +102,9 @@ export function useSolutionCardAnimation({
         scale: 1,
         duration: 0.5,
         ease: "back.out(1.7)",
-      }, "-=0.2");
+      }, "-=0.2")
+      // === global speed multiplier ===
+      .timeScale(1.5);   // 1 = normal speed, 1.5 = 50 % faster
 
     // === Hover Interaction ===
     const handleHoverIn = () => {

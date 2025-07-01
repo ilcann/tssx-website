@@ -18,37 +18,22 @@ const Hero = () => {
 
   gsap.registerPlugin();
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({ delay: 0.2 });
-      gsap.set(
-        [
-          tagLineRef.current,
-          titleRef.current,
-          subtitleRef.current,
-          descriptionRef.current,
-          ctaRef.current,
-        ],
-        {
-          opacity: 0,
-          y: 50,
-        }
-      );
-      gsap.set(statsRef.current, { opacity: 0, y: 50 });
+  useGSAP(() => {
+    const tl = gsap.timeline({ delay: 0.2 }).timeScale(1.5); // ← tüm timeline 1.5× hızlı
 
-      tl.to(tagLineRef.current, { opacity: 1, y: 0, duration: 0.8 })
-        .to(titleRef.current, { opacity: 1, y: 0, duration: 0.8 }, "-=0.4")
-        .to(subtitleRef.current, { opacity: 1, y: 0, duration: 0.8 }, "-=0.6")
-        .to(
-          descriptionRef.current,
-          { opacity: 1, y: 0, duration: 0.8 },
-          "-=0.4"
-        )
-        .to(statsRef.current, { opacity: 1, y: 0, duration: 0.8 }, "-=0.4")
-        .to(ctaRef.current, { opacity: 1, y: 0, duration: 0.8 }, "-=0.4");
-    },
-    { scope: heroRef }
-  );
+    gsap.set(
+      [tagLineRef.current, titleRef.current, subtitleRef.current, descriptionRef.current, ctaRef.current],
+      { opacity: 0, y: 50 }
+    );
+    gsap.set(statsRef.current, { opacity: 0, y: 50 });
+
+    tl.to(tagLineRef.current,  { opacity: 1, y: 0, duration: 0.8 })
+      .to(titleRef.current,    { opacity: 1, y: 0, duration: 0.8 }, "-=0.4")
+      .to(subtitleRef.current, { opacity: 1, y: 0, duration: 0.8 }, "-=0.6")
+      .to(descriptionRef.current, { opacity: 1, y: 0, duration: 0.8 }, "-=0.4")
+      .to(statsRef.current,    { opacity: 1, y: 0, duration: 0.8 }, "-=0.4")
+      .to(ctaRef.current,      { opacity: 1, y: 0, duration: 0.8 }, "-=0.4");
+  }, { scope: heroRef });
 
   return (
     <section
@@ -57,7 +42,7 @@ const Hero = () => {
       className="relative h-full flex items-center "
     >
       <video
-        src="/img/tssx/background.mp4"
+        src="/img/tssx/background-composed.mp4"
         autoPlay
         muted
         loop

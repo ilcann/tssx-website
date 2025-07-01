@@ -1,10 +1,10 @@
 /* Import Tailwind CSS */
 @import "tailwindcss";
-@import "./components/common.css";
-@import "./components/footer.css";
-@import "./components/header.css";
-@import "./components/solutionCards.css";
-@import "./components/contactBanner.css";
+@import "./styles/components/common.css";
+@import "./styles/components/footer.css";
+@import "./styles/components/header.css";
+@import "./styles/components/solutionCards.css";
+@import "./styles/components/contactBanner.css";
 
 @custom-variant dark (&:is(.dark *));
 

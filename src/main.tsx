@@ -1,6 +1,6 @@
 import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import "@/styles/index.css"; // Load critical CSS first
+import "./index.css"; // Load critical CSS first
 import App from "./App.tsx";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router";

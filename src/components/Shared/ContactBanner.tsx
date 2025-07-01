@@ -14,13 +14,14 @@ const ContactBanner = () => {
             muted
             loop
             playsInline
+            preload="auto"
             className="contact-banner-bg"
             onError={(e) => {
               e.currentTarget.style.display = "none";
             }}
             aria-hidden="true"
           >
-            <source src="/img/tssx/background.mp4" type="video/mp4" />
+            <source src="/img/tssx/background-composed.mp4" type="video/mp4" />
           </video>
           <div className="contact-banner-content">
             <h2 className="contact-banner-title">{t("contact_banner.title")}</h2>
