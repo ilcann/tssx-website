@@ -1,0 +1,53 @@
+{
+    "solutions": {
+        "title": "Çözümlerimiz",
+        "description": "Çözümlerimiz, iş süreçlerinizi otomatikleştirmenize ve verimliliğinizi artırmanıza yardımcı olmak için tasarlanmıştır.",
+        "list": {
+            "observability": {
+                "title": "Gözlemlenebilirlik ve AIOps",
+                "subtitle": "Sorunları İzleyin ve Tahmin Edin",
+                "tools": {
+                    "helix": "BMC Helix AIOPS",
+                    "zabbix": "Zabbix",
+                    "netreo": "Netreo"
+                }
+            },
+            "assetManagement": {
+                "title": "BT Varlık Keşfi ve Yönetimi",
+                "subtitle": "BT Varlıklarını Gerçek Zamanlı Takip Edin",
+                "tools": {
+                    "discovery": "BMC Helix Discovery",
+                    "snow": "Snow Software"
+                }
+            },
+            "automation": {
+                "title": "BT Otomasyonu ve Orkestrasyonu",
+                "subtitle": "Operasyonları Otomatikleştirin",
+                "tools": {
+                    "controlm": "Control-M",
+                    "tso": "TrueSight Orchestration",
+                    "tssa": "TrueSight Server Automation"
+                }
+            },
+            "security": {
+                "title": "Güvenlik ve Uyum Yönetimi",
+                "subtitle": "Güvenlik ve Uyumluluğu Sağlayın",
+                "tools": {
+                    "monosign": "MonoSign",
+                    "monopam": "MonoPAM",
+                    "helixVulnMgmt": "Helix Vulnerability Management"
+                }
+            },
+            "finops": {
+                "title": "FinOps ve Bulut Maliyet Optimizasyonu",
+                "subtitle": "Bulut Maliyetlerini Optimize Edin",
+                "tools": {
+                    "cloudhealth": "CloudHealth",
+                    "apptio": "Apptio",
+                    "harness": "Harness"
+                }
+            }
+        }
+    }
+    
+}

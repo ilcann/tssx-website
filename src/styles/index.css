@@ -3,6 +3,8 @@
 @import "./components/common.css";
 @import "./components/footer.css";
 @import "./components/header.css";
+@import "./components/solutionCards.css";
+@import "./components/contactBanner.css";
 
 @custom-variant dark (&:is(.dark *));
 

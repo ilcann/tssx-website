@@ -1,0 +1,55 @@
+{   
+    "solutions":{
+        "title": "Our Solutions",
+        "description": "Our solutions are designed to help you automate your business processes and improve your efficiency.",
+        "list": {
+            "title": "Our Solutions",
+            "description": "Our solutions are designed to help you automate your business processes and improve your efficiency.",
+            "observability": {
+                "title": "Observability & AIOps",
+                "subtitle": "Monitor & Predict Issues",
+                "tools": {
+                    "helix": "BMC Helix AIOPS",
+                    "zabbix": "Zabbix",
+                    "netreo": "Netreo"
+                }
+            },
+            "assetManagement": {
+                "title": "IT Discovery & Asset Management",
+                "subtitle": "Track & Optimize IT Assets",
+                "tools": {
+                    "discovery": "BMC Helix Discovery",
+                    "snow": "Snow Software"
+                }
+            },
+            "automation": {
+                "title": "Automation",
+                "subtitle": "Automate Workflows & Orchestration",
+                "tools": {
+                    "controlm": "Control-M",
+                    "tso": "TrueSight Orchestration",
+                    "tssa": "TrueSight Server Automation"
+                }
+            },
+            "security": {
+                "title": "Security",
+                "subtitle": "Secure and Manage Access",
+                "tools": {
+                    "monosign": "MonoSign",
+                    "monopam": "MonoPAM",
+                    "helixVulnMgmt": "Helix Vulnerability Management"
+                }
+            },
+            "finops": {
+                "title": "FinOps",
+                "subtitle": "Optimize Cloud Spend",
+                "tools": {
+                    "cloudhealth": "CloudHealth",
+                    "apptio": "Apptio",
+                    "harness": "Harness"
+                }
+            }
+        }
+    }
+    
+}

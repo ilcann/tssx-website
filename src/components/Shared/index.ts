@@ -9,4 +9,5 @@ export { default as Footer } from './Footer/Footer';
 export { default as Logo } from './Logo';
 export { Dropdown, DropdownItem } from "./Dropdown";
 export { default as NavItem } from "./NavItem";
+export { default as CTAButton } from "./CTAButton";
 export { Accordion, AccordionItem} from "./Accordion";

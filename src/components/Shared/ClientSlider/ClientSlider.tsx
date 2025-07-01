@@ -81,7 +81,7 @@ const ClientSlider = () => {
 
   return (
     <section id="partners">
-      <div className="container mx-auto px-6 overflow-hidden">
+      <div className="section-content overflow-hidden">
         <AnimatedTitle 
           title={t("title")}
           description={t("description")}

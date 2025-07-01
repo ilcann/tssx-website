@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer components {
+  /* === Grid === */
+  .solutions-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10;
+    @apply mx-auto max-w-7xl;
+  }
+
+  /* === Card === */
+  .solutionCard {
+    @apply w-full h-full relative;
+    @apply bg-white border border-neutral-200 rounded-xl;
+    @apply shadow-lg cursor-pointer;
+    @apply group-hover:scale-105 transition-transform duration-300;
+  }
+
+  /* === SolutionCard Header === */
+  .solutionCard-header {
+    @apply relative h-40 overflow-hidden rounded-t-xl;
+    @apply bg-gradient-to-br from-amber-600 to-amber-700;
+    @apply flex items-center justify-center;
+  }
+
+  .solutionCard-hoverOverlay {
+    @apply absolute inset-0 pointer-events-none;
+    @apply bg-amber-100 opacity-0;
+    @apply transition-opacity duration-300 group-hover:opacity-10;
+  }
+
+  .solutionCard-header-iconContainer {
+    @apply w-20 h-20 relative z-10;
+    @apply flex items-center justify-center;
+    @apply bg-white/20 backdrop-blur-sm rounded-full;
+  }
+
+  /* === SolutionCard Content === */
+  .solutionCard-content {
+    @apply p-6 h-[calc(100%-10rem)];
+    @apply flex flex-col gap-6;
+  }
+
+  .solutionCard-title {
+    @apply text-xl font-semibold text-neutral-900;
+  }
+
+  .solutionCard-subtitle {
+    @apply text-sm font-medium text-amber-600;
+  }
+
+  .solutionCard-toolList {
+    @apply flex-1 flex flex-col gap-4;
+  }
+
+  /* === CTA === */
+  .solutionCard-cta {
+    @apply w-full px-4 py-2 rounded-xl;
+    @apply flex items-center justify-between;
+    @apply transition-all duration-300;
+    @apply scale-100 group-hover:scale-105;
+    @apply cursor-pointer;
+  }
+
+  .solutionCard-cta-text {
+    @apply text-amber-600;
+    @apply transition-transform duration-300 group-hover:translate-x-2;
+  }
+
+  .solutionCard-cta-icon {
+    @apply p-1 rounded-full;
+    @apply text-amber-600;
+    @apply transition-all duration-300;
+    @apply group-hover:bg-amber-600 group-hover:text-white;
+  }
+}

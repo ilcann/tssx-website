@@ -1,32 +1,34 @@
-import DecorativeBackground from "@/components/ui/DecorativeBackground";
-import SolutionsHeader from "./Solutions.header";
-import SolutionsGrid from "./Solutions.grid";
-import { useSolutions } from "./useSolutions";
+import { useTranslation } from "react-i18next";
+import { solutionCards } from "./Solutions.constants"
+import { AnimatedTitle } from '@/components/Shared'
+import SolutionCard from "./Solutions.card";
 
 const Solutions = () => {
-  const solutions = useSolutions();
+    const { t } = useTranslation('home');
 
-  return (
-    <DecorativeBackground
-      elements={[
-        {
-          position: "bottom-right",
-          size: "lg",
-          opacity: "high",
-          intensity: "medium",
-        },
-      ]}
-      variant="light"
-      className="bg-gradient-to-b from-white to-neutral-50"
-    >
-      <section id="solutions" className="min-h-[100dvh]">
-        <div className="container mx-auto px-6">
-          <SolutionsHeader />
-          <SolutionsGrid solutions={solutions} />
-        </div>
-      </section>
-    </DecorativeBackground>
-  );
-};
+    return (
+        <section id="solutions">
+            <div className="section-content">
+                <AnimatedTitle
+                    title={t('solutions.title')}
+                    description={t('solutions.description')}
+                    size="sm"
+                />
+                <div className="solutions-grid">
+                    {solutionCards.map((solution, index) => (
+                        <SolutionCard
+                            key={index}
+                            id={solution.id}
+                            icon={solution.icon}
+                            title={solution.title}
+                            subtitle={solution.subtitle}
+                            tools={solution.tools}                           
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
 
 export default Solutions;

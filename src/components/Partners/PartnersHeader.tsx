@@ -8,7 +8,6 @@ const PartnersHeader = () => {
     <AnimatedTitle
       title={t('title')}
       description={t('description')}
-      className='px-6'
     />
   );
 };

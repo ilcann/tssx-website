@@ -35,8 +35,8 @@ const FAQSection = () => {
       className="bg-gradient-to-b from-neutral-100 to-neutral-200"
     >
       <section id="faq">
-        <div className="container mx-auto flex flex-col px-6">
-          <div className="w-full max-w-3xl flex flex-col gap-6 items-center mx-auto py-6 md:py-12">
+        <div className="section-content">
+          <div className="section-header">
             <SpecialText
               className={`text-3xl md:text-4xl font-extrabold text-neutral-900`}
             >

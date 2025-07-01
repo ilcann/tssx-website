@@ -1,4 +1,4 @@
-import { Dropdown, DropdownItem, NavItem } from "@/components/Shared";
+import { CTAButton, Dropdown, DropdownItem, NavItem } from "@/components/Shared";
 import { MobileMenu, LanguageSwitch } from ".";
 import { useDeviceType, useHideOnScroll }  from "@/lib";
 import { useState, useEffect, useRef } from "react";
@@ -51,20 +51,30 @@ const Header = () => {
             <ul className="nav-list flex-row">
               { device === 'desktop' && (
                 <>
-                  <LanguageSwitch/>
-                  <NavItem to="/contact" className="header-cta" label={t("header.contactUs")}/>        
+                  <li className="nav-item">
+                    <LanguageSwitch/>
+                  </li>
+                  <li className="nav-item">
+                    <CTAButton to="/contact" type="primary">
+                      {t("header.contactUs")}
+                    </CTAButton>
+                  </li>
                 </>
               )}
               { device === 'mobile' && (
                 <>
-                  <LanguageSwitch/>
-                  <button
-                    className="nav-clickable"
-                    onClick={() => setMobileOpen(!mobileOpen)}
-                    aria-label={mobileOpen ? "Close menu" : "Open menu"}
-                  >
-                    { mobileOpen ? <X className="w-12"/> : <Menu className="w-12"/> }
-                  </button>
+                  <li className="nav-item">
+                    <LanguageSwitch/>
+                  </li>
+                  <li className="nav-item">
+                    <button
+                      className="nav-clickable"
+                      onClick={() => setMobileOpen(!mobileOpen)}
+                      aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                    >
+                      { mobileOpen ? <X className="w-12"/> : <Menu className="w-12"/> }
+                    </button>
+                  </li>
                 </>
               )}
 

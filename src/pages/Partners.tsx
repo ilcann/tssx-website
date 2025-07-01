@@ -16,11 +16,13 @@ const PartnersPage = () => {
         <meta property="og:title" content={`${t("title")} | ${COMPANY_NAME}`} />
         <meta property="og:description" content={t("meta_description")} />
       </Helmet>
-      <main id="partners" className="container mx-auto flex flex-col">
-        <div className="flex flex-col min-h-[60vh]">
-          <PartnersHeader />
-          <PartnersGrid />
-        </div>
+      <main>
+        <section id="partners">
+          <div className="section-content min-h-[80vh]">
+            <PartnersHeader />
+            <PartnersGrid />
+          </div>
+        </section>
         <ContactBanner />
       </main>
     </>

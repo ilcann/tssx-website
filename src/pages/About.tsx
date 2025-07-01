@@ -1,14 +1,13 @@
 import { Meta } from "@/components/About";
-import { Success, Overview, Hero, Team, Timeline, Stats } from "@/components/About";
+import { Success, Overview, PageHeader, Team, Timeline } from "@/components/About";
 import { ContactBanner } from "@/components/Shared";
 
 const AboutPage = () => {
   return (
     <>
       <Meta />
-      <main id="about" className="container flex flex-col mx-auto">
-          <Hero />
-          <Stats />
+      <main id="about">
+          <PageHeader />
           <Overview />
           <Team />
           <Timeline />

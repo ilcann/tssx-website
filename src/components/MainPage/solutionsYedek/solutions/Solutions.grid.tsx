@@ -1,4 +1,4 @@
-import { SolutionCard } from "./Solutions.card";
+import SolutionCard  from "./Solutions.card";
 
 interface SolutionsGridProps {
   solutions: {

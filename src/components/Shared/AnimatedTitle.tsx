@@ -22,7 +22,7 @@ const AnimatedTitle = ({
 
   return (
     <header
-      className={`w-full max-w-2xl flex flex-col gap-6 items-center mx-auto py-10 ${className ?? ""}`}
+      className={`section-header ${className ?? ""}`}
     >
       <SpecialText
         className={`${sizeClassMap[size]} font-extrabold text-neutral-900`}

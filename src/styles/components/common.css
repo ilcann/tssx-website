@@ -7,7 +7,44 @@
 }
 
 @layer components{
-    .logo {
-        @apply flex items-center w-24 xl:w-24;
-    }
+  .logo {
+    @apply flex items-center w-24 xl:w-24;
+  }
+
+  .section-content {
+    @apply container mx-auto px-6 ;
+    @apply flex flex-col;
+    @apply py-10 gap-8 lg:py-16 lg:gap-14;
+  }
+
+  .section-header {
+    @apply w-full max-w-3xl flex flex-col gap-6 items-center mx-auto;
+  }
+
+  .content-box {
+    @apply rounded-xl shadow-lg border p-8 border-neutral-200 bg-white;
+  }
+
+  .horizontal-stack {
+    @apply flex flex-row gap-6;
+  }
+
+  .vertical-stack {
+    @apply flex flex-col gap-6;
+  }
+
+  .responsive-stack {
+    @apply flex flex-col lg:flex-row gap-6;
+  }
+
+  .cta-button-primary {
+    @apply inline-flex items-center bg-amber-700 text-white px-8 py-4 rounded-xl text-base font-semibold
+           hover:bg-amber-800 hover:scale-102 transition-all duration-300 shadow-md cursor-pointer;
+  }
+
+  .cta-button-secondary {
+    @apply inline-flex items-center bg-black text-white px-8 py-4 rounded-xl text-base font-semibold 
+           hover:bg-neutral-800 hover:scale-102 transition-colors shadow-lg cursor-pointer;
+  }
+
 }

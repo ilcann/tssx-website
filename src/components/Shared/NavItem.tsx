@@ -7,6 +7,7 @@ type NavItemProps = {
   icon?: ReactNode;
   onClick?: () => void;
   className?: string;
+  children?: ReactNode;
 };
 
 const NavItem = ({
@@ -15,12 +16,14 @@ const NavItem = ({
   icon,
   onClick,
   className,
+  children
 }: NavItemProps) => {
   return (
     <li className={`nav-item${className ? ` ${className}` : ""}`}>
       <RouterLink to={to} className="nav-clickable" onClick={onClick}>
         {icon && <span>{icon}</span>}
         {label && <span>{label}</span>}
+        {children}
       </RouterLink>
     </li>
   );

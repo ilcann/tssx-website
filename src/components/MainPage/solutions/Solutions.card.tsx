@@ -1,247 +1,79 @@
-import type { SolutionCardProps } from "@/types/solution";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { Link } from "react-router";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { type SolutionCardProps } from "./Solutions.constants"
+import { ArrowRight, Check } from "lucide-react";
+import { useSolutionCardAnimation } from "./Solution.card.animations";
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
-
-export const SolutionCard = ({
+const SolutionCard = ({
+  id,
   icon,
   title,
-  label,
-  services,
-  id,
+  subtitle,
+  tools,
   index = 0,
-}: SolutionCardProps & { id?: string | number; index?: number }) => {
-  const { t } = useTranslation();
+}: SolutionCardProps & { index?: number }) => {
+  const { t } = useTranslation('home');
 
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLAnchorElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const iconContainerRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const labelRef = useRef<HTMLParagraphElement>(null);
-  const servicesRef = useRef<HTMLUListElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const toolsRef = useRef<HTMLUListElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    const card = cardRef.current;
-    const header = headerRef.current;
-    const iconContainer = iconContainerRef.current;
-    const iconElement = iconRef.current;
-    const titleElement = titleRef.current;
-    const labelElement = labelRef.current;
-    const servicesList = servicesRef.current;
-    const content = contentRef.current;
+  useSolutionCardAnimation({
+    index,
+    cardRef,
+    headerRef,
+    iconRef,
+    titleRef,
+    subtitleRef,
+    toolsRef,
+    buttonRef
+  });
 
-    if (
-      !card ||
-      !header ||
-      !iconContainer ||
-      !iconElement ||
-      !titleElement ||
-      !labelElement ||
-      !servicesList ||
-      !content
-    )
-      return;
-
-    // Get service items for staggered animation
-    const serviceItems = servicesList.querySelectorAll("li");
-
-    // Initial state - hide elements for entrance animation
-    gsap.set([titleElement, labelElement], {
-      y: 20,
-      opacity: 0,
-    });
-
-    gsap.set(serviceItems, {
-      x: -20,
-      opacity: 0,
-    });
-
-    gsap.set(card, {
-      y: 60,
-      opacity: 0,
-      rotateX: 15,
-      scale: 0.9,
-    });
-
-    gsap.set(iconContainer, {
-      scale: 0.5,
-      rotation: -15,
-    });
-
-    gsap.set(header, {
-      clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-    });
-
-    // Entrance animation with ScrollTrigger
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: card,
-        start: "top 85%",
-        end: "bottom 15%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    tl.to(card, {
-      y: 0,
-      opacity: 1,
-      rotateX: 0,
-      scale: 1,
-      duration: 0.8,
-      ease: "back.out(1.7)",
-      delay: index * 0.15, // Stagger based on card index
-    })
-      .to(
-        header,
-        {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          duration: 0.6,
-          ease: "power2.out",
-        },
-        "-=0.6"
-      )
-      .to(
-        iconContainer,
-        {
-          scale: 1,
-          rotation: 0,
-          duration: 0.6,
-          ease: "back.out(1.7)",
-        },
-        "-=0.4"
-      )
-      .to(
-        titleElement,
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-          ease: "power2.out",
-        },
-        "-=0.3"
-      )
-      .to(
-        labelElement,
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-          ease: "power2.out",
-        },
-        "-=0.2"
-      )
-      .to(
-        serviceItems,
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.4,
-          ease: "power2.out",
-          stagger: 0.1,
-        },
-        "-=0.2"
-      );
-
-    // Animate services with bounce effect
-    gsap.to(serviceItems, {
-      scale: 1.05,
-      duration: 0.2,
-      ease: "power2.out",
-      stagger: 0.05,
-      yoyo: true,
-      repeat: 1,
-    });
-
-    // Cleanup
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.trigger === card) {
-          trigger.kill();
-        }
-      });
-    };
-  }, [index, services.length]);
-
-  const cardContent = (
-    <div
+  return (
+    <Link
+      to={`/solutions/${id}`}
       ref={cardRef}
-      className="group bg-white rounded-xl w-full shadow-lg border border-neutral-200 h-full overflow-hidden cursor-pointer relative transition-transform hover:scale-[1.02]"
+      className="solutionCard group"
       style={{ transformStyle: "preserve-3d" }}
     >
-      <div
-        ref={headerRef}
-        className="relative h-40 bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-amber-100 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-
-        <div
-          ref={iconContainerRef}
-          className="w-20 h-20 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full z-10 relative"
-        >
-          <div ref={iconRef} className="text-white">
-            {icon}
-          </div>
+      <div className="solutionCard-header" ref={headerRef}>
+        <div className="solutionCard-hoverOverlay" />
+        <div className="solutionCard-header-iconContainer" ref={iconRef}>
+          {icon}
         </div>
       </div>
 
-      <div ref={contentRef} className="p-6 flex flex-col h-[calc(100%-10rem)]">
-        <h3 ref={titleRef} className="text-xl font-bold text-neutral-900 mb-2">
-          {title}
-        </h3>
-        <p ref={labelRef} className="text-amber-700 mb-4 text-sm font-medium">
-          {label}
-        </p>
-        <ul ref={servicesRef} className="space-y-3 mb-6 flex-grow">
-          {services.map((service, serviceIndex) => (
-            <li key={serviceIndex} className="flex items-start group/item">
-              <span className="w-5 h-5 flex-shrink-0 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mr-3 mt-0.5 group-hover/item:bg-amber-200 transition-colors duration-200">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="size-3"
-                >
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <span className="text-neutral-700 text-sm group-hover/item:text-neutral-900 transition-colors duration-200">
-                {service}
-              </span>
+      <div className="solutionCard-content">
+        <div className="flex flex-col gap-2">
+          <h3 className="solutionCard-title" ref={titleRef}>{t(title)}</h3>
+          <p className="solutionCard-subtitle" ref={subtitleRef}>{t(subtitle)}</p>
+        </div>
+        <ul className="solutionCard-toolList" ref={toolsRef}>
+          {tools.map((tool, i) => (
+            <li key={i} className="flex items-start gap-3">
+              <div className="w-5 h-5 flex items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                <Check className="w-3 h-3" strokeWidth={3} />
+              </div>
+              <p className="text-sm text-neutral-700 group-hover:text-neutral-900 transition-colors duration-200">
+                {t(tool)}
+              </p>
             </li>
           ))}
         </ul>
-
-        {/* Learn More Indicator */}
-        <div className="mt-auto">
-          <div className="flex items-center justify-between text-amber-600 font-medium text-sm group-hover:text-amber-700 transition-colors">
-            <span>{t("learn_more")}</span>
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </div>
-        </div>
+        <button ref={buttonRef} className="solutionCard-cta">
+          <span className="solutionCard-cta-text">Learn More</span>
+          <span className="solutionCard-cta-icon">
+            <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+          </span>
+        </button>
       </div>
-    </div>
+    </Link>
   );
-
-  // If id is provided, wrap with Link, otherwise return plain card
-  if (id) {
-    return (
-      <Link to={`/solutions/${id}`} className="block h-full">
-        {cardContent}
-      </Link>
-    );
-  }
-
-  return cardContent;
 };
+
+export default SolutionCard;

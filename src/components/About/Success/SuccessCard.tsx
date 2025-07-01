@@ -73,7 +73,7 @@ const SuccessCard = ({
   return (
     <Card
       ref={cardRef}
-      className="bg-white rounded-lg shadow-sm border border-neutral-200 hover:shadow-md transition-shadow duration-200"
+      className="content-box"
     >
       <CardHeader>
         <div className="flex items-center gap-3 mb-4">
