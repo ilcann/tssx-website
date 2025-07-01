@@ -10,7 +10,7 @@ const Timeline = () => {
   return (
     <section id="timeline">
       <div className="section-content">
-        <div className="horizontal-stack">
+        <div className="vertical-stack">
           <SpecialText
             id="about-our-journey"
             className="text-3xl font-bold text-neutral-900 text-center"
