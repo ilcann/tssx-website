@@ -1,6 +1,6 @@
 {
-  "app_title": "TSS-X | Enterprise IT & Automation",
-  "main_page_title": "TSS-X | Enterprise IT Infrastructure and Automation Solutions",
+  "app_title": "TSS-X | Enterprise IT Solutions",
+  "main_page_title": "Homepage",
   "nav_home": "Home",
   "nav_solutions": "Solutions",
   "nav_about": "About Us",
@@ -21,6 +21,7 @@
   "solutions_header": "Our Solutions",
   "solutions_description": "Our solutions are designed to help you automate your business processes and improve your efficiency.",
   "learn_more": "Learn More",
+  "contactUs_title": "Contact Us",
   "contact_form_title": "Contact Form",
   "contact_form_description": "Please fill out the form below and we will get back to you.",
   "form_full_name": "Full Name",

@@ -1,6 +1,6 @@
 {
-  "app_title": "TSS-X | Kurumsal BT & Otomasyon",
-  "main_page_title": "TSS-X | Kurumsal BT Altyapı ve Otomasyon Çözümleri",
+  "app_title": "TSS-X | Kurumsal BT Çözümleri",
+  "main_page_title": "Anasayfa",
   "nav_home": "Anasayfa",
   "nav_solutions": "Çözümlerimiz",
   "nav_about": "Hakkımızda",
@@ -21,6 +21,7 @@
   "solutions_header": "Çözümlerimiz",
   "solutions_description": "Çözümlerimiz, iş süreçlerinizi otomatikleştirmenize ve verimliliğinizi artırmanıza yardımcı olmak için tasarlanmıştır.",
   "learn_more": "Daha Fazla",
+  "contactUs_title": "Bize Ulaşın",
   "contact_form_title": "İletişim Formu",
   "contact_form_description": "Lütfen aşağıdaki formu doldurun, size geri dönüş yapalım.",
   "form_full_name": "Ad Soyad",

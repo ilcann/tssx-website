@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
+import { COMPANY_NAME } from "@/staticComponents/companyInfo";
 
 const HomeMeta = () => {
   const { t } = useTranslation();
 
   return (
     <Helmet>
-      <title>{t("main_page_title")}</title>
+      <title>{t("main_page_title")} | {COMPANY_NAME} </title>
       <meta
         name="description"
         content="TSS-X Information Technologies provides enterprise IT infrastructure management and automation solutions. Specializing in hybrid cloud provisioning, AIOps observability, compliance management, and security automation in Istanbul, Turkey."

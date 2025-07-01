@@ -60,7 +60,7 @@ const Solution = () => {
   return (
     <>
       <Helmet>
-        <title>{solution.title} | TSS-X Solutions</title>
+        <title>{solution.title} | TSS-X</title>
         <meta name="description" content={solution.description} />
         <meta
           name="keywords"

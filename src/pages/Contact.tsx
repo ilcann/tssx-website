@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import ContactPage from "@/components/Contact/ContactPage"
 import { useTranslation } from "react-i18next";
+import { COMPANY_NAME } from "@/staticComponents/companyInfo";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -8,7 +9,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact TSS-X | Get Expert IT Infrastructure Consultation</title>
+        <title>{t('contactUs_title')} | {COMPANY_NAME}</title>
         <meta
           name="description"
           content={t("meta_contact_description")}

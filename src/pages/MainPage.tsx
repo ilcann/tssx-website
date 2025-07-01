@@ -1,42 +1,22 @@
 import Hero from "@/components/MainPage/hero/Hero";
 import LoadingPage from "@/components/ui/LoadingPage";
 import { Suspense } from "react";
-import LazySection from "@/components/LazySection";
-import {
-  LazyFAQSection,
-  LazyContactSection,
-  //LazyTestimonials,
-} from "@/components/LazyComponents";
-import IntersectionObserver from "@/components/IntersectionObserver";
 import Solutions from "@/components/MainPage/solutions/Solutions";
 import HomeMeta from "@/components/MainPage/Home.meta";
-import { ClientSlider } from "@/components/Shared";
+import { ClientSlider, ContactBanner } from "@/components/Shared";
+import FAQSection from "@/components/MainPage/FAQSection";
 
 const MainPage = () => {
   return (
     <>
       <HomeMeta/>
-      <main id="main">
+      <main className="app-content">
         <Suspense fallback={<LoadingPage />}>
           <Hero />
           <ClientSlider />
           <Solutions />
-          {/* 
-          <IntersectionObserver>
-            <LazySection>
-              <LazyTestimonials />
-            </LazySection>
-          </IntersectionObserver> */}
-          <IntersectionObserver>
-            <LazySection>
-              <LazyFAQSection />
-            </LazySection>
-          </IntersectionObserver>
-          <IntersectionObserver>
-            <LazySection>
-              <LazyContactSection />
-            </LazySection>
-          </IntersectionObserver>
+          <FAQSection />
+          <ContactBanner />
         </Suspense>
       </main>
     </>
