@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { footerLinks, footerContactItems } from "./footer.constants";
-import { RouterLink } from "@/components/Shared";
+import { RouterLink, Logo } from "@/components/Shared";
 
 const Footer = () => {
   const { t } = useTranslation('common');
@@ -11,13 +11,7 @@ const Footer = () => {
       <section className="footer-content">
         <div className="footer-columns">
           <div className="footer-column lg:col-span-4">
-            <RouterLink to="/">
-              <img
-                src="img/tssx/tssx-light-logo.png"
-                alt="TSS-X Logo"
-                className="logo"
-              />
-            </RouterLink>
+            <Logo /> 
             <p className="footer-text">
               {t("footer.brand.description")}
             </p>
@@ -32,7 +26,7 @@ const Footer = () => {
             <h3 className="footer-heading">
               {t("footer.companyLinks.title")}
             </h3>
-            <ul className="space-y-2">
+            <ul className="footer-list">
               {footerLinks.companyLinks.map(({ href, labelKey })=> (
               <li key={href}><RouterLink to={href} className="footer-link">{t(labelKey)}</RouterLink></li>
               ))}

@@ -11,11 +11,11 @@ const HeroTitle = ({ titleRef, subtitleRef }: Props) => {
   return (
     <div className="text-4xl md:text-6xl font-bold text-white mb-8">
       <h2 ref={titleRef} className="text-white text-shadow-2xl">
-        {t("hero_title_1")}
+        {t("hero_title_1")}<br/>
+        <span className="text-3xl text-white/80 font-light italic text-shadow-2xl">
+          {t("hero_title_with")}
+        </span>
       </h2>
-      <span className="text-3xl text-white/80 font-light italic text-shadow-2xl">
-        {t("hero_title_with")}
-      </span>
       <h2 ref={subtitleRef} className="text-white mt-2 text-shadow-2xl">
         {t("hero_title_2")}
       </h2>

@@ -2,6 +2,7 @@
 @import "tailwindcss";
 @import "./components/common.css";
 @import "./components/footer.css";
+@import "./components/header.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -72,6 +73,7 @@
   font-weight: 400;
 }
 
+
 /* Typography */
 #hero {
   font-family: "RobotoSlab";
@@ -83,19 +85,6 @@
 
 #main {
   font-family: "RobotoSlab-Thin";
-}
-
-/* Optimized section layouts */
-section {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
 }
 
 section#solutions,

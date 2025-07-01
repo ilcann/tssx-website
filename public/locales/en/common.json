@@ -28,8 +28,27 @@
             }
         },
         "contactUs": {
-            "title": "Contact Us"
+            "title": "Contact Information"
         },
         "copyright": "© {{year}} TSS-X Information Technologies. All rights reserved."
+    },
+    "header": {
+        "nav": {
+            "solutions": "Solutions",
+            "aboutUs": "About Us",
+            "references": "References",
+            "partners": "Partners"
+        },
+        "solutionLinks": {
+            "title": "Solutions",
+            "links": {
+                "observability": "Observability",
+                "assetManagement": "IT Discovery & Asset Management",
+                "automation": "Automation",
+                "security": "Security",
+                "finops": "FinOPS"
+            }
+        },       
+        "contactUs": "Contact Us"
     }
 }

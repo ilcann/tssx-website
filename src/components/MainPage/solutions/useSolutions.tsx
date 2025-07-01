@@ -1,13 +1,12 @@
 import { getSolutionData } from "@/staticComponents/solution";
 import { useTranslation } from "react-i18next";
 
-// Mapping between solution card titles and detailed solution IDs
 const titleToIdMapping: Record<string, string> = {
-  "Observability": "observability", // Maps to "Observability & AIOps"
+  "Observability": "observability",
   "IT Discovery & Asset Management": "asset-management",
-  "Automation": "automation", // Maps to "IT Automation & Orchestration"
-  "Security": "security", // Maps to "Security & Compliance Management"
-  "FinOPS": "finops", // Maps to "FinOps & Cloud Cost Optimization"
+  "Automation": "automation",
+  "Security": "security",
+  "FinOPS": "finops",
 };
 
 export const useSolutions = () => {

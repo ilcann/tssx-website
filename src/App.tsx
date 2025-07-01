@@ -1,8 +1,7 @@
 import { Routes, Route, useLocation } from "react-router";
 import { useEffect, lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
-import Header from "./components/header/Header";
-import Footer from "./components/Footer/Footer";
+import { Header, Footer} from "@/components/Shared"
 import BackToTop from "./components/ui/BackToTop";
 import { useTranslation } from "react-i18next";
 import { Loader2 } from "lucide-react";

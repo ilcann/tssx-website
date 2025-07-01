@@ -1,7 +1,54 @@
 {
-    "contact_banner": {
-        "title": "Memnun Müşterilerimizin Büyüyen Listesine Katılın",
-        "description": "Dünya çapındaki kuruluşların BT altyapılarını dönüştürmelerine yardımcı olan aynı düzeyde olağanüstü hizmet ve yenilikçi çözümleri deneyimleyin.",
-        "cta": "Bugün Bize Ulaşın"
-    }
+  "contact_banner": {
+    "title": "Büyüyen Başarılı Müşterilerimiz Listesine Katılın",
+    "description": "Bizimle ortak olun ve başarılı müşteriler ağımıza katılın. Birlikte harika sonuçlar elde edelim.",
+    "cta": "Bugün Bize Ulaşın"
+  },
+  "footer": {
+    "brand": {
+      "description": "TSS-X, BT Altyapı yönetimi ve otomasyon hizmetlerine odaklanarak, özel ortamlar için uçtan uca yaşam döngüsü yönetimi ile en uygun otomasyon çözümlerini sunar.",
+      "caption": "BMC Software ve HashiCorp ürünleri ile müşteriye özel çözümler sunar."
+    },
+    "companyLinks": {
+      "title": "Şirket",
+      "links": {
+        "aboutUs": "Hakkımızda",
+        "references": "Referanslarımız",
+        "partners": "İş Ortaklarımız"
+      }
+    },
+    "solutionLinks": {
+      "title": "Çözümlerimiz",
+      "links": {
+        "observability": "Gözlemlenebilirlik",
+        "assetManagement": "BT Varlık Keşfi ve Yönetimi",
+        "automation": "Otomasyon",
+        "security": "Güvenlik",
+        "finops": "FinOPS"
+      }
+    },
+    "contactUs": {
+      "title": "İletişim Bilgileri"
+    },
+    "copyright": "© {{year}} TSS-X Bilişim Teknolojileri. Tüm hakları saklıdır."
+  },
+  "header": {
+    "nav": {
+      "solutions": "Çözümlerimiz",
+      "aboutUs": "Hakkımızda",
+      "references": "Referanslarımız",
+      "partners": "İş Ortaklarımız"
+    },
+    "solutionLinks": {
+      "title": "Çözümlerimiz",
+      "links": {
+        "observability": "Gözlemlenebilirlik",
+        "assetManagement": "BT Varlık Keşfi ve Yönetimi",
+        "automation": "Otomasyon",
+        "security": "Güvenlik",
+        "finops": "FinOPS"
+      }
+    },
+    "contactUs": "Bize Ulaşın"
+  }
 }

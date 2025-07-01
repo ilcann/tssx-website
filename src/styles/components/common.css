@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
+@utility container {
+  @media (width >= 96rem) {
+    max-width: 120rem;
+  }
+}
+
 @layer components{
     .logo {
-        @apply h-7 w-fit;
+        @apply flex items-center w-24 xl:w-24;
     }
 }
