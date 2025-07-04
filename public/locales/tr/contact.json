@@ -5,12 +5,12 @@
         "part2": "bir üst seviyeye",
         "part3": "taşıyalım"
     },
-    "description": "Hedeflerinizi paylaşın — biz gereken adımları atalım.",
+    "description": "Hedeflerinizi paylaşın — biz gereken adımları atalım",
     "form": {
         "sections": {
             "contact": "Kiminle İletişime Geçelim?",
             "company": "Şirketiniz",
-            "details": "Sizi dinliyoruz — bize daha fazla bilgi verin."
+            "details": "Nasıl Yardımcı Olabiliriz?"
         },
         "fields": {
             "firstName": "Ad",
