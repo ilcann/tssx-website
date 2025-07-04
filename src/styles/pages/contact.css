@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@layer components {
+    #contact-header {
+        @apply bg-gradient-to-br from-neutral-900 via-neutral-800 to-amber-900 text-white;
+    }
+    .form-grid {
+        @apply w-full grid;
+        /* Mobil (default) */
+        @apply grid-cols-1;
+        /* Tablet */
+        @apply md:grid-cols-2;
+        /* Desktop */
+        @apply xl:grid-cols-2;
+    }
+    .form-subtitle {
+        @apply text-2xl font-semibold text-neutral-800;
+        @apply col-span-1 md:col-span-2;
+    }
+}

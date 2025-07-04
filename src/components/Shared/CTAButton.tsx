@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink } from "react-router";
+import { RouterLink } from "@/components/Shared";
 import clsx from "clsx";
 
 type CTAButtonProps = {
@@ -24,11 +24,11 @@ const CTAButton = ({
   href,
   onClick,
 }: CTAButtonProps) => {
-  const baseClass = type === "primary"
-    ? "cta-button-primary"
-    : "cta-button-secondary";
-
-  const combinedClass = clsx(baseClass, className);
+  const combinedClass = clsx(
+    "p-element text-btn",
+    type === "primary" ? "cta-button-primary" : "cta-button-secondary",
+    className
+  );
 
   // Scroll button
   if (scrollTo) {

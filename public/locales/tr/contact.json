@@ -1,3 +1,30 @@
 {
-    "title": "Bize Ulaşın"
+    "label": "İlk Adımı Atın",
+    "title": {
+        "part1": "Kurumsal teknolojinizi",
+        "part2": "bir üst seviyeye",
+        "part3": "taşıyalım"
+    },
+    "description": "Hedeflerinizi paylaşın — biz gereken adımları atalım.",
+    "form": {
+        "sections": {
+            "contact": "Kiminle İletişime Geçelim?",
+            "company": "Şirketiniz",
+            "details": "Sizi dinliyoruz — bize daha fazla bilgi verin."
+        },
+        "fields": {
+            "firstName": "Ad",
+            "lastName": "Soyad",
+            "email": "İş E-postası",
+            "phone": "Telefon Numarası",
+            "company": "Şirket Adı",
+            "jobTitle": "Unvan",
+            "solution": "Hangi çözümle ilgileniyorsunuz?",
+            "message": "İhtiyaçlarınızı anlatın",
+            "consent": "Talebimle ilgili olarak benimle iletişime geçilmesini kabul ediyorum."
+        },
+        "submit": "Talebinizi Gönderin",
+        "successMessage": "Bizimle iletişime geçtiğiniz için teşekkürler! Size en kısa sürede geri döneceğiz.",
+        "errorMessage": "Üzgünüz, mesajınızı gönderirken bir hata oluştu. Lütfen tekrar deneyin veya doğrudan info@tss-x.com adresine yazın."
+    }   
 }

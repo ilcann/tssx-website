@@ -7,7 +7,6 @@ const ContactBanner = () => {
 
   return (
     <section id="contact">
-      <div className="section-content">
         <div className="contact-banner">
           <video
             autoPlay
@@ -23,15 +22,16 @@ const ContactBanner = () => {
           >
             <source src="/img/tssx/background-composed.mp4" type="video/mp4" />
           </video>
-          <div className="contact-banner-content">
-            <h2 className="contact-banner-title">{t("contact_banner.title")}</h2>
-            <p className="contact-banner-subtitle">{t("contact_banner.description")}</p>
-            <CTAButton to="/contact" type="secondary" icon={<ExternalLink className="size-4" />}>
-              {t("contact_banner.cta")}
-            </CTAButton>
+          <div className="section-content">
+            <div className="vertical-stack items-center text-center relative">
+              <h2 className="title-section text-white">{t("contact_banner.title")}</h2>
+              <p className="text-body text-white/90">{t("contact_banner.description")}</p>
+              <CTAButton to="/contact" type="secondary" icon={<ExternalLink className="size-4" />}>
+                {t("contact_banner.cta")}
+              </CTAButton>
+            </div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

@@ -11,3 +11,5 @@ export { Dropdown, DropdownItem } from "./Dropdown";
 export { default as NavItem } from "./NavItem";
 export { default as CTAButton } from "./CTAButton";
 export { Accordion, AccordionItem} from "./Accordion";
+export { default as SectionLabel} from "./SectionLabel"
+export { InputBox } from "./ui";

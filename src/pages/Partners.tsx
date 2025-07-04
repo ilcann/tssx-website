@@ -21,12 +21,12 @@ const PartnersPage = () => {
       <main className="app-content">
         <Suspense fallback={<LoadingPage />}>
           <section id="partners">
-            <div className="section-content min-h-[80vh]">
+            <div className="section-content">
               <PartnersHeader />
               <PartnersGrid />
             </div>
           </section>
-          <ContactBanner />         
+          <ContactBanner />
         </Suspense>
       </main>
     </>

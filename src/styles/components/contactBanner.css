@@ -1,6 +1,6 @@
 @layer components {
   .contact-banner {
-    @apply relative overflow-hidden rounded-xl;
+    @apply relative overflow-hidden;
   }
 
   .contact-banner-bg {
@@ -10,15 +10,5 @@
   .contact-banner-content {
     @apply relative z-10 px-6 flex flex-col items-center text-center gap-6;
     @apply py-8 md:py-16 xl:py-24;
-  }
-
-  .contact-banner-title {
-    @apply font-bold text-white leading-tight;
-    @apply text-xl md:text-2xl xl:text-4xl;
-  }
-
-  .contact-banner-subtitle {
-    @apply text-white/90 max-w-2xl 
-    text-base md:text-lg xl:text-2xl;
   }
 }

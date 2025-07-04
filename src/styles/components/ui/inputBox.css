@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer components {
+    .input-box {
+        @apply w-full rounded-full border border-neutral-300 bg-white text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all;
+    }
+
+    .input-box-required {
+        @apply font-medium;
+    }
+}

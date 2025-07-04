@@ -13,7 +13,7 @@ const HeroCTA = forwardRef<HTMLDivElement>((_, ref) => {
         smooth={true}
         duration={800}
         offset={-10}
-        className="cta-button-secondary"
+        className="cta-button-secondary p-element text-btn"
       >
         <span>{t("hero_cta")}</span>
         <ArrowRightIcon className="ml-2 h-4 w-4" />

@@ -1,3 +1,30 @@
 {
-    "title": "Contact Us"
+  "label": "Get in Touch",
+  "title": {
+    "part1": "Let’s build",
+    "part2": "smart infrastructure",
+    "part3": "together"
+  },
+  "description": "Share your goals — we’ll handle the rest.",
+  "form": {
+    "sections": {
+      "contact": "Who Should We Contact?",
+      "company": "Company",
+      "details": "We’re listening — tell us more."
+    },
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Work Email",
+      "phone": "Phone Number",
+      "company": "Company Name",
+      "jobTitle": "Job Title",
+      "solution": "Which solution interests you?",
+      "message": "Tell us about your needs",
+      "consent": "I agree to be contacted regarding my request."
+    },
+    "submit": "Submit Request",
+    "successMessage": "Thank you! Our team will contact you within one business day.",
+    "errorMessage": "Sorry—we couldn’t deliver your message. Please try again, or email us at info@tss-x.com."
+  }
 }
