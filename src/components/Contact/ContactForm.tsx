@@ -169,18 +169,19 @@ const ContactForm = () => {
                     )}
                     </button>
 
-                    {submitStatus === "success" && 
-                        <p className="text-body">
-                            <CheckCircle className="w-4 h-4" aria-hidden="true" /> 
-                            {t('form.successMessage')}
-                        </p>
-                    }
-                    {submitStatus === "error" && 
-                        <p className="text-body">
-                            <XCircle className="w-4 h-4" aria-hidden="true" />
-                            {t('form.errorMessage')}
-                        </p>
-                    }
+                    {submitStatus === "success" && (
+                    <p className="text-body flex items-center gap-2 text-green-600">
+                        <CheckCircle className="w-6 h-6" aria-hidden="true" />
+                        {t('form.successMessage')}
+                    </p>
+                    )}
+
+                    {submitStatus === "error" && (
+                    <p className="text-body flex items-center gap-2 text-red-600">
+                        <XCircle className="w-6 h-6" aria-hidden="true" />
+                        {t('form.errorMessage')}
+                    </p>
+                    )}
                 </form>
             </div>
         </section>
