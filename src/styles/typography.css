@@ -3,7 +3,7 @@
 @layer components{
     .title-hero-main {
         @apply tracking-tight font-extrabold leading-[1.1];
-        @apply text-[3rem] md:text-[4rem] xl:text-[6rem];
+        @apply text-4xl md:text-5xl xl:text-6xl;
     }
 
     /* ---------- T-2 : Other Page Heros ---------- */

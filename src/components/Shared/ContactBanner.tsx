@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { CTAButton } from "@/components/Shared";
 
@@ -23,10 +23,12 @@ const ContactBanner = () => {
             <source src="/img/tssx/background-composed.mp4" type="video/mp4" />
           </video>
           <div className="section-content">
-            <div className="vertical-stack items-center text-center relative">
-              <h2 className="title-section text-white">{t("contact_banner.title")}</h2>
-              <p className="text-body text-white/90">{t("contact_banner.description")}</p>
-              <CTAButton to="/contact" type="secondary" icon={<ExternalLink className="size-4" />}>
+            <div className="relative flex flex-col items-center gap-block">
+              <div className="flex flex-col gap-element text-center">
+                <h2 className="title-section text-white">{t("contact_banner.title")}</h2>
+                <p className="text-body text-white/90">{t("contact_banner.description")}</p>
+              </div>
+              <CTAButton to="/contact" type="secondary" icon={<ChevronRight className="size-6 md:size-7 xl:size-8" />}>
                 {t("contact_banner.cta")}
               </CTAButton>
             </div>

@@ -11,9 +11,9 @@ import {
   SolutionUseCases,
   SolutionScreenshots,
   SolutionSuccessStories,
-  SolutionCTA
 } from "@/components/Solution";
 import { useTranslation } from "react-i18next";
+import { ContactBanner } from "@/components/Shared";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,7 +105,7 @@ const Solution = () => {
           <SolutionSuccessStories solution={solution} />
 
           {/* Call to Action Section */}
-          <SolutionCTA solution={solution} />
+          <ContactBanner />
         </div>
       </main>
     </>

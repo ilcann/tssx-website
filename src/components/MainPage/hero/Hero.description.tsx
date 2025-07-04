@@ -7,7 +7,7 @@ const HeroDescription = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <div
       ref={ref}
-      className="text-base md:text-lg text-white mt-6 mb-8 max-w-3xl mx-auto"
+      className="text-body text-white/90 mt-6 mb-8 max-w-3xl mx-auto"
     >
       {t("hero_description")}
     </div>
