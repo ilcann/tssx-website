@@ -6,6 +6,8 @@ import DecorativeBackground from "@/components/ui/DecorativeBackground";
 import AnimatedText from "@/components/ui/AnimatedText";
 import type { DetailedSolution } from "@/types/solution";
 import { useTranslation } from 'react-i18next';
+import { useParams } from "react-router";
+import { buildPath } from "@/lib";
 
 interface SolutionHeroProps {
   solution: DetailedSolution;
@@ -14,6 +16,8 @@ interface SolutionHeroProps {
 const SolutionHero = ({ solution }: SolutionHeroProps) => {
   const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
+  const { lng } = useParams();
+  const lang = lng === "en" ? "en" : "tr";
 
   // Use heroMetrics from solution if available, otherwise fallback to default
   const metrics = solution.heroMetrics || [];
@@ -42,7 +46,7 @@ const SolutionHero = ({ solution }: SolutionHeroProps) => {
       <div className="container mx-auto px-4">
         <div ref={heroRef} className="max-w-6xl mx-auto">
           <Link
-            to="/"
+            to={`/${lang}`}
             className="inline-flex items-center text-amber-300 hover:text-amber-200 transition-colors mb-8 group"
           >
             <ArrowLeft className="mr-2 size-5 group-hover:-translate-x-1 transition-transform" />
@@ -70,7 +74,7 @@ const SolutionHero = ({ solution }: SolutionHeroProps) => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  to="/contact"
+                  to={buildPath(lang, "contact")}
                   className="bg-amber-500 text-white px-8 py-3 rounded-full font-medium hover:bg-amber-600 transition-colors text-center"
                 >
                   {t('connect_with_expert')}

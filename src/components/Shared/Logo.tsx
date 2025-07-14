@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import RouterLink from "./RouterLink";
 
 type LogoProps = {
@@ -5,8 +6,12 @@ type LogoProps = {
 };
 
 const Logo = ({ onClick }: LogoProps) => {
+  const { i18n } = useTranslation(); // +++
+  const lang = i18n.language.startsWith("tr") ? "tr" : "en"; // +++
+  const homePath = `/${lang}`;
+
   return (
-    <RouterLink to="/" className="logo" onClick={onClick}>
+    <RouterLink to={homePath} className="logo" onClick={onClick}>
       <img
         src="/img/tssx/tssx-light-logo.png"
         alt="TSS-X Logo"

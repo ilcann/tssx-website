@@ -1,19 +1,26 @@
+import { slugs } from "@/routes/slugs";
 import { MapPin, Mail, Phone } from "lucide-react";
 
-export const footerLinks = {
-    "companyLinks": [
-        { href: "/about", labelKey: "footer.companyLinks.links.aboutUs" },
-        { href: "/references", labelKey: "footer.companyLinks.links.references" },
-        { href: "/partners", labelKey: "footer.companyLinks.links.partners" }
+export const getFooterLinks = (lang: "tr" | "en") => {
+  const solutions = slugs[lang].solutions;
+  const solutionList = slugs[lang].solutionList;
+
+  return {
+    companyLinks: [
+      { href: `/${lang}/${slugs[lang].about}`, labelKey: "footer.companyLinks.links.aboutUs" },
+      { href: `/${lang}/${slugs[lang].references}`, labelKey: "footer.companyLinks.links.references" },
+      { href: `/${lang}/${slugs[lang].partners}`, labelKey: "footer.companyLinks.links.partners" },
     ],
-    "solutionLinks": [
-        { href: "/solutions/observability", labelKey: "footer.solutionLinks.links.observability" },
-        { href: "/solutions/asset-management", labelKey: "footer.solutionLinks.links.assetManagement" },
-        { href: "/solutions/automation", labelKey: "footer.solutionLinks.links.automation" },
-        { href: "/solutions/security", labelKey: "footer.solutionLinks.links.security" },
-        { href: "/solutions/finops", labelKey: "footer.solutionLinks.links.finops" },
+    solutionLinks: [
+      { href: `/${lang}/${solutions}/${solutionList.observability}`, labelKey: "footer.solutionLinks.links.observability" },
+      { href: `/${lang}/${solutions}/${solutionList["asset-management"]}`, labelKey: "footer.solutionLinks.links.assetManagement" },
+      { href: `/${lang}/${solutions}/${solutionList.automation}`, labelKey: "footer.solutionLinks.links.automation" },
+      { href: `/${lang}/${solutions}/${solutionList.security}`, labelKey: "footer.solutionLinks.links.security" },
+      { href: `/${lang}/${solutions}/${solutionList.finops}`, labelKey: "footer.solutionLinks.links.finops" },
     ]
-}
+  };
+};
+
 
 export const footerContactItems = [
   {

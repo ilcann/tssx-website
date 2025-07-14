@@ -4,16 +4,21 @@ import { useTranslation } from "react-i18next";
 import { type SolutionCardProps } from "./Solutions.constants"
 import { ArrowRight, Check } from "lucide-react";
 import { useSolutionCardAnimation } from "./Solution.card.animations";
+import { useParams } from "react-router";
+import { slugs } from "@/routes/slugs";
+
 
 const SolutionCard = ({
-  id,
+  slug,
   icon,
   title,
   subtitle,
   tools,
   index = 0,
 }: SolutionCardProps & { index?: number }) => {
-  const { t } = useTranslation('home');
+  const { t, i18n } = useTranslation("home");
+  const { lng } = useParams();
+  const lang = lng === "tr" || lng === "en" ? lng : i18n.language.startsWith("tr") ? "tr" : "en";
 
   const cardRef = useRef<HTMLAnchorElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -36,7 +41,7 @@ const SolutionCard = ({
 
   return (
     <Link
-      to={`/solutions/${id}`}
+      to={`/${lang}/${slugs[lang].solutions}/${slug[lang]}`}
       ref={cardRef}
       className="solutionCard group"
       style={{ transformStyle: "preserve-3d" }}

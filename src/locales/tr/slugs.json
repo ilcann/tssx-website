@@ -1,7 +1,14 @@
 {
   "about": "hakkimizda",
-  "references": "referanslar",
+  "references": "referanslarimiz",
   "contact": "iletisim",
-  "partners": "is-ortaklari",
-  "solutions": "cozumler"
+  "partners": "is-ortaklarimiz",
+  "solutions": "cozumlerimiz",
+  "solutionList" : {
+      "observability": "gozlenebilirlik",
+      "asset-management": "varlik-yonetimi",
+      "automation": "otomasyon",
+      "security": "guvenlik",
+      "finops": "finops"
+  }
 }

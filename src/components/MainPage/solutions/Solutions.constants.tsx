@@ -1,7 +1,10 @@
 import { Activity, Search, Zap, Shield, DollarSign } from "lucide-react";
 
 export type SolutionCardProps = {
-  id: string;
+  slug: {
+    tr: string;
+    en: string;
+  };
   icon: React.ReactNode;
   title: string;
   subtitle: string;
@@ -10,7 +13,10 @@ export type SolutionCardProps = {
 
 export const solutionCards: SolutionCardProps[] = [
   {
-    id: "observability",
+    slug: {
+      tr: "gozlenebilirlik",
+      en: "observability",
+    },
     icon: <Activity />,
     title: "solutions.list.observability.title",
     subtitle: "solutions.list.observability.subtitle",
@@ -21,8 +27,11 @@ export const solutionCards: SolutionCardProps[] = [
     ],
   },
   {
-    id: "asset-management",
-    icon: <Search/>,
+    slug: {
+      tr: "varlik-yonetimi",
+      en: "asset-management",
+    },
+    icon: <Search />,
     title: "solutions.list.assetManagement.title",
     subtitle: "solutions.list.assetManagement.subtitle",
     tools: [
@@ -31,8 +40,11 @@ export const solutionCards: SolutionCardProps[] = [
     ],
   },
   {
-    id: "automation",
-    icon: <Zap/>,
+    slug: {
+      tr: "otomasyon",
+      en: "automation",
+    },
+    icon: <Zap />,
     title: "solutions.list.automation.title",
     subtitle: "solutions.list.automation.subtitle",
     tools: [
@@ -42,8 +54,11 @@ export const solutionCards: SolutionCardProps[] = [
     ],
   },
   {
-    id: "security",
-    icon: <Shield/>,
+    slug: {
+      tr: "guvenlik",
+      en: "security",
+    },
+    icon: <Shield />,
     title: "solutions.list.security.title",
     subtitle: "solutions.list.security.subtitle",
     tools: [
@@ -53,8 +68,11 @@ export const solutionCards: SolutionCardProps[] = [
     ],
   },
   {
-    id: "finops",
-    icon: <DollarSign/>,
+    slug: {
+      tr: "finansal-operasyonlar",
+      en: "finops",
+    },
+    icon: <DollarSign />,
     title: "solutions.list.finops.title",
     subtitle: "solutions.list.finops.subtitle",
     tools: [

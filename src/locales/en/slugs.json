@@ -3,5 +3,12 @@
   "references": "references",
   "contact": "contact",
   "partners": "partners",
-  "solutions": "solutions"
+  "solutions": "solutions",
+  "solutionList" : {
+      "observability": "observability",
+      "asset-management": "asset-management",
+      "automation": "automation",
+      "security": "security",
+      "finops": "finops"
+  }
 }

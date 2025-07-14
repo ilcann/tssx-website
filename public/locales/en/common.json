@@ -43,7 +43,7 @@
             "title": "Solutions",
             "links": {
                 "observability": "Observability",
-                "assetManagement": "IT Discovery & Asset Management",
+                "asset-management": "IT Discovery & Asset Management",
                 "automation": "Automation",
                 "security": "Security",
                 "finops": "FinOPS"

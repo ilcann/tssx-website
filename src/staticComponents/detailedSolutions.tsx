@@ -11,7 +11,10 @@ import type { TFunction } from "i18next";
 export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
   {
     id: 1,
-    slug: "observability",
+    slug: {
+      en: "observability",
+      tr: "gozlenebilirlik"
+    },
     title: t("solution_title_observability"),
     titleTr: t("solution_title_observability"),
     description: t("solution_description_observability"),
@@ -113,7 +116,10 @@ export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
   },
   {
     id: 2,
-    slug: "asset-management",
+    slug: {
+      en: "asset-management",
+      tr: "varlik-yonetimi"
+    },
     title: t("solution_title_asset_management"),
     titleTr: t("solution_title_asset_management"),
     description: t("solution_description_asset_management"),
@@ -257,7 +263,10 @@ export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
   },
   {
     id: 3,
-    slug: "automation",
+    slug: {
+      en: "automation",
+      tr: "otomasyon"
+    },
     title: t("solution_title_automation"),
     titleTr: t("solution_title_automation"),
     description: t("solution_description_automation"),
@@ -377,7 +386,10 @@ export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
   },
   {
     id: 4,
-    slug: "security",
+    slug: {
+      en: "security",
+      tr: "guvenlik"
+    },
     title: t("solution_title_security"),
     titleTr: t("solution_title_security"),
     description: t("solution_description_security"),
@@ -497,7 +509,10 @@ export const getDetailedSolutionData = (t: TFunction): DetailedSolution[] => [
   },
   {
     id: 5,
-    slug: "finops",
+    slug: {
+      en: "finops",
+      tr: "finops"
+    },
     title: t("solution_title_finops"),
     titleTr: t("solution_title_finops"),
     description: t("solution_description_finops"),

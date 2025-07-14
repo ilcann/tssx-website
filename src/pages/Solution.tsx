@@ -20,11 +20,11 @@ gsap.registerPlugin(ScrollTrigger);
 const Solution = () => {
   const { slug } = useParams<{ slug: string }>();
   const contentRef = useRef<HTMLDivElement>(null);
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const detailedSolutionData = getDetailedSolutionData(t);
   const solution = detailedSolutionData.find(
-    (sol) => sol.slug === slug
+    (sol) => sol.slug[i18n.language as "tr" | "en"] === slug
   );
 
   useEffect(() => {

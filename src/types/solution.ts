@@ -1,5 +1,10 @@
 import React from "react";
 
+export type LocalizedString = {
+  en: string;
+  tr: string;
+};
+
 export type SolutionCardProps = {
   icon: React.ReactNode;
   title: string;
@@ -9,7 +14,7 @@ export type SolutionCardProps = {
 
 export type DetailedSolution = {
   id: number;
-  slug: string;
+  slug: LocalizedString;
   title: string;
   titleTr: string;
   description: string;

@@ -18,7 +18,7 @@ const Solutions = () => {
                     {solutionCards.map((solution, index) => (
                         <SolutionCard
                             key={index}
-                            id={solution.id}
+                            slug={solution.slug}
                             icon={solution.icon}
                             title={solution.title}
                             subtitle={solution.subtitle}
