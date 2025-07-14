@@ -69,7 +69,7 @@ export const solutionCards: SolutionCardProps[] = [
   },
   {
     slug: {
-      tr: "finansal-operasyonlar",
+      tr: "finops",
       en: "finops",
     },
     icon: <DollarSign />,
