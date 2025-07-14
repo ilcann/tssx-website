@@ -71,7 +71,7 @@ const SolutionCard = ({
           ))}
         </ul>
         <button ref={buttonRef} className="solutionCard-cta">
-          <span className="solutionCard-cta-text">Learn More</span>
+          <span className="solutionCard-cta-text">{t('solutions.learn_more')}</span>
           <span className="solutionCard-cta-icon">
             <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
           </span>
