@@ -78,6 +78,7 @@ function App() {
         />
         {/* Resource hints */}
         <link rel="prefetch" href="/world-110m.json" />
+        <link rel="icon" href="/img/tssx/logo.png" type="image/x-icon" />
       </Helmet>
 
       <Header />
