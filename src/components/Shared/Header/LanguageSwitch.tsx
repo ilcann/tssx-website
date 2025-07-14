@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router";
 import { Globe } from "lucide-react";
+import { slugs } from "@/routes/slugs";
 
 export default function LanguageSwitch() {
   const { i18n } = useTranslation();
@@ -8,24 +9,47 @@ export default function LanguageSwitch() {
   const { pathname, search, hash } = useLocation();
 
   const currentLang = i18n.language.startsWith("tr") ? "tr" : "en";
-  const nextLang    = currentLang === "tr" ? "en" : "tr";
+  const nextLang = currentLang === "tr" ? "en" : "tr";
 
   const handleToggleLanguage = () => {
-    // 1) i18next dili güncelle
     i18n.changeLanguage(nextLang);
 
-    // 2) URL'deki ilk segmenti değiştir -> "/tr/..."  →  "/en/..."
-    const segments = pathname.split("/");      // ["", "tr", "hakkimizda"]
-    // Eğer path "/" ise (["",""]) => ['', '', ''] hali oluşacağı için koruyucu
+    const segments = pathname.split("/"); // ["", "en", "solutions", "observability"]
+
+    // Dil öneki varsa güncelle, yoksa başa ekle
     if (segments.length > 1 && (segments[1] === "tr" || segments[1] === "en")) {
       segments[1] = nextLang;
     } else {
-      // Dil öneki yoksa başa ekle
       segments.splice(1, 0, nextLang);
     }
-    const newPath = segments.join("/") || `/${nextLang}`;
 
-    // 3) Arama parametreleri ve hash'i koruyarak yönlendir
+    // Çözümler sayfasıysa slug'ları da çevir
+    const currentSlugs = slugs[currentLang];
+    const nextSlugs = slugs[nextLang];
+
+    if (
+      segments[2] === currentSlugs.solutions &&
+      segments[3] // örn: observability
+    ) {
+      const currentSolutionSlug = segments[3];
+
+      // slug'ı karşılık gelen key ile eşleştir
+      const matchedEntry = Object.entries(currentSlugs.solutionList).find(
+        ([, val]) => val === currentSolutionSlug
+      );
+
+    if (matchedEntry) {
+      const [solutionKey] = matchedEntry;
+
+      if (solutionKey in nextSlugs.solutionList) {
+        // çözüm: type assertion ile
+        segments[2] = nextSlugs.solutions;
+        segments[3] = nextSlugs.solutionList[solutionKey as keyof typeof nextSlugs.solutionList];
+      }
+    }
+    }
+
+    const newPath = segments.join("/") || `/${nextLang}`;
     navigate(newPath + search + hash, { replace: true });
   };
 
